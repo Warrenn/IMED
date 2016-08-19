@@ -5,6 +5,12 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMED", "IMED\IMED.csproj", "{8D83C9CE-C9AD-405D-B1F4-19E36D58FE07}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1B45B006-4EAF-4A05-9BB7-7BEC925F4F04}"
+	ProjectSection(SolutionItems) = preProject
+		install.cmd = install.cmd
+		Install\installchocolatey.cmd = Install\installchocolatey.cmd
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
