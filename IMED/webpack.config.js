@@ -11,7 +11,6 @@ module.exports = {
         loaders: [
             { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate!babel' },
             { test: /\.html$/, loader: 'raw' },
-            { test: /\.styl$/, loader: ExtractTextPlugin.extract('style', ['css', 'postcss', 'stylus']) },
             { test: /\.css$/, loader: ExtractTextPlugin.extract('style', ['css', 'postcss']) },
             { test: /\.less/, loader: ExtractTextPlugin.extract('style', ['css', 'postcss', 'less']) },
             { test: /\.svg/, loader: 'svg-url' },
@@ -39,9 +38,6 @@ module.exports = {
             inject: 'body',
             hash: true,
             mobile: true
-        }),
-        new ExtractTextPlugin("[name].css", {
-            allChunks: true
         }),
         new Purify({
             basePath: __dirname,

@@ -1,14 +1,18 @@
-var webpack = require('webpack');
-var path    = require('path');
-var config  = require('./webpack.config');
+let webpack = require('webpack');
+let path    = require('path');
+let config  = require('./webpack.config');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 config.output = {
-  filename: '[name].bundle.js',
-  publicPath: '/',
-  path: path.resolve(__dirname, 'Content')
+    filename: '[name].bundle.js',
+    publicPath: '/',
+    path: path.resolve(__dirname, 'Content')
 };
 
 config.plugins = config.plugins.concat([
+    new ExtractTextPlugin("[name].css", {
+        allChunks: true
+    }),
 
   // Adds webpack HMR support. It act's like livereload,
   // reloading page after webpack rebuilt modules.
