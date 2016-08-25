@@ -5,7 +5,7 @@ class DashboardController extends MediaAwareControllerBase {
         'ngInject';
         super(mediaQueryFactory);
 
-        this.name = 'dashboard ing';
+        this.name = 'dashboard edry';
     }
 }
 

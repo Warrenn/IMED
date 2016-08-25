@@ -226,6 +226,7 @@
     <Content Include="favicon.ico" />
     <Content Include="gulpfile.babel.js" />
     <Content Include="karma.conf.js" />
+    <Content Include="paths.js" />
     <Content Include="webpack.config.js" />
     <Content Include="webpack.dev.config.js" />
     <Content Include="webpack.dist.config.js" />

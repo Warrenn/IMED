@@ -25,6 +25,10 @@ namespace IMED
             options.ConfigureCaching(ConfigurationManager.AppSettings["IMED:Caching"]);
             options.ConfigureRequestPath(ConfigurationManager.AppSettings["IMED:QueryPath"]);
             app.UseAngularServer(rootPath, "/index.html", options);
+
+            var configuration = System.Web.Http.GlobalConfiguration.Configuration;
+            WebApiConfig.Register(configuration);
+            app.UseWebApi(configuration);
         }
     }
 }

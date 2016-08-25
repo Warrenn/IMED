@@ -5,11 +5,12 @@ let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let Purify = require("purifycss-webpack-plugin");
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var AppCachePlugin = require('appcache-webpack-plugin');
+import paths from './paths';
 
 config.output = {
     filename: '[name].bundle.js',
     publicPath: '/',
-    path: path.resolve(__dirname, 'wwwroot')
+    path: paths.dest
 };
 
 config.plugins = config.plugins.concat([
@@ -17,7 +18,7 @@ config.plugins = config.plugins.concat([
         allChunks: true
     }),
     new Purify({
-        basePath: path.resolve(__dirname, 'Content'),
+        basePath: path.resolve(__dirname, paths.root),
         paths: [
             "**/*.html"
         ],
