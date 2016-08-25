@@ -9,7 +9,7 @@ let dashboardModule = angular
         uiRouter
     ])
     .config(($stateProvider) => {
-        "ngInject";
+        'ngInject';
         $stateProvider
             .state('dashboard', {
                 url: '/dashboard',

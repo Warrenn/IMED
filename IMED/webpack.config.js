@@ -2,7 +2,6 @@ let path = require('path');
 let webpack = require('webpack');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
-let Purify = require("purifycss-webpack-plugin");
 
 module.exports = {
     devtool: 'source-map',
@@ -36,17 +35,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'Content/index.html',
             inject: 'body',
-            hash: true,
+            hash: false,
             mobile: true
-        }),
-        new Purify({
-            basePath: __dirname,
-            paths: [
-                "Content/**/*.html"
-            ],
-            purifyOptions: {
-                minify: true
-            }
         }),
         // Automatically move all modules defined outside of application directory to vendor bundle.
         // If you are using more complicated project structure, consider to specify common chunks manually.

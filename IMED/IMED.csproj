@@ -266,10 +266,14 @@
     <Content Include="Content\app\components\dashboard\panel.less" />
     <Content Include="Content\app\components\dashboard\section.less" />
     <Content Include="Content\app\common\layout\layout.less" />
+    <Content Include="Content\app\variables.less" />
+    <Content Include="Content\app\mixins.less" />
+    <Content Include="Content\app\common\common.less" />
     <None Include="Project_Readme.html" />
     <Content Include="wwwroot\app.bundle.js.map" />
     <Content Include="wwwroot\vendor.bundle.js.map" />
     <Content Include="wwwroot\app.css.map" />
+    <Content Include="wwwroot\manifest.appcache" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

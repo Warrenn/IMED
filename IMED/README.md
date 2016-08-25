@@ -1,14 +1,14 @@
-<p align="center">
-  <a href="http://courses.angularclass.com/courses/angular-2-fundamentals" target="_blank">
-    <img width="438" alt="Angular 2 Fundamentals" src="https://cloud.githubusercontent.com/assets/1016365/17200649/085798c6-543c-11e6-8ad0-2484f0641624.png">
+<p align='center'>
+  <a href='http://courses.angularclass.com/courses/angular-2-fundamentals' target='_blank'>
+    <img width='438' alt='Angular 2 Fundamentals' src='https://cloud.githubusercontent.com/assets/1016365/17200649/085798c6-543c-11e6-8ad0-2484f0641624.png'>
   </a>
 </p>
 
 ---
 
-<p align="center">
-  <a href="https://angularclass.com" target="_blank">
-    <img src="https://cloud.githubusercontent.com/assets/1016365/9864650/93a5660a-5b00-11e5-8716-a0d538d12913.png" alt="ng6-starter" width="480px;" >
+<p align='center'>
+  <a href='https://angularclass.com' target='_blank'>
+    <img src='https://cloud.githubusercontent.com/assets/1016365/9864650/93a5660a-5b00-11e5-8716-a0d538d12913.png' alt='ng6-starter' width='480px;' >
   </a>
   <!-- old img url: http://res.cloudinary.com/angularclass/image/upload/v1431802814/ng6_vrmd60.png -->
 </p>
@@ -77,7 +77,7 @@ client
 ⋅⋅⋅⋅⋅⋅components.js * components entry file
 ⋅⋅⋅⋅⋅⋅home/ * home component
 ⋅⋅⋅⋅⋅⋅⋅⋅home.js * home entry file (routes, configurations, and declarations occur here)
-⋅⋅⋅⋅⋅⋅⋅⋅home.component.js * home "directive"
+⋅⋅⋅⋅⋅⋅⋅⋅home.component.js * home 'directive'
 ⋅⋅⋅⋅⋅⋅⋅⋅home.controller.js * home controller
 ⋅⋅⋅⋅⋅⋅⋅⋅home.styl * home styles
 ⋅⋅⋅⋅⋅⋅⋅⋅home.html * home template
@@ -112,7 +112,7 @@ NG6 uses Gulp to build and launch the development environment. After you have in
 ### Gulp Tasks
 Here's a list of available tasks:
 * `webpack`
-  * runs Webpack, which will transpile, concatenate, and compress (collectively, "bundle") all assets and modules into `dist/bundle.js`. It also prepares `index.html` to be used as application entry point, links assets and created dist version of our application.
+  * runs Webpack, which will transpile, concatenate, and compress (collectively, 'bundle') all assets and modules into `dist/bundle.js`. It also prepares `index.html` to be used as application entry point, links assets and created dist version of our application.
 * `serve`
   * starts a dev server via `webpack-dev-server`, serving the client folder.
 * `watch`
@@ -137,7 +137,7 @@ It's always easier to learn something if you have an examples. Here is a list of
  - [TodoMVC Example App](https://github.com/AngularClass/NG6-todomvc-starter)
 
 ### Generating Components
-Following a consistent directory structure between components offers us the certainty of predictability. We can take advantage of this certainty by creating a gulp task to automate the "instantiation" of our components. The component boilerplate task generates this:
+Following a consistent directory structure between components offers us the certainty of predictability. We can take advantage of this certainty by creating a gulp task to automate the 'instantiation' of our components. The component boilerplate task generates this:
 ```
 ⋅⋅⋅⋅⋅⋅componentName/
 ⋅⋅⋅⋅⋅⋅⋅⋅componentName.js // entry file where all its dependencies load
@@ -173,7 +173,7 @@ enjoy — **AngularClass**
 
 <br><br>
 
-[![AngularClass](https://cloud.githubusercontent.com/assets/1016365/9863770/cb0620fc-5af7-11e5-89df-d4b0b2cdfc43.png  "Angular Class")](https://angularclass.com)
+[![AngularClass](https://cloud.githubusercontent.com/assets/1016365/9863770/cb0620fc-5af7-11e5-89df-d4b0b2cdfc43.png  'Angular Class')](https://angularclass.com)
 ##[AngularClass](https://angularclass.com)
 > Learn AngularJS, Angular 2, and Modern Web Development from the best.
 > Looking for corporate Angular training, want to host us, or Angular consulting? hello@angularclass.com

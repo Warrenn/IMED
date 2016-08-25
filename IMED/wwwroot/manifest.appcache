@@ -1,0 +1,13 @@
+CACHE MANIFEST
+# 18f13b2bd10e9e7f1c1e
+
+/app.bundle.js
+/vendor.bundle.js
+/app.css
+/app.bundle.js.map
+/app.css.map
+/vendor.bundle.js.map
+/index.html
+
+NETWORK:
+*
