@@ -1,35 +1,30 @@
-let webpack = require('webpack');
-let path    = require('path');
-let config  = require('./webpack.config');
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
-let Purify = require("purifycss-webpack-plugin");
+var webpack = require('webpack');
+var path = require('path');
+var config = require('./webpack.config');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var AppCachePlugin = require('appcache-webpack-plugin');
-import paths from './paths';
+var paths = require('./paths.js').default;
 
 config.output = {
     filename: '[name].bundle.js',
-    publicPath: '/',
+    publicPath: '',
     path: paths.dest
 };
 
 config.plugins = config.plugins.concat([
-    new ExtractTextPlugin("[name].css", {
-        allChunks: true
+    new OptimizeCssAssetsPlugin({
+        cssProcessor: require('cssnano'),
+        cssProcessorOptions: { discardComments: { removeAll: true } },
+        canPrint: true
     }),
-    new Purify({
-        basePath: path.resolve(__dirname, paths.root),
-        paths: [
-            "**/*.html"
-        ],
-        resolveExtensions: '.html',
-        purifyOptions: {
-            minify: true
-        }
-    }),
-    new OptimizeCssAssetsPlugin(),
+    // Reduces bundles total size
     new webpack.optimize.UglifyJsPlugin({
         mangle: {
+
+            // You can specify all variables that should not be mangled.
+            // For example if your vendor dependency doesn't use modules
+            // and relies on global variables. Most of angular modules relies on
+            // angular global variable, so we should keep it unchanged
             except: ['$super', '$', 'exports', 'require', 'angular']
         }
     }),

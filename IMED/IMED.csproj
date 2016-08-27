@@ -189,13 +189,6 @@
     <Content Include="Content\app\common\layout\layout.xs.html" />
     <Content Include="Content\app\common\layout\layout.js" />
     <Content Include="Content\app\common\layout\layout.spec.js" />
-    <Content Include="Content\app\common\layout\menubar.component.js" />
-    <Content Include="Content\app\common\layout\menubar.controller.js" />
-    <Content Include="Content\app\common\layout\menubar.html" />
-    <Content Include="Content\app\common\layout\menubar.spec.js" />
-    <Content Include="Content\app\common\layout\navbar.component.js" />
-    <Content Include="Content\app\common\layout\navbar.controller.js" />
-    <Content Include="Content\app\common\layout\navbar.html" />
     <Content Include="Content\app\common\marker\marker.component.js" />
     <Content Include="Content\app\common\marker\marker.controller.js" />
     <Content Include="Content\app\common\marker\marker.html" />
@@ -204,6 +197,22 @@
     <Content Include="Content\app\common\mediaQuery\MediaAwareControllerBase.js" />
     <Content Include="Content\app\common\mediaQuery\mediaQuery.factory.js" />
     <Content Include="Content\app\common\mediaQuery\mediaQuery.js" />
+    <Content Include="Content\app\common\menubar\menubar.component.js" />
+    <Content Include="Content\app\common\menubar\menubar.controller.js" />
+    <Content Include="Content\app\common\menubar\menubar.js" />
+    <Content Include="Content\app\common\menubar\menubar.lg.html" />
+    <Content Include="Content\app\common\menubar\menubar.md.html" />
+    <Content Include="Content\app\common\menubar\menubar.sm.html" />
+    <Content Include="Content\app\common\menubar\menubar.spec.js" />
+    <Content Include="Content\app\common\menubar\menubar.xs.html" />
+    <Content Include="Content\app\common\navbar\navbar.component.js" />
+    <Content Include="Content\app\common\navbar\navbar.controller.js" />
+    <Content Include="Content\app\common\navbar\navbar.js" />
+    <Content Include="Content\app\common\navbar\navbar.lg.html" />
+    <Content Include="Content\app\common\navbar\navbar.md.html" />
+    <Content Include="Content\app\common\navbar\navbar.sm.html" />
+    <Content Include="Content\app\common\navbar\navbar.spec.js" />
+    <Content Include="Content\app\common\navbar\navbar.xs.html" />
     <Content Include="Content\app\components\components.js" />
     <Content Include="Content\app\components\dashboard\dashboard.sm.html" />
     <Content Include="Content\app\components\dashboard\dashboard.component.js" />
@@ -214,14 +223,22 @@
     <Content Include="Content\app\components\dashboard\claimsPanel.html" />
     <Content Include="Content\app\components\dashboard\payrollPanel.html" />
     <Content Include="Content\app\components\dashboard\newBusinessPanel.html" />
-    <Content Include="Content\app\components\dashboard\panel.component.js" />
-    <Content Include="Content\app\components\dashboard\panel.controller.js" />
-    <Content Include="Content\app\components\dashboard\panel.html" />
-    <Content Include="Content\app\components\dashboard\panel.spec.js" />
-    <Content Include="Content\app\components\dashboard\section.component.js" />
-    <Content Include="Content\app\components\dashboard\section.controller.js" />
-    <Content Include="Content\app\components\dashboard\section.html" />
-    <Content Include="Content\app\components\dashboard\section.spec.js" />
+    <Content Include="Content\app\components\panel\panel.component.js" />
+    <Content Include="Content\app\components\panel\panel.controller.js" />
+    <Content Include="Content\app\components\panel\panel.js" />
+    <Content Include="Content\app\components\panel\panel.lg.html" />
+    <Content Include="Content\app\components\panel\panel.md.html" />
+    <Content Include="Content\app\components\panel\panel.sm.html" />
+    <Content Include="Content\app\components\panel\panel.spec.js" />
+    <Content Include="Content\app\components\panel\panel.xs.html" />
+    <Content Include="Content\app\components\section\section.component.js" />
+    <Content Include="Content\app\components\section\section.controller.js" />
+    <Content Include="Content\app\components\section\section.js" />
+    <Content Include="Content\app\components\section\section.lg.html" />
+    <Content Include="Content\app\components\section\section.md.html" />
+    <Content Include="Content\app\components\section\section.sm.html" />
+    <Content Include="Content\app\components\section\section.spec.js" />
+    <Content Include="Content\app\components\section\section.xs.html" />
     <Content Include="Content\index.html" />
     <Content Include="favicon.ico" />
     <Content Include="gulpfile.babel.js" />
@@ -253,28 +270,29 @@
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
     <Folder Include="Providers\" />
-    <Folder Include="Results\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include=".bowerrc" />
+    <Content Include="bower.json" />
     <None Include="Content\app\app.less" />
     <Content Include="Content\app\components\dashboard\dashboard.less" />
-    <Content Include="Content\app\common\layout\navbar.less" />
-    <Content Include="Content\app\common\layout\menubar.less" />
     <Content Include="Content\app\common\marker\marker.less" />
-    <Content Include="Content\app\components\dashboard\panel.less" />
-    <Content Include="Content\app\components\dashboard\section.less" />
     <Content Include="Content\app\common\layout\layout.less" />
     <Content Include="Content\app\variables.less" />
     <Content Include="Content\app\mixins.less" />
     <Content Include="Content\app\common\common.less" />
+    <Content Include="Content\app\common\menubar\menubar.less" />
+    <Content Include="Content\app\common\navbar\navbar.less" />
+    <Content Include="Content\app\components\panel\panel.less" />
+    <Content Include="Content\app\components\section\section.less" />
     <None Include="Project_Readme.html" />
     <Content Include="wwwroot\app.bundle.js.map" />
-    <Content Include="wwwroot\vendor.bundle.js.map" />
     <Content Include="wwwroot\app.css.map" />
     <Content Include="wwwroot\manifest.appcache" />
+    <Content Include="wwwroot\vendor.bundle.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

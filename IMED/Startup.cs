@@ -8,6 +8,7 @@ using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.StaticFiles;
 using Microsoft.Owin.StaticFiles.Infrastructure;
 using Owin;
+using System.Web.Http;
 
 [assembly: OwinStartup(typeof(IMED.Startup))]
 
@@ -26,8 +27,8 @@ namespace IMED
             options.ConfigureRequestPath(ConfigurationManager.AppSettings["IMED:QueryPath"]);
             app.UseAngularServer(rootPath, "/index.html", options);
 
-            var configuration = System.Web.Http.GlobalConfiguration.Configuration;
-            WebApiConfig.Register(configuration);
+            var configuration = GlobalConfiguration.Configuration;
+            //WebApiConfig.Register(configuration);
             app.UseWebApi(configuration);
         }
     }

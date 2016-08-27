@@ -1,7 +1,10 @@
 class LayoutController {
-  constructor() {
-    this.name = 'layout';
-  }
+    constructor(ionPullUpFooterState) {
+        'ngInject';
+
+        this.footerState = ionPullUpFooterState.EXPANDED;
+        this.searchText = '';
+    }
 }
 
 export default LayoutController;
