@@ -1,4 +1,4 @@
-﻿let mediaQueryFactory = function($window, $state, $transitions) {
+﻿let MediaQueryFactoryClass = function($window, $rootScope) {
     'ngInject';
 
     let listeners = {},
@@ -6,18 +6,9 @@
         mediaStates = [],
         currentMediaState = '';
 
-    init();
-
     return {
         monitorMediaStates: monitorMediaStates,
         getCurrentState: getCurrentState
-    }
-
-    function init() {
-        $transitions.onBefore(true, (transition) => {
-            const newState = transition.$to().name;
-            return isMediaState(newState) || $state.target(newState + '.' + currentMediaState);
-        });
     }
 
     function getCurrentState() {
@@ -25,24 +16,12 @@
     }
 
     function redirectCallback(stateId, list) {
-        const newState = $state.$current.name;
-        if (!newState) {
-            return;
-        }
-
         currentMediaState = stateId;
-        (isMediaState(newState)) ?
-            $state.go('^.' + stateId, { queryList: list }) :
-            $state.go('.' + stateId, { queryList: list });
-    }
-
-    function isMediaState(state) {
-        if (!state) {
-            return false;
-        }
-
-        const parts = state.split('.');
-        return mediaStates.indexOf(parts[parts.length - 1]) >= 0;
+        $rootScope.$broadcast('mediaQuery.stateChange', {
+            state: stateId,
+            list
+        });
+        $rootScope.$apply();
     }
 
     function monitorMediaStates(config) {
@@ -69,4 +48,38 @@
     }
 }
 
-export default mediaQueryFactory;
+MediaQueryFactoryClass.wrapAsMediaComponent = (component) => {
+    const states = Object.keys(component.mediaTemplates || {}),
+        controller = component.controller;
+
+    if ((states.length === 0) || !controller) {
+        return component;
+    }
+
+    component.template = (mediaQueryFactory) => {
+        'ngInject';
+
+        if (!('currentMediaState' in controller.prototype)) {
+
+            Object.defineProperty(controller.prototype, 'currentMediaState', {
+                get: () => {
+                    return mediaQueryFactory.getCurrentState();
+                }
+            });
+        }
+
+        let template = '<div ng-switch on="$ctrl.currentMediaState">';
+
+        for (let i = 0; i < states.length; i++) {
+            const mediaState = states[i],
+                mediaTemplate = component.mediaTemplates[mediaState];
+            template += '<div ng-switch-when="' + mediaState + '" >' + mediaTemplate + '</div>';
+        }
+
+        return template + '</div>';
+    }
+
+    return component;
+}
+
+export default MediaQueryFactoryClass;

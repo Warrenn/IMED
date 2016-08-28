@@ -1,11 +1,12 @@
-import MediaAwareControllerBase from '../../common/mediaQuery/MediaAwareControllerBase';
-
-class DashboardController extends MediaAwareControllerBase {
-    constructor(mediaQueryFactory) {
+class DashboardController{
+    constructor(mediaQueryFactory, $rootScope) {
         'ngInject';
-        super(mediaQueryFactory);
 
-        this.name = 'dashboard edry';
+        this.name = 'dashboard the media query';
+
+        $rootScope.$on('mediaQuery.stateChange',(event, data) => {
+            this.name = 'a new state ' + data.state;
+        });
     }
 }
 
