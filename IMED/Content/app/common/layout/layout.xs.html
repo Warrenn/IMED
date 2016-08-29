@@ -10,8 +10,8 @@
     <ion-content delegate-handle="main" on-scroll="$ctrl.getScrollPosition()" class="content-light has-subheader has-footer">
         <div ng-transclude="content"></div>
     </ion-content>
-    <div class="layout-float-button button button-icon ion-chevron-up" ng-click="$ctrl.scrollToTop()">
-    </div>
+    <button class="layout-float-button ion-chevron-up" ng-class="$ctrl.showScrollButton?'am-fade-and-scale':''" ng-show="$ctrl.showScrollButton" ng-click="$ctrl.scrollToTop()">
+    </button>
     <ion-pull-up-footer class="bar-light" default-behavior="expand" max-height="300" state="$ctrl.footerState">
         <ion-pull-up-bar ion-pull-up-trigger>
             <h1 class="title title-left"><a href="">My Client Disclaimer</a>{{$ctrl.scrollTop}}</h1>
