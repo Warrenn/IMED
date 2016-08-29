@@ -1,3 +1,38 @@
-<div>
-  <h1>{{ $ctrl.name }}</h1>
+<div class="menubar-top-line">
 </div>
+<div class="menubar-logo">Old-Mutual Logo here</div>
+<button class="button icon ion-navicon button-clear menubar-icon-right" ng-click="popover.show($event)"></button>
+<script id="templates/popover.html" type="text/ng-template">
+    <ion-popover-view>
+        <ion-header-bar>
+            Hello
+            <h1 class="title">{{userName}}</h1>
+        </ion-header-bar>
+        <ion-content>
+            <ion-list>
+                <ion-item>
+                    <i class="icon ion-home"></i>
+                    <a ui-sref="dashboard">
+                        HOME
+                    </a>
+                </ion-item>
+            </ion-list>
+            <ion-list>
+                <ion-item>
+                    <i class="icon ion-person"></i>
+                    <a ui-sref="dashboard">
+                        PROFILE
+                    </a>
+                </ion-item>
+            </ion-list>
+            <ion-list>
+                <ion-item>
+                    <i class="icon ion-log-out"></i>
+                    <a ui-sref="dashboard">
+                        LOG OUT
+                    </a>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-popover-view>
+</script>

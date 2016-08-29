@@ -1,3 +1,13 @@
-<div>
-  <h1>{{ $ctrl.name }}</h1>
+<div class="item">
+    <div class="info-panel">
+        <div class="amount">
+            {{$ctrl.summary.payrollOverdue | zeropad:'00'}}
+        </div>
+        <div class="content">
+            <a class="heading">PAYROLL OVERDUE</a>
+            <div class="description">You can see which paypoints will be incurring late payment interest. Your intervention may be required.</div>
+        </div>
+    </div>
+    <!--<highchart config="$ctrl.chartConfig"></highchart>-->
 </div>
+

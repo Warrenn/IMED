@@ -1,3 +1,4 @@
-<div>
-  <h1>{{ $ctrl.name }}</h1>
+<div ng-class="'marker-' + $ctrl.markerType" class="marker">
+    <div class="circle">{{$ctrl.amount | zeropad:'00'}}</div>
+    <div class="caret"></div>
 </div>

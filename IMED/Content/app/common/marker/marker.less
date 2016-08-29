@@ -1,3 +1,20 @@
-.marker {
-    color: red;
+@import "../../mixins.less";
+@ns: marker;
+@size: 66;
+@thickness: 6;
+
+.@{ns}-quote {
+    .marker(@quote-color,@size,@thickness);
+}
+
+.@{ns}-launch {
+    .marker(@launch-color,@size,@thickness);
+}
+
+.@{ns}-install {
+    .marker(@install-color,@size,@thickness);
+}
+
+.@{ns}-payroll {
+    .marker(@payroll-color,@size,@thickness);
 }

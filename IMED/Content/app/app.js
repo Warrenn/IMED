@@ -5,19 +5,25 @@ import ngSanitize from 'angular-sanitize';
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
-import Layout from './common/layout/layout';
 import ionic from '../../node_modules/ionic-starter/www/lib/ionic/js/ionic';
 import ngIonic from '../../node_modules/ionic-starter/www/lib/ionic/js/ionic-angular';
 import ionicPullUp from '../../bower_components/ionic-pullup/dist/ion-pullup';
+import moment from 'moment';
+
+//HighCharts configuration
+var Highcharts = require('highcharts');
+window.Highcharts = Highcharts;
+require('highcharts/modules/exporting')(Highcharts);
+import highChartsNg from 'highcharts-ng';
 
 angular
     .module('app', [
         uiRouter,
         Common,
         Components,
-        Layout,
         ngAnimate,
         ngSanitize,
+        highChartsNg,
         'ionic'
     ])
     .run((mediaQueryFactory, $ionicPlatform) => {
@@ -47,4 +53,4 @@ angular
     })
     .component('app', AppComponent);
 
-angular.bootstrap(window.document.body, ['app']);
+angular.bootstrap(window.document.body, ['app'], { strictDi: true });

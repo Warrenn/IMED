@@ -1,8 +1,64 @@
-.app {
-    height: 100%;
+@import "../../variables.less";
+@ns: dashboard;
+
+.@{ns}-filter {
+    display: inline;
 }
 
-.dashboard {
-    height: 100%;
-    width: 20%;
+.@{ns}-newbusiness {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+
+    .@{ns}-linkbar {
+        position: absolute;
+        z-index: -1;
+    }
+
+    @media (max-width: @screen-sm) {
+        .marker {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .@{ns}-linkbar {
+            border-right: 6px dotted @stable;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            right: 49%;
+        }
+    }
+
+    .@{ns}-title {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: @padding-base-vertical;
+    }
+
+    .@{ns}-content {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: @font-size-base;
+        padding-bottom: @item-padding * 2;
+    }
+}
+
+.list .item.item-accordion {
+    line-height: 38px;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: 0.09s all linear;
+}
+
+.list .item.item-accordion.ng-hide {
+    line-height: 0px;
+}
+
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+    display: block !important;
 }

@@ -1,12 +1,30 @@
+import chartConfig from "./chartConfig";
+
 class DashboardController{
-    constructor(mediaQueryFactory, $rootScope) {
-        'ngInject';
+    constructor() {
+        this.searchText = '';
+        this.filterState = 'COLLAPSED';
+        this.showNewBusiness = true;
+        this.showPayroll = true;
+        this.showClaims = true;
+        
+        this.newBusinessSummary = {
+            quotesIssued: 4,
+            launching: 11,
+            installing: 5,
+            payrollTracking: 2
+        }
 
-        this.name = 'dashboard the media query';
+        this.payrollSummary = {
+            submitted: 2,
+            notsubmitted: 4
+        }
+    }
 
-        $rootScope.$on('mediaQuery.stateChange',(event, data) => {
-            this.name = 'a new state ' + data.state;
-        });
+    toggleFilterState() {
+        this.filterState = this.filterState === 'EXPANDED' ?
+            'COLLAPSED' :
+            'EXPANDED';
     }
 }
 

@@ -1,10 +1,14 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import dashboardComponent from './dashboard.component';
+import payrollPanelComponent from './payrollPanel.component';
+import markerComponent from '../../common/marker/marker';
+import newBusinessPanelTemplate from './newBusinessPanel.html'
 
 let dashboardModule = angular
     .module('dashboard', [
-        uiRouter
+        uiRouter,
+        markerComponent
     ])
     .config(($stateProvider) => {
         'ngInject';
@@ -16,6 +20,11 @@ let dashboardModule = angular
             });
     })
     .component('dashboard', dashboardComponent)
+    .component('payrollPanel', payrollPanelComponent)
+    .component('newBusinessPanel', {
+        bindings: { summary: '<' },
+        template: newBusinessPanelTemplate
+    })
     .name;
 
 export default dashboardModule;

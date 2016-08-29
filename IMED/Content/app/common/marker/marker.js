@@ -1,13 +1,15 @@
 import angular from 'angular';
-import uiRouter from 'angular-ui-router';
-import markerComponent from './marker.component';
+import template from './marker.html';
+import './marker.less';
 
-let markerModule = angular.module('marker', [
-  uiRouter
-])
-
-.component('marker', markerComponent)
-
-.name;
+let markerModule = angular.module('marker', [])
+    .component('marker', {
+        bindings: {
+            markerType: '<',
+            amount: '<'
+        },
+        template
+    })
+    .name;
 
 export default markerModule;

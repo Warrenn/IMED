@@ -1,6 +1,42 @@
 ﻿@import 'variables.less';
-
 @import '~bootstrap/less/mixins.less';
 @import '~less-plugin-ionic/less/mixins.less';
 
+.marker(@marker-color,@size,@thickness) {
+    position: relative;
+    width: unit(@size,px);
+    height: unit(@size,px);
+    margin-bottom: unit(round(@size/2),px);
+    text-align: center;
+    background-color: @light;
 
+    .circle {
+        .circle(@size,@marker-color,@thickness);
+        line-height: unit(@size - (@thickness * 2),px);
+        color: @marker-color;
+        font-weight: 700;
+        font-size: 25px;
+    }
+
+    .caret {
+        .caret(@thickness * 4,round(@size/2) - @thickness,@marker-color);
+        left: unit(round((@size - (@thickness * 4))/2),px);
+        bottom: unit(((@size/2) - (@thickness *2)) * -1,px);
+        position: absolute;
+    }
+}
+
+.caret(@thickness,@height,@color) {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: unit(@height,px) unit(round(@thickness/2),px) 0px unit(round(@thickness/2),px);
+    border-color: @color transparent transparent transparent;
+}
+
+.circle(@size,@color,@thickness) {
+    width: unit(@size,px);
+    height: unit(@size,px);
+    border-radius: unit(round((@size/2)) + @thickness,px);
+    border: unit(@thickness,px) @color solid;
+}

@@ -5,8 +5,10 @@ import controller from './layout.controller';
 import './layout.less';
 
 let layoutComponent = {
-    restrict: 'E',
-    bindings: {},
+    bindings: {
+        userName: '<',
+        scrollOffset: '<'
+    },
     mediaTemplates: {
         xs: template_xs,
         sm: template_sm,

@@ -1,36 +1,40 @@
-<layout>
+<layout user-name="'Jon, Snow'">
+    <subheading>
+        <label class="item item-input">
+            <input type="text" ng-model="$ctrl.searchText" placeholder="Search">
+            <i class="ion-search padding-right"></i>
+        </label>
+    </subheading>
     <content>
         <div class="list card">
-            <div class="item item-divider">Upcoming</div>
-            <div class="item item-body item-light">
-                <div>
-                    You have <b>229</b> meetings on your calendar tomorrow.
-                </div>
-            </div>
+            <ion-item class="bar" ng-click="$ctrl.toggleFilterState()">
+                <h2 class="title title-left">FILTER YOUR VIEW</h2>
+                <i ng-class="$ctrl.filterState === 'EXPANDED'?'ion-chevron-up':'ion-chevron-down'" class="button button-icon"></i>
+            </ion-item>
+            <ion-checkbox ng-hide="$ctrl.filterState !== 'EXPANDED'" class="item-accordion" ng-model="$ctrl.showNewBusiness">NEW BUSINESS</ion-checkbox>
+            <ion-checkbox ng-hide="$ctrl.filterState !== 'EXPANDED'" class="item-accordion" ng-model="$ctrl.showPayroll">PAYROLL</ion-checkbox>
+            <ion-checkbox ng-hide="$ctrl.filterState !== 'EXPANDED'" class="item-accordion" ng-model="$ctrl.showClaims">CLAIMS</ion-checkbox>
+            <ion-item ng-hide="$ctrl.filterState !== 'EXPANDED'" class="item-accordion bar item-stable">
+                <a href="">Save View</a>
+            </ion-item>
         </div>
-        <div class="list card">
-            <div class="item item-divider">Upcoming</div>
-            <div class="item item-body item-light">
-                <div>
-                    You have <b>229</b> meetings on your calendar tomorrow.
-                </div>
+        <div class="list card am-fade-and-slide-top" ng-if="$ctrl.showNewBusiness">
+            <div class="item item-divider">
+                NEW BUSINESS
             </div>
+            <new-business-panel summary="$ctrl.newBusinessSummary" ></new-business-panel>
         </div>
-        <div class="list card">
-            <div class="item item-divider">Upcoming</div>
-            <div class="item item-body item-light">
-                <div>
-                    You have <b>229</b> meetings on your calendar tomorrow.
-                </div>
+        <div class="list card am-fade-and-slide-top" ng-if="$ctrl.showPayroll">
+            <div class="item item-divider">
+                PAYROLL
             </div>
+            <payroll-panel summary="$ctrl.payrollSummary"></payroll-panel>
         </div>
-        <div class="list card">
-            <div class="item item-divider">Upcoming</div>
-            <div class="item item-body item-light">
-                <div>
-                    You have <b>229</b> meetings on your calendar tomorrow.
-                </div>
+        <div class="list card am-fade-and-slide-top" ng-if="$ctrl.showClaims">
+            <div class="item item-divider">
+                PAYROLL
             </div>
+            <new-business-panel quotes-issued="$ctrl.quotesIssued" launching="$ctrl.launching" installing="$ctrl.installing" payroll-tracking="$ctrl.payrollTracking"></new-business-panel>
         </div>
     </content>
 </layout>
