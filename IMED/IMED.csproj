@@ -279,6 +279,7 @@
     <Content Include="Content\app\components\panel\panel.less" />
     <Content Include="Content\app\components\section\section.less" />
     <Content Include="Content\app\components\dashboard\payrollPanel.less" />
+    <Content Include="Content\app\components\dashboard\infoPanels.less" />
     <None Include="Project_Readme.html" />
     <Content Include="wwwroot\app.bundle.js.map" />
     <Content Include="wwwroot\app.css.map" />

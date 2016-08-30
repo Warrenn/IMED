@@ -7,6 +7,9 @@ class PayrollPanelController{
             series: [chartConfig.series.statuses],
             title: chartConfig.title
         }
+        this.totalPayPoints = this.summary.submitted + 
+            this.summary.notsubmitted + 
+            this.summary.payrollOverdue;
 
         this.chartConfig.series[0].data = [
             {

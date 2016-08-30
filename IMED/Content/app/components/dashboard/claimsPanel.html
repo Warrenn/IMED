@@ -1,3 +1,36 @@
-<div>
-  <h1>{{ $ctrl.name }}</h1>
+<div class="item">
+    <div class="info-panel info-panel-qoutes">
+        <div class="amount">
+            {{$ctrl.summary.draft | zeropad:'00'}}
+        </div>
+        <div class="content">
+            <a class="heading">DRAFT CLAIMS</a>
+            <div class="description">You can see all  draft eClaims which must still be completed by your client. Your intervention may be required. If left in draft for 60 days these will be default to Preserver.</div>
+        </div>
+    </div>
+    <div class="info-panel">
+        <div class="amount-circle amount-circle-installing">
+            {{$ctrl.summary.processing | zeropad:'00'}}
+        </div>
+        <div class="content">
+            <a class="heading">PROCESSING</a>
+            <div class="description">You can see all claims which have been completed by your client. These claims are being processed,.</div>
+        </div>
+    </div>
+    <div class="info-panel">
+        <div class="amount-circle amount-circle-payroll">
+            {{$ctrl.summary.paid | zeropad:'00'}}
+        </div>
+        <div class="content">
+            <a class="heading">PAID</a>
+            <div class="description">You can see all claims that have been paid. These will appear on the list for 30 days from date of payment.</div>
+        </div>
+    </div>
+    <div class="panel item">
+        <div class="label">TOTAL CLAIMS</div>
+        <div class="total">{{($ctrl.summary.draft + $ctrl.summary.processing + $ctrl.summary.paid) | zeropad:'00' }}</div>
+    </div>
+    <div class="panel item content content-light">
+        You can see a list of all claims in your portfolio.
+    </div>
 </div>

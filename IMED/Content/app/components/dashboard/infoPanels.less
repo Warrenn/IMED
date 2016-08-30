@@ -1,0 +1,77 @@
+﻿@import "../../mixins.less";
+
+.info-panel {
+    border-radius: @border-radius-large;
+    display: flex;
+    align-items: center;
+    padding: @content-padding;
+
+    .amount {
+        width: 20%;
+        text-align: center;
+        font-weight: bold;
+        font-size: @amount-font-size;
+    }
+
+    .amount-circle {
+        text-align: center;
+        width: unit(@marker-size,px);
+        height: unit(@marker-size,px);
+        line-height: unit(@marker-size - (@marker-thickness * 2),px);
+        font-weight: 700;
+        font-size: 25px;
+
+        &.amount-circle-payroll {
+            .circle(@marker-size,@payroll-color,@marker-thickness);
+            color: @payroll-color;
+        }
+
+        &.amount-circle-installing {
+            .circle(@marker-size,@install-color,@marker-thickness);
+            color: @install-color;
+        }
+    }
+
+
+
+    .content {
+        width: 80%;
+
+        .heading {
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .description {
+            white-space: normal;
+            font-size: @font-size-base;
+        }
+    }
+}
+
+.info-panel-qoutes {
+    color: @quote-color;
+    border: @button-border-radius solid @quote-color;
+}
+
+.info-panel-solid-qoutes {
+    color: @light;
+    border: @button-border-radius solid @quote-color;
+    background-color: @quote-color;
+}
+
+.panel.item {
+    font-size: @font-size-base;
+    white-space: normal;
+
+    .label {
+        font-size: @font-size-large;
+        display: inline-block;
+        float: left;
+    }
+
+    .total {
+        font-size: @item-icon-font-size;
+        float: right;
+    }
+}

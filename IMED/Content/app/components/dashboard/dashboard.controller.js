@@ -7,7 +7,7 @@ class DashboardController{
         this.showNewBusiness = true;
         this.showPayroll = true;
         this.showClaims = true;
-        
+
         this.newBusinessSummary = {
             quotesIssued: 4,
             launching: 11,
@@ -17,7 +17,14 @@ class DashboardController{
 
         this.payrollSummary = {
             submitted: 2,
-            notsubmitted: 4
+            notsubmitted: 4,
+            payrollOverdue: 1
+        }
+
+        this.claimsSummary = {
+            draft: 4,
+            processing: 5,
+            paid: 1
         }
     }
 

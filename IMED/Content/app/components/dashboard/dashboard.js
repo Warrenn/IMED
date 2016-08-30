@@ -4,6 +4,7 @@ import dashboardComponent from './dashboard.component';
 import payrollPanelComponent from './payrollPanel.component';
 import markerComponent from '../../common/marker/marker';
 import newBusinessPanelTemplate from './newBusinessPanel.html'
+import claimsPanelTemplate from './claimsPanel.html'
 
 let dashboardModule = angular
     .module('dashboard', [
@@ -24,6 +25,10 @@ let dashboardModule = angular
     .component('newBusinessPanel', {
         bindings: { summary: '<' },
         template: newBusinessPanelTemplate
+    })
+    .component('claimsPanel', {
+        bindings: { summary: '<' },
+        template: claimsPanelTemplate
     })
     .name;
 

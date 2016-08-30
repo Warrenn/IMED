@@ -1,4 +1,5 @@
 @import "../../variables.less";
+@import "infoPanels.less";
 @ns: payrollPanel;
 
 .highcharts-container {
@@ -6,29 +7,36 @@
     margin-right: auto;
 }
 
-.info-panel {
+.@{ns}-chartsummary {
     border-radius: @border-radius-large;
-    display: flex;
-    align-items: center;
+    text-align: center;
+    padding: @content-padding/2;
+    margin: @sheet-margin;
+    display: inline-block;
+    width: 155px;
+    height: 73px;
 
     .amount {
-        width: 20%;
-        text-align: center;
+        font-size: 30px;
         font-weight: bold;
-        font-size: 45px;
-    }
-
-    .content {
-        width: 80%;
-
-        .heading {
-            text-decoration: underline;
-            font-weight: 600;
-        }
-
-        .description {
-            white-space: normal;
-            font-size: 14px;
-        }
+        padding: @content-padding;
     }
 }
+
+.@{ns}-chartsummary-container {
+    display: flex;
+    justify-content: center;
+}
+
+.@{ns}-chartsummary-notsubmitted {
+    color: @install-color;
+    border: @button-border-radius solid @install-color;
+    margin: @sheet-margin @sheet-margin @sheet-margin auto;
+}
+
+.@{ns}-chartsummary-submitted {
+    color: @payroll-color;
+    border: @button-border-radius solid @payroll-color;
+    margin: @sheet-margin auto @sheet-margin @sheet-margin;
+}
+
