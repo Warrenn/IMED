@@ -1,14 +1,19 @@
-<div class="bar-light">
+<ion-header-bar align-title="right" class="bar-light">
     <menubar user-name="$ctrl.userName">
     </menubar>
-    <div ng-transclude="subheading">
-        
+</ion-header-bar>
+<ion-view class="has-header has-footer stable-bg">
+    <ion-header class="bar bar-clear bar-subheader">
+        <div ng-transclude="subheading">
+        </div>
+    </ion-header>
+    <ion-content delegate-handle="main" on-scroll="$ctrl.getScrollPosition()" class="content-light has-subheader has-footer">
+        <div ng-transclude="content"></div>
+    </ion-content>
+    <div class="layout-footer">
+        <div>
+            MyClient Disclaimer
+        </div>
+        <footer></footer>
     </div>
-    <div ng-transclude="content"></div>
-</div>
-<div class="layout-footer">
-    <div>
-        MyClient Disclaimer
-    </div>
-    <footer></footer>
-</div>
+</ion-view>

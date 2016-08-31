@@ -1,5 +1,36 @@
-<layout>
+<layout user-name="'Jon, Snow'">
+    <subheading>
+        <label class="item item-input">
+            <input type="text" ng-model="$ctrl.searchText" placeholder="Search">
+            <i class="ion-search padding-right"></i>
+        </label>
+    </subheading>
     <content>
-        <div></div>        
+        <div class="list card">
+            <ion-item class="bar" ng-click="$ctrl.toggleFilterState()">
+                <span>FILTER YOUR VIEW</span>
+                <label><input type="checkbox" value="">NEW BUSINESS</label>
+                <label><input type="checkbox" value="">NEW BUSINESS</label>
+            </ion-item>
+        </div>
+        <div class="list card am-fade-and-slide-top" ng-if="$ctrl.showNewBusiness">
+            <div class="item item-divider">
+                NEW BUSINESS
+            </div>
+            <new-business-panel summary="$ctrl.newBusinessSummary"></new-business-panel>
+        </div>
+        <div class="list card am-fade-and-slide-top" ng-if="$ctrl.showPayroll">
+            <div class="item item-divider">
+                PAYROLL
+            </div>
+            <payroll-panel summary="$ctrl.payrollSummary"></payroll-panel>
+        </div>
+        <div class="list card am-fade-and-slide-top" ng-if="$ctrl.showClaims">
+            <div class="item item-divider">
+                CLAIMS
+            </div>
+            <claims-panel summary="$ctrl.claimsSummary"></claims-panel>
+        </div>
+
     </content>
 </layout>
