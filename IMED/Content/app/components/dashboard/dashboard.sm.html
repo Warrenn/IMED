@@ -1,6 +1,6 @@
 <layout user-name="'Jon, Snow'">
     <subheading>
-        <ion-item class="bar sm-hidden lg-min60" ng-click="$ctrl.toggleFilterState()">
+        <ion-item class="bar sm-hidden lg-min60 no-activated" ng-click="$ctrl.toggleFilterState()">
             <span class="dashboard-filter-label">FILTER YOUR VIEW</span>
             <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showNewBusiness" value="">NEW BUSINESS</label>
             <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showPayroll" value="">PAYROLL</label>
@@ -16,7 +16,7 @@
     </subheading>
     <content>
         <div class="list card lg-hidden">
-            <ion-item class="bar" ng-click="$ctrl.toggleFilterState()">
+            <ion-item class="bar no-activated" ng-click="$ctrl.toggleFilterState()">
                 <span class="dashboard-filter-label">FILTER YOUR VIEW</span>
                 <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showNewBusiness" value="">NEW BUSINESS</label>
                 <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showPayroll" value="">PAYROLL</label>
