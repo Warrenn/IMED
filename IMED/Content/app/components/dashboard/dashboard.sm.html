@@ -1,16 +1,29 @@
 <layout user-name="'Jon, Snow'">
     <subheading>
-        <label class="item item-input">
+        <ion-item class="bar sm-hidden lg-min60" ng-click="$ctrl.toggleFilterState()">
+            <span class="dashboard-filter-label">FILTER YOUR VIEW</span>
+            <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showNewBusiness" value="">NEW BUSINESS</label>
+            <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showPayroll" value="">PAYROLL</label>
+            <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showClaims" value="">CLAIMS</label>
+            <div class="dashboard-filter-save">
+                <a href="" class="right">Save View</a>
+            </div>
+        </ion-item>
+        <label class="item item-input lg-min40">
             <input type="text" ng-model="$ctrl.searchText" placeholder="Search">
             <i class="ion-search padding-right"></i>
         </label>
     </subheading>
     <content>
-        <div class="list card">
+        <div class="list card lg-hidden">
             <ion-item class="bar" ng-click="$ctrl.toggleFilterState()">
-                <span>FILTER YOUR VIEW</span>
-                <label><input type="checkbox" value="">NEW BUSINESS</label>
-                <label><input type="checkbox" value="">NEW BUSINESS</label>
+                <span class="dashboard-filter-label">FILTER YOUR VIEW</span>
+                <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showNewBusiness" value="">NEW BUSINESS</label>
+                <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showPayroll" value="">PAYROLL</label>
+                <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showClaims" value="">CLAIMS</label>
+                <div class="dashboard-filter-save">
+                    <a href="" class="right">Save View</a>
+                </div>
             </ion-item>
         </div>
         <div class="list card am-fade-and-slide-top" ng-if="$ctrl.showNewBusiness">
@@ -19,18 +32,19 @@
             </div>
             <new-business-panel summary="$ctrl.newBusinessSummary"></new-business-panel>
         </div>
-        <div class="list card am-fade-and-slide-top" ng-if="$ctrl.showPayroll">
-            <div class="item item-divider">
-                PAYROLL
+        <div class="dashboard-split-panels">
+            <div class="dashboard-split-item list card am-fade-and-slide-top" ng-if="$ctrl.showPayroll">
+                <div class="item item-divider">
+                    PAYROLL
+                </div>
+                <payroll-panel summary="$ctrl.payrollSummary"></payroll-panel>
             </div>
-            <payroll-panel summary="$ctrl.payrollSummary"></payroll-panel>
-        </div>
-        <div class="list card am-fade-and-slide-top" ng-if="$ctrl.showClaims">
-            <div class="item item-divider">
-                CLAIMS
+            <div class="dashboard-split-item list card am-fade-and-slide-top" ng-if="$ctrl.showClaims">
+                <div class="item item-divider">
+                    CLAIMS
+                </div>
+                <claims-panel summary="$ctrl.claimsSummary"></claims-panel>
             </div>
-            <claims-panel summary="$ctrl.claimsSummary"></claims-panel>
         </div>
-
     </content>
 </layout>

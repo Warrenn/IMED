@@ -198,7 +198,6 @@
     <Content Include="Content\app\common\menubar\menubar.component.js" />
     <Content Include="Content\app\common\menubar\menubar.controller.js" />
     <Content Include="Content\app\common\menubar\menubar.js" />
-    <Content Include="Content\app\common\menubar\menubar.sm.html" />
     <Content Include="Content\app\common\menubar\menubar.lg.html" />
     <Content Include="Content\app\common\menubar\menubar.spec.js" />
     <Content Include="Content\app\common\menubar\menubar.xs.html" />

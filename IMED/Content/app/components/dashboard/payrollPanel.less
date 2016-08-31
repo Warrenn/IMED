@@ -3,8 +3,14 @@
 @ns: payrollPanel;
 
 .highcharts-container {
-    margin-left: auto;
-    margin-right: auto;
+    @media (max-width: @screen-sm) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (min-width: @screen-sm) {
+        display: inline-block;
+    }
 }
 
 .@{ns}-chartsummary {
@@ -23,20 +29,53 @@
     }
 }
 
+.payroll-highchart-section {
+    @media (min-width: @screen-sm) { // and (max-width:@screen-lg) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    /*@media (min-width:@screen-lg) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }*/
+}
+
 .@{ns}-chartsummary-container {
     display: flex;
-    justify-content: center;
+
+    @media (max-width: @screen-sm) {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    @media (min-width: @screen-sm) and (max-width:@screen-lg) {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    @media (min-width:@screen-lg) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 .@{ns}-chartsummary-notsubmitted {
     color: @install-color;
     border: @button-border-radius solid @install-color;
-    margin: @sheet-margin @sheet-margin @sheet-margin auto;
+
+    @media (max-width: @screen-sm) {
+        margin: @sheet-margin @sheet-margin @sheet-margin auto;
+    }
 }
 
 .@{ns}-chartsummary-submitted {
     color: @payroll-color;
     border: @button-border-radius solid @payroll-color;
-    margin: @sheet-margin auto @sheet-margin @sheet-margin;
-}
 
+    @media (max-width: @screen-sm) {
+        margin: @sheet-margin auto @sheet-margin @sheet-margin;
+    }
+}

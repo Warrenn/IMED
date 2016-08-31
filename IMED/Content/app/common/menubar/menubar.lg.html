@@ -1,3 +1,27 @@
-<div>
-  <h1>{{ $ctrl.name }}</h1>
+<div class="menubar-top-line">
 </div>
+<div class="menubar-logo">Old-Mutual Logo here</div>
+<div class="menubar-right">
+    <div class="menubar-greeting">
+        Hello {{userName}}
+    </div>
+    <div class="menubar-links">
+        <div class="menubar-link" ui-sref-active="active">
+            <a ui-sref="dashboard">
+                HOME
+            </a>
+        </div>
+        <div  class="menubar-link">
+            <a ui-sref="dashboard">
+                PROFILE
+            </a>
+        </div>
+        <div class="menubar-link">
+            <a ui-sref="dashboard">
+                LOG OUT
+            </a>
+        </div>
+    </div>
+</div>
+<script id="templates/popover.html" type="text/ng-template">
+</script>

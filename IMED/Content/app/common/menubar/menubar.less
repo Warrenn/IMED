@@ -32,3 +32,28 @@
         color: @gray-light;
     }
 }
+
+.@{ns}-right {
+    float: right;
+    display: flex;
+}
+
+.@{ns}-greeting {
+    padding: @content-padding - 1;
+}
+
+.@{ns}-links {
+    display: flex;
+
+    .active {
+        border-bottom: 5px solid @home-active-color;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.@{ns}-link {
+    padding: @menubar-padding;
+}

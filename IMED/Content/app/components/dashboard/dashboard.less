@@ -1,19 +1,94 @@
 @import "../../variables.less";
 @ns: dashboard;
 
-.@{ns}-filter {
-    display: inline;
+.@{ns}-filter-input {
+    padding-right: @item-right-edit-open-width;
+}
+
+.@{ns}-filter-save {
+    float: right;
+    display: inline-block;
+}
+
+.@{ns}-filter-label {
+    padding-right: @item-right-edit-open-width;
+}
+
+.@{ns}-newbusiness-marker {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    @media (min-width: @screen-sm) {
+        width: 20%;
+    }
+}
+
+@media (min-width: @screen-sm) {
+    .@{ns}-split-panels {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    .@{ns}-split-item {
+        width: 47%;
+    }
+}
+
+@media (min-width: @screen-sm) and (max-width: @screen-lg) {
+    .sm-hidden {
+        display: none;
+    }
+}
+
+@media (min-width: @screen-lg) {
+    .lg-hidden {
+        display: none;
+    }
+
+    subheading {
+        display: flex;
+    }
+
+    .lg-min60 {
+        width: 60%;
+    }
+
+    .lg-min40 {
+        width: 39%;
+        margin-left:auto;
+    }
 }
 
 .@{ns}-newbusiness {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+
+    @media (max-width: @screen-sm) {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    @media (min-width: @screen-sm) {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+
     position: relative;
 
     .@{ns}-linkbar {
         position: absolute;
         z-index: -1;
+    }
+
+    @media (min-width: @screen-sm) {
+        .@{ns}-linkbar {
+            border-top: 6px dotted @stable;
+            height: 1px;
+            width: 75%;
+            top: unit((@marker-size/2) + (@marker-thickness*2),px);
+        }
     }
 
     @media (max-width: @screen-sm) {

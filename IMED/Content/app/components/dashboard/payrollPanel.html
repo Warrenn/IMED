@@ -8,15 +8,17 @@
             <div class="description">You can see which paypoints will be incurring late payment interest. Your intervention may be required.</div>
         </div>
     </div>
-    <highchart config="$ctrl.chartConfig"></highchart>
-    <div class="payrollPanel-chartsummary-container">
-        <div class="payrollPanel-chartsummary payrollPanel-chartsummary-notsubmitted">
-            <div class="amount">{{$ctrl.summary.notsubmitted | zeropad:'00'}}</div>
-            <div>NOT SUBMITTED</div>
-        </div>
-        <div class="payrollPanel-chartsummary payrollPanel-chartsummary-submitted">
-            <div class="amount">{{$ctrl.summary.submitted | zeropad:'00'}}</div>
-            <div>SUBMITTED</div>
+    <div class="payroll-highchart-section">
+        <highchart config="$ctrl.chartConfig"></highchart>
+        <div class="payrollPanel-chartsummary-container">
+            <div class="payrollPanel-chartsummary payrollPanel-chartsummary-notsubmitted">
+                <div class="amount">{{$ctrl.summary.notsubmitted | zeropad:'00'}}</div>
+                <div>NOT SUBMITTED</div>
+            </div>
+            <div class="payrollPanel-chartsummary payrollPanel-chartsummary-submitted">
+                <div class="amount">{{$ctrl.summary.submitted | zeropad:'00'}}</div>
+                <div>SUBMITTED</div>
+            </div>
         </div>
     </div>
     <div class="panel item">

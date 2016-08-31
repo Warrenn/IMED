@@ -2,7 +2,6 @@ import MediaQueryFactory from '../mediaQuery/mediaQuery.factory';
 import controller from './menubar.controller';
 import './menubar.less';
 import template_xs from './menubar.xs.html'
-import template_sm from './menubar.xs.html'
 import template_lg from './menubar.lg.html'
 
 let menubarComponent = {
