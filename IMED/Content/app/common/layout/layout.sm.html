@@ -1,5 +1,14 @@
-<div>This would be cool if it works</div>
-<div ng-transclude="subheading">
-    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+<div class="bar-light">
+    <menubar user-name="$ctrl.userName">
+    </menubar>
+    <div ng-transclude="subheading">
+        
+    </div>
+    <div ng-transclude="content"></div>
 </div>
-<div ng-transclude="content"></div>
+<div class="layout-footer">
+    <div>
+        MyClient Disclaimer
+    </div>
+    <footer></footer>
+</div>

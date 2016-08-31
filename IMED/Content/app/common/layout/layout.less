@@ -4,13 +4,35 @@
 .@{ns}-float-button {
     position: absolute;
     height: 50px;
-    background-color: @scroll-refresh-icon-color;
+    background-color: fade(@scroll-refresh-icon-color,80%);
     width: 50px;
     z-index: 9;
     right: 10px;
-    bottom: 50px;
+    bottom: @bar-height + @menubar-height + @padding-base-vertical;
     border-radius: 25px;
     color: @button-light-active-bg;
     border-color: @scroll-refresh-icon-color;
-    border-style:none;
+    border-style: none;
+}
+
+.@{ns}-footer {
+    padding: @item-padding;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: @footer-size;
+    background-color: @light;
+}
+
+@media (min-width: @screen-sm) {
+
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    body {
+        margin-bottom: @footer-size;
+        background-color: @stable;
+    }
 }

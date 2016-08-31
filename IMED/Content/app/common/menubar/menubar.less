@@ -1,13 +1,34 @@
+@import "../../variables.less";
+@import "../../mixins.less";
+
 @ns: menubar;
 
-.@{ns}-logo{
-    display:inline-block;
+.@{ns}-logo {
+    display: inline-block;
 }
 
-.@{ns}-icon-right{
-    float:right;
+.@{ns}-icon-right {
+    float: right;
 }
 
-@{ns}{
-    width:100%;
+@{ns} {
+    width: 100%;
+}
+
+.@{ns}-top-line {
+    width: 100%;
+    height: @menubar-height;
+    .horizontal-gradient(#6eab24,#006150);
+}
+
+.@{ns} {
+    &.btn-link, &.btn-link:hover, &.btn-link:active, &.btn-link:focus {
+        text-decoration: none !important;
+        box-shadow: none !important;
+        outline: none;
+    }
+
+    &.btn-link:focus {
+        color: @gray-light;
+    }
 }
