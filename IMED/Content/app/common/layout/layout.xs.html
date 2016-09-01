@@ -3,15 +3,12 @@
     </menubar>
 </ion-header-bar>
 <ion-view class="has-header has-footer stable-bg">
-    <ion-header class="bar bar-clear bar-subheader">
-        <div ng-transclude="subheading">
-        </div>
-    </ion-header>
-    <ion-content delegate-handle="main" on-scroll="$ctrl.getScrollPosition()" class="content-light has-subheader has-footer">
+    <div ng-transclude="subheading">
+    </div>
+    <ion-content delegate-handle="main" on-scroll="$ctrl.getScrollPosition()" class="content-light has-footer" ng-class="({'search':'has-subheader','grid':'has-grid-header','grid-tabs':'has-grid-tabs-header'})[$ctrl.headingType]">
         <div ng-transclude="content"></div>
     </ion-content>
-    <button class="layout-float-button ion-chevron-up am-fade-and-scale" ng-class="$ctrl.showScrollButton?'':'ng-hide'" ng-click="$ctrl.scrollToTop()">
-    </button>
+    <button class="layout-float-button ion-chevron-up am-fade-and-scale" ng-class="$ctrl.showScrollButton?'':'ng-hide'" ng-click="$ctrl.scrollToTop()"></button>
     <ion-pull-up-footer class="bar-light" default-behavior="expand" max-height="300" state="$ctrl.footerState">
         <ion-pull-up-bar ion-pull-up-trigger>
             <h1 class="title title-left"><a href="">My Client Disclaimer</a>{{$ctrl.scrollTop}}</h1>

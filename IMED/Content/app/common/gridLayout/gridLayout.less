@@ -1,12 +1,54 @@
-@ns: gridLayout;
+@import "../../variables.less";
+@ns: gridlayout;
 
-.@{ns}{
-
+.@{ns}-heading-container {
+    display: flex;
+    align-items: flex-start;
+    padding: @content-padding;
 }
 
-.bar-subheader{
-  height: 162px !important;
+.@{ns}-heading {
+    padding-left: @content-padding;
+    margin-bottom: @list-header-margin-top;
 }
-.has-subheader{
-  top: 206px !important;
+
+.@{ns}-grid-header {
+    height: unit(@grid-heading-height,px) !important;
 }
+
+.@{ns}-grid-tabs-header {
+    height: unit(@grid-heading-height + @bar-height,px) !important;
+}
+
+.item-status {
+    height: 100%;
+    width: @item-status-width;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    line-height: 100%;
+    line-height: @button-large-height;
+    font-size: @font-size-large*2;
+}
+
+.data-item-container {
+    padding-right: @button-bar-button-icon-size !important;
+}
+
+.data-item-title {
+    font-size: @font-size-small !important;
+    margin-left: @item-status-width;
+}
+
+.data-item-title-icon {
+    position: absolute !important;
+    top: 10px;
+    right: 0;
+}
+
+.item-status-alert {
+    background-color: @install-color;
+    color: @light;
+}
+

@@ -1,9 +1,13 @@
-<grid-layout user-name="$ctrl.userName" heading="'QUOTES ISSUED'">
-    <tabarea>
-        <tabs>
-            <tab>incomplete</tab>
-            <tab>complete</tab>
-            <tab>processed</tab>
-        </tabs>
-    </tabarea>
+<grid-layout user-name="$ctrl.userName"
+             heading="'QUOTES ISSUED'"
+             has-tabs="true">
+    <tabbar>
+        <div class="bar bar-clear padding">
+            <div class="button-bar bar-positive">
+                <a class="button">First</a>
+                <a class="button active">Second</a>
+                <a class="button">Third</a>
+            </div>
+        </div>
+    </tabbar>
 </grid-layout>

@@ -7,7 +7,8 @@ import './layout.less';
 let layoutComponent = {
     bindings: {
         userName: '<',
-        scrollOffset: '<'
+        scrollOffset: '<',
+        headingType: '<'
     },
     mediaTemplates: {
         xs: template_xs,
