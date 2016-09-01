@@ -24,6 +24,51 @@
     background-color: @light;
 }
 
+.@{ns}-footer-disclaimer {
+    border-bottom: 1px solid @dark;
+}
+
+.@{ns}-footer-container {
+     padding: @item-padding;
+}
+
+
+
+.@{ns}-footer-links {
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 22px;
+    text-align: center;
+
+    a {
+        padding: 10px;
+        white-space: nowrap;
+    }
+
+    @media (max-width: @screen-sm) {
+        border-bottom: 1px solid @dark;
+    }
+}
+
+.@{ns}-footer-company-information {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.@{ns}-footer-company-address {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.@{ns}-footer-company-copyright {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 @media (min-width: @screen-sm) {
 
     html {
