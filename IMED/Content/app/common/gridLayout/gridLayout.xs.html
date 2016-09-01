@@ -1,0 +1,23 @@
+<layout user-name="$ctrl.userName">
+    <subheading>
+        <div>
+            <marker marker-type="'quote'" amount="$ctrl.amount"></marker>
+            <span> {{$ctrl.heading}}</span>
+        </div>
+        <div>
+            <label class="item item-input item-input-inset">
+                <input type="text" ng-model="$ctrl.searchText" placeholder="Search">
+                <i class="ion-search padding-right"></i>
+            </label>
+        </div>
+        <div ng-transclude="tabarea"></div>
+    </subheading>
+    <content>
+        <div class="list card">
+            <ion-item class="bar" ng-click="$ctrl.toggleFilterState()">
+                <h2 class="title title-left">Sansa Stark</h2>
+                <i ng-class="$ctrl.filterState === 'EXPANDED'?'ion-chevron-up':'ion-chevron-down'" class="button button-icon"></i>
+            </ion-item>
+        </div>
+    </content>
+</layout>

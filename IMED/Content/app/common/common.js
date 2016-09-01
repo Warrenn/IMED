@@ -1,6 +1,7 @@
 import angular from 'angular';
 import MediaQuery from  './mediaQuery/mediaQuery'
 import Layout from  './layout/layout'
+import GridLayout from  './gridLayout/gridLayout'
 import Marker from  './marker/marker'
 import Menubar from  './menubar/menubar'
 import Filters from  './filters/filters'
@@ -12,7 +13,8 @@ let commonModule = angular
         Layout,
         Marker,
         Menubar,
-        Filters
+        Filters,
+        GridLayout
     ])
     .name;
 

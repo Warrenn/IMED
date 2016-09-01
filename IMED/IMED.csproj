@@ -182,6 +182,13 @@
     <Content Include="Content\app\common\common.js" />
     <Content Include="Content\app\common\filters\filters.js" />
     <Content Include="Content\app\common\filters\zeropad.js" />
+    <Content Include="Content\app\common\gridLayout\gridLayout.component.js" />
+    <Content Include="Content\app\common\gridLayout\gridLayout.controller.js" />
+    <Content Include="Content\app\common\gridLayout\gridLayout.js" />
+    <Content Include="Content\app\common\gridLayout\gridLayout.lg.html" />
+    <Content Include="Content\app\common\gridLayout\gridLayout.sm.html" />
+    <Content Include="Content\app\common\gridLayout\gridLayout.spec.js" />
+    <Content Include="Content\app\common\gridLayout\gridLayout.xs.html" />
     <Content Include="Content\app\common\internal.js" />
     <Content Include="Content\app\common\layout\footer.html" />
     <Content Include="Content\app\common\layout\layout.component.js" />
@@ -214,6 +221,13 @@
     <Content Include="Content\app\components\dashboard\claimsPanel.html" />
     <Content Include="Content\app\components\dashboard\payrollPanel.html" />
     <Content Include="Content\app\components\dashboard\newBusinessPanel.html" />
+    <Content Include="Content\app\components\quotesIssued\quotesIssued.component.js" />
+    <Content Include="Content\app\components\quotesIssued\quotesIssued.controller.js" />
+    <Content Include="Content\app\components\quotesIssued\quotesIssued.js" />
+    <Content Include="Content\app\components\quotesIssued\quotesIssued.lg.html" />
+    <Content Include="Content\app\components\quotesIssued\quotesIssued.sm.html" />
+    <Content Include="Content\app\components\quotesIssued\quotesIssued.spec.js" />
+    <Content Include="Content\app\components\quotesIssued\quotesIssued.xs.html" />
     <Content Include="Content\index.html" />
     <Content Include="favicon.ico" />
     <Content Include="gulpfile.babel.js" />
@@ -262,6 +276,8 @@
     <Content Include="Content\app\common\menubar\menubar.less" />
     <Content Include="Content\app\components\dashboard\payrollPanel.less" />
     <Content Include="Content\app\components\dashboard\infoPanels.less" />
+    <Content Include="Content\app\common\gridLayout\gridLayout.less" />
+    <Content Include="Content\app\components\quotesIssued\quotesIssued.less" />
     <None Include="Project_Readme.html" />
     <Content Include="wwwroot\app.bundle.js.map" />
     <Content Include="wwwroot\app.css.map" />
