@@ -4,9 +4,9 @@
 @ns: layout;
 
 .@{ns}-float-button {
-    .circle(@float-button-width,@button-light-active-bg,0);
+    .circle(@float-button-width, @button-light-active-bg, 0);
     position: absolute;
-    background-color: fade(@scroll-refresh-icon-color,80%);
+    background-color: fade(@scroll-refresh-icon-color, 80%);
     z-index: 9;
     right: 10px;
     bottom: @bar-height + @menubar-height + @padding-base-vertical;
@@ -68,8 +68,8 @@
 @media (min-width: @screen-sm) {
 
     html {
-        min-height: 100%;
         background-color: @light;
+        overflow: auto !important;
     }
 
     body {
@@ -77,6 +77,10 @@
         margin-right: auto !important;
         background-color: @stable;
         height: 100%;
+    }
+
+    .bar {
+        position: unset !important;
     }
 }
 

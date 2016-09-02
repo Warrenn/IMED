@@ -2,7 +2,7 @@
 @ns: dashboard;
 
 .@{ns}-filter-input {
-    padding-right: @item-right-edit-open-width;
+    padding-right: 5%;
 }
 
 .@{ns}-filter-save {
@@ -11,7 +11,7 @@
 }
 
 .@{ns}-filter-label {
-    padding-right: @item-right-edit-open-width;
+    padding-right: 5%;
 }
 
 .@{ns}-newbusiness-marker {
@@ -47,18 +47,29 @@
         display: none;
     }
 
-    subheading {
-        display: flex;
-    }
-
     .lg-min60 {
         width: 60%;
+    }
+
+    .@{ns}-subheading {
+        display: flex;
     }
 
     .lg-min40 {
         width: 39%;
         margin-left: auto;
     }
+}
+
+.@{ns}-search-margin {
+    margin: @list-header-margin-top !important;
+}
+
+.@{ns}-filter-bar {
+    border-left: none !important;
+    border-right: none !important;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 .@{ns}-newbusiness {
