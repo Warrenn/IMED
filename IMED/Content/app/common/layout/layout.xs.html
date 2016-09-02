@@ -9,12 +9,12 @@
         <div ng-transclude="content"></div>
     </ion-content>
     <button class="layout-float-button ion-chevron-up am-fade-and-scale" ng-class="$ctrl.showScrollButton?'':'ng-hide'" ng-click="$ctrl.scrollToTop()"></button>
-    <ion-pull-up-footer class="bar-light" default-behavior="expand" max-height="300" state="$ctrl.footerState">
+    <ion-pull-up-footer class="bar-light" default-behavior="expand" max-height="370" state="$ctrl.footerState">
         <ion-pull-up-bar ion-pull-up-trigger>
             <h1 class="title title-left"><a href="">My Client Disclaimer</a>{{$ctrl.scrollTop}}</h1>
             <i ng-class="$ctrl.footerState === 'EXPANDED'?'ion-chevron-up':'ion-chevron-down'" class="button button-icon"></i>
         </ion-pull-up-bar>
-        <ion-pull-up-content scroll="false">
+        <ion-pull-up-content scroll="true">
             <footer></footer>
         </ion-pull-up-content>
     </ion-pull-up-footer>
