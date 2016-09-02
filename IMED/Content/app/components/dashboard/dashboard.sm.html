@@ -1,50 +1,40 @@
 <layout user-name="'Jon, Snow'">
     <subheading>
-        <ion-item class="bar sm-hidden lg-min60 no-activated" ng-click="$ctrl.toggleFilterState()">
-            <span class="dashboard-filter-label">FILTER YOUR VIEW</span>
-            <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showNewBusiness" value="">NEW BUSINESS</label>
-            <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showPayroll" value="">PAYROLL</label>
-            <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showClaims" value="">CLAIMS</label>
-            <div class="dashboard-filter-save">
-                <a href="" class="right">Save View</a>
-            </div>
-        </ion-item>
-        <label class="item item-input lg-min40">
+        <div class="sm-hidden lg-min60 no-activated" ng-click="$ctrl.toggleFilterState()">
+            <div ng-include="templates/filter.html"></div>
+        </div>
+        <label class="lg-min40">
             <input type="text" ng-model="$ctrl.searchText" placeholder="Search">
             <i class="ion-search padding-right"></i>
         </label>
+        <div class="lg-hidden">
+            <div ng-include="templates/filter.html"></div>
+        </div>
     </subheading>
     <content>
-        <div class="list card lg-hidden">
-            <ion-item class="bar no-activated" ng-click="$ctrl.toggleFilterState()">
-                <span class="dashboard-filter-label">FILTER YOUR VIEW</span>
-                <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showNewBusiness" value="">NEW BUSINESS</label>
-                <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showPayroll" value="">PAYROLL</label>
-                <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showClaims" value="">CLAIMS</label>
-                <div class="dashboard-filter-save">
-                    <a href="" class="right">Save View</a>
-                </div>
-            </ion-item>
-        </div>
-        <div class="list card am-fade-and-slide-top" ng-if="$ctrl.showNewBusiness">
-            <div class="item item-divider">
-                NEW BUSINESS
-            </div>
+        <div class="am-fade-and-slide-top" ng-if="$ctrl.showNewBusiness">
+            <div class="">NEW BUSINESS</div>
             <new-business-panel summary="$ctrl.newBusinessSummary"></new-business-panel>
         </div>
         <div class="dashboard-split-panels">
-            <div class="dashboard-split-item list card am-fade-and-slide-top" ng-if="$ctrl.showPayroll">
-                <div class="item item-divider">
-                    PAYROLL
-                </div>
+            <div class="dashboard-split-item am-fade-and-slide-top" ng-if="$ctrl.showPayroll">
+                <div class="">PAYROLL</div>
                 <payroll-panel summary="$ctrl.payrollSummary"></payroll-panel>
             </div>
-            <div class="dashboard-split-item list card am-fade-and-slide-top" ng-if="$ctrl.showClaims">
-                <div class="item item-divider">
-                    CLAIMS
-                </div>
+            <div class="dashboard-split-item am-fade-and-slide-top" ng-if="$ctrl.showClaims">
+                <div class="">CLAIMS</div>
                 <claims-panel summary="$ctrl.claimsSummary"></claims-panel>
             </div>
         </div>
     </content>
 </layout>
+
+<script id="templates/filter.html" type="text/ng-template">
+    <span class="dashboard-filter-label">FILTER YOUR VIEW</span>
+    <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showNewBusiness" value="">NEW BUSINESS</label>
+    <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showPayroll" value="">PAYROLL</label>
+    <label><input type="checkbox" ng-model="$ctrl.showClaims" value="">CLAIMS</label>
+    <div class="dashboard-filter-save">
+        <a href="" class="right">Save View</a>
+    </div>
+</script>

@@ -278,6 +278,7 @@
     <Content Include="Content\app\components\dashboard\infoPanels.less" />
     <Content Include="Content\app\common\gridLayout\gridLayout.less" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.less" />
+    <Content Include="Content\app\common\ionic-bar.less" />
     <None Include="Project_Readme.html" />
     <Content Include="wwwroot\app.bundle.js.map" />
     <Content Include="wwwroot\app.css.map" />

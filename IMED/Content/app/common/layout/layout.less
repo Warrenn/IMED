@@ -1,17 +1,15 @@
 @import "../../variables.less";
+@import "../../mixins.less";
+
 @ns: layout;
 
 .@{ns}-float-button {
+    .circle(@float-button-width,@button-light-active-bg,0);
     position: absolute;
-    height: 50px;
     background-color: fade(@scroll-refresh-icon-color,80%);
-    width: 50px;
     z-index: 9;
     right: 10px;
     bottom: @bar-height + @menubar-height + @padding-base-vertical;
-    border-radius: 25px;
-    color: @button-light-active-bg;
-    border-color: @scroll-refresh-icon-color;
     border-style: none;
 }
 
@@ -34,11 +32,11 @@
     list-style-type: none;
     margin-left: auto;
     margin-right: auto;
-    padding: 22px;
+    padding: @content-padding;
     text-align: center;
 
     a {
-        padding: 10px;
+        padding: @content-padding;
         white-space: nowrap;
     }
 
@@ -75,8 +73,8 @@
     }
 
     body {
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: auto !important;
+        margin-right: auto !important;
         background-color: @stable;
         height: 100%;
     }
