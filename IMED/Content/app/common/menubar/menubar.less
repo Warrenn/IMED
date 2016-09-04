@@ -3,8 +3,18 @@
 
 @ns: menubar;
 
+.@{ns}-container {
+    height: @menubar-bar-height !important;
+}
+
 .@{ns}-logo {
     display: inline-block;
+    background-image: url(logo.png);
+    height: (@menubar-bar-base-height - @content-padding);
+    width: @menu-logo-width;
+    background-size: @menu-logo-width;
+    background-repeat: no-repeat;
+    margin-top: (@content-padding / 3);
 }
 
 .@{ns}-icon-right {
@@ -17,7 +27,7 @@
 
 .@{ns}-top-line {
     width: 100%;
-    height: @menubar-height;
+    height: @menubar-top-line-height;
     .horizontal-gradient(#6eab24,#006150);
 }
 
@@ -39,14 +49,16 @@
 }
 
 .@{ns}-greeting {
-    padding: @content-padding - 1;
+    padding: @menubar-padding;
+    border-right: 1px solid @dark;
+    margin-right: @content-padding;
 }
 
 .@{ns}-links {
     display: flex;
 
     .active {
-        border-bottom: 5px solid @home-active-color;
+        border-bottom: @menu-link-border-size solid @home-active-color;
 
         a {
             text-decoration: none;

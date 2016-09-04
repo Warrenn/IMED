@@ -1,11 +1,13 @@
-<ion-header-bar align-title="right" class="bar-light">
-    <menubar user-name="$ctrl.userName">
-    </menubar>
-</ion-header-bar>
-<div ng-transclude="subheading">
-</div>
-<div ng-transclude="content"></div>
-<div class="layout-footer">
-    <div>MyClient Disclaimer</div>
-    <footer></footer>
+<div class="layout-content-container">
+    <ion-header-bar align-title="right" class="bar-light menubar-container">
+        <menubar user-name="$ctrl.userName">
+        </menubar>
+    </ion-header-bar>
+    <div ng-transclude="subheading">
+    </div>
+    <div ng-transclude="content"></div>
+    <div class="layout-footer">
+        <div class="layout-footer-heading">MyClient Disclaimer</div>
+        <footer></footer>
+    </div>
 </div>

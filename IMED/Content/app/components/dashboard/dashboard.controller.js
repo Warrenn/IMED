@@ -2,6 +2,7 @@ import chartConfig from "./chartConfig";
 
 class DashboardController{
     constructor() {
+        this.userName = 'Jon Snow';
         this.searchText = '';
         this.filterState = 'COLLAPSED';
         this.showNewBusiness = true;

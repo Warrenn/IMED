@@ -1,6 +1,9 @@
-<layout user-name="$ctrl.userName" heading-type="$ctrl.hasTabs?'grid-tabs':'grid'">
+<layout user-name="$ctrl.userName" 
+        has-grid-header="true"
+        has-search="true"
+        has-tabs="$ctrl.hasTabs">
     <subheading>
-        <ion-header class="bar bar-clear bar-subheader" ng-class="$ctrl.hasTabs?'gridlayout-grid-tabs-header':'gridlayout-grid-header'">
+        <ion-header class="bar bar-clear bar-subheader has-menu-bar" ng-class="$ctrl.hasTabs?'has-tabs':''">
             <div class="gridlayout-heading-container">
                 <marker class="pull-left" marker-type="'quote'" amount="$ctrl.amount"></marker>
                 <h2 class="gridlayout-heading">{{$ctrl.heading}}</h2>
@@ -14,14 +17,6 @@
             <div ng-transclude="tabbar"></div>
         </ion-header>
     </subheading>
-    <content>
-        <div class="list card" ng-repeat="group in $ctrl.groups">
-            <ion-item class="bar data-item-container" ng-click="$ctrl.toggleGroup(group)">
-                <div class="icon ion-alert item-status item-status-alert"></div>
-                <a href="" class="data-item-title">FILTER YOUR VIEW VERY VERy VERy VERY VERy VERY LOOOOOOOOOONG</a>
-                <i ng-class="$ctrl.isGroupShown(group)?'ion-chevron-up':'ion-chevron-down'" class="button button-icon data-item-title-icon"></i>
-            </ion-item>
-            <ion-item class="item-accordion" ng-repeat="item in $ctrl.groups[$index].items" ng-show="$ctrl.isGroupShown(group)">{{item}}</ion-item>
-        </div>
+    <content ng-transclude="content">
     </content>
 </layout>

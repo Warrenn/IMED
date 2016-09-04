@@ -3,7 +3,6 @@ import controller from './gridLayout.controller';
 import './gridLayout.less';
 import template_xs from './gridLayout.xs.html'
 import template_sm from './gridLayout.sm.html'
-import template_lg from './gridLayout.lg.html'
 
 let gridLayoutComponent = {
     bindings: {
@@ -15,10 +14,11 @@ let gridLayoutComponent = {
     mediaTemplates: {
         xs: template_xs,
         sm: template_sm,
-        lg: template_lg
+        lg: template_sm
     },
     transclude: {
-        'tabbar': '?tabbar'
+        'tabbar': '?tabbar',
+        'content': 'content'
     },
     controller
 };

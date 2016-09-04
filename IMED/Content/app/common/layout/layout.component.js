@@ -8,7 +8,9 @@ let layoutComponent = {
     bindings: {
         userName: '<',
         scrollOffset: '<',
-        headingType: '<'
+        hasTabs: '<',
+        hasGridHeader: '<',
+        hasSearch: '<'
     },
     mediaTemplates: {
         xs: template_xs,

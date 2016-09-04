@@ -185,7 +185,6 @@
     <Content Include="Content\app\common\gridLayout\gridLayout.component.js" />
     <Content Include="Content\app\common\gridLayout\gridLayout.controller.js" />
     <Content Include="Content\app\common\gridLayout\gridLayout.js" />
-    <Content Include="Content\app\common\gridLayout\gridLayout.lg.html" />
     <Content Include="Content\app\common\gridLayout\gridLayout.sm.html" />
     <Content Include="Content\app\common\gridLayout\gridLayout.spec.js" />
     <Content Include="Content\app\common\gridLayout\gridLayout.xs.html" />
@@ -202,6 +201,7 @@
     <Content Include="Content\app\common\marker\marker.spec.js" />
     <Content Include="Content\app\common\mediaQuery\mediaQuery.factory.js" />
     <Content Include="Content\app\common\mediaQuery\mediaQuery.js" />
+    <Content Include="Content\app\common\menubar\logo.png" />
     <Content Include="Content\app\common\menubar\menubar.component.js" />
     <Content Include="Content\app\common\menubar\menubar.controller.js" />
     <Content Include="Content\app\common\menubar\menubar.js" />
@@ -224,7 +224,6 @@
     <Content Include="Content\app\components\quotesIssued\quotesIssued.component.js" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.controller.js" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.js" />
-    <Content Include="Content\app\components\quotesIssued\quotesIssued.lg.html" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.sm.html" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.spec.js" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.xs.html" />

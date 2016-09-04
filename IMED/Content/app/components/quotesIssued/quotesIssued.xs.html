@@ -1,13 +1,22 @@
 <grid-layout user-name="$ctrl.userName"
-             heading="'QUOTES ISSUED'"
-             has-tabs="true">
+             heading="'QUOTES ISSUED'">
     <tabbar>
-        <div class="bar bar-clear padding">
+        <!--<div class="bar bar-clear padding">
             <div class="button-bar bar-positive">
                 <a class="button">First</a>
                 <a class="button active">Second</a>
                 <a class="button">Third</a>
             </div>
-        </div>
+        </div>-->
     </tabbar>
+    <content>
+        <div class="list card" ng-repeat="group in $ctrl.groups">
+            <ion-item class="bar gridlayout-data-item-container" ng-click="$ctrl.toggleGroup(group)">
+                <div class="icon ion-alert gridlayout-item-status gridlayout-item-status-alert"></div>
+                <a href="" class="gridlayout-data-item-title">FILTER YOUR VIEW VERY VERy VERy VERY VERy VERY LOOOOOOOOOONG</a>
+                <i ng-class="$ctrl.isGroupShown(group)?'ion-chevron-up':'ion-chevron-down'" class="button button-icon gridlayout-data-item-title-icon"></i>
+            </ion-item>
+            <ion-item class="item-accordion" ng-repeat="item in $ctrl.groups[$index].items" ng-show="$ctrl.isGroupShown(group)">{{item}}</ion-item>
+        </div>
+    </content>
 </grid-layout>

@@ -1,9 +1,9 @@
-<layout user-name="'Jon, Snow'">
+<layout user-name="$ctrl.userName">
     <subheading class="dashboard-subheading">
-        <ion-item class="bar sm-hidden lg-min60 no-activated dashboard-search-margin" ng-click="$ctrl.toggleFilterState()">
+        <ion-item class="bar sm-hidden lg-min60 no-activated dashboard-margin" ng-click="$ctrl.toggleFilterState()">
             <div ng-include src="'templates/filter.html'"></div>
         </ion-item>
-        <label class="item item-input dashboard-search-margin lg-min40">
+        <label class="item item-input dashboard-margin lg-min40">
             <input type="text" ng-model="$ctrl.searchText" placeholder="Search">
             <i class="ion-search padding-right"></i>
         </label>
@@ -12,16 +12,16 @@
         </div>
     </subheading>
     <content>
-        <div class="list card am-fade-and-slide-top" ng-if="$ctrl.showNewBusiness">
+        <div class="list card am-fade-and-slide-top dashboard-margin" ng-if="$ctrl.showNewBusiness">
             <div class="item item-divider">NEW BUSINESS</div>
             <new-business-panel summary="$ctrl.newBusinessSummary"></new-business-panel>
         </div>
         <div class="dashboard-split-panels">
-            <div class="list card dashboard-split-item am-fade-and-slide-top" ng-if="$ctrl.showPayroll">
+            <div class="list card dashboard-split-item am-fade-and-slide-top dashboard-margin" ng-if="$ctrl.showPayroll">
                 <div class="item item-divider">PAYROLL</div>
                 <payroll-panel summary="$ctrl.payrollSummary"></payroll-panel>
             </div>
-            <div class="list card dashboard-split-item am-fade-and-slide-top" ng-if="$ctrl.showClaims">
+            <div class="list card dashboard-split-item am-fade-and-slide-top dashboard-margin" ng-if="$ctrl.showClaims">
                 <div class="item item-divider">CLAIMS</div>
                 <claims-panel summary="$ctrl.claimsSummary"></claims-panel>
             </div>

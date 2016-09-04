@@ -1,10 +1,23 @@
 @import "../../variables.less";
 @ns: gridlayout;
 
+.@{ns}-subheading {
+    display: flex;
+    flex-flow: row;
+}
+
 .@{ns}-heading-container {
     display: flex;
     align-items: flex-start;
     padding: @content-padding;
+}
+
+.@{ns}-heading-container-left {
+    width: 60%;
+}
+
+.@{ns}-search-container-right {
+    width: 40%;
 }
 
 .@{ns}-heading {
@@ -12,15 +25,7 @@
     margin-bottom: @list-header-margin-top;
 }
 
-.@{ns}-grid-header {
-    height: unit(@grid-heading-height,px) !important;
-}
-
-.@{ns}-grid-tabs-header {
-    height: unit(@grid-heading-height + @bar-height,px) !important;
-}
-
-.item-status {
+.@{ns}-item-status {
     height: 100%;
     width: @item-status-width;
     position: absolute;
@@ -32,23 +37,23 @@
     font-size: @font-size-large*2;
 }
 
-.data-item-container {
-    padding-right: @button-bar-button-icon-size !important;
+.@{ns}-data-item-container {
+    padding-right: (@button-bar-button-icon-size * 2) !important;
+    height:auto !important;
 }
 
-.data-item-title {
+.@{ns}-data-item-title {
     font-size: @font-size-small !important;
     margin-left: @item-status-width;
 }
 
-.data-item-title-icon {
+.@{ns}-data-item-title-icon {
     position: absolute !important;
     top: 10px;
     right: 0;
 }
 
-.item-status-alert {
+.@{ns}-item-status-alert {
     background-color: @install-color;
     color: @light;
 }
-
