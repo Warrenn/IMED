@@ -18,8 +18,8 @@
 
 .dashboard-margin.@{ns}-search-container-right {
     width: 40%;
-    margin-top:auto !important;
-    margin-bottom:auto !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
 }
 
 .@{ns}-heading {
@@ -41,11 +41,10 @@
 
 .@{ns}-data-item-container {
     padding-right: (@button-bar-button-icon-size * 2) !important;
-    height:auto !important;
+    height: auto !important;
 }
 
 .@{ns}-data-item-title {
-    font-size: @font-size-small !important;
     margin-left: @item-status-width;
 }
 
@@ -58,4 +57,43 @@
 .@{ns}-item-status-alert {
     background-color: @install-color;
     color: @light;
+    font-weight: bold;
+}
+
+.@{ns}-item-status-normal {
+    color: @light;
+    background-color: @normal-status-color;
+    font-weight: bold;
+}
+
+.@{ns}-data-table {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.@{ns}-data-table-heading {
+    color: @light;
+    background-color: @heading-bg-color;
+    border: 1px solid @light;
+    padding: (@content-padding * 2);
+    font-weight: bold;
+}
+
+.@{ns}-data-table-value {
+    position: relative;
+    padding: (@content-padding * 2);
+}
+
+.@{ns}-data-table-value-borders {
+    border-left: 1px solid @normal-status-color;
+    border-right: 1px solid @normal-status-color;
+}
+
+.@{ns}-data-table-row {
+    background-color: @light;
+}
+
+.@{ns}-data-table-row-alternate {
+    background-color: @stable;
 }

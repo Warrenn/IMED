@@ -9,7 +9,9 @@ let gridLayoutComponent = {
         userName: '<',
         amount: '<',
         heading: '<',
-        hasTabs: '<'
+        hasTabs: '<',
+        items: '=',
+        searchText : '='
     },
     mediaTemplates: {
         xs: template_xs,
@@ -17,7 +19,6 @@ let gridLayoutComponent = {
         lg: template_sm
     },
     transclude: {
-        'tabbar': '?tabbar',
         'content': 'content'
     },
     controller

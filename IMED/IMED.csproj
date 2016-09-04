@@ -227,6 +227,7 @@
     <Content Include="Content\app\components\quotesIssued\quotesIssued.sm.html" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.spec.js" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.xs.html" />
+    <Content Include="Content\app\components\quotesIssued\uiroutting.js" />
     <Content Include="Content\index.html" />
     <Content Include="favicon.ico" />
     <Content Include="gulpfile.babel.js" />

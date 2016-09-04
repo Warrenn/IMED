@@ -1,22 +1,26 @@
 <grid-layout user-name="$ctrl.userName"
-             heading="'QUOTES ISSUED'">
-    <tabbar>
-        <!--<div class="bar bar-clear padding">
-            <div class="button-bar bar-positive">
-                <a class="button">First</a>
-                <a class="button active">Second</a>
-                <a class="button">Third</a>
-            </div>
-        </div>-->
-    </tabbar>
+             heading="'QUOTES ISSUED'"
+             items="$ctrl.items"
+             search-text="$ctrl.searchText"
+             amount="$ctrl.amount">
     <content>
-        <div class="list card" ng-repeat="group in $ctrl.groups">
-            <ion-item class="bar gridlayout-data-item-container" ng-click="$ctrl.toggleGroup(group)">
-                <div class="icon ion-alert gridlayout-item-status gridlayout-item-status-alert"></div>
-                <a href="" class="gridlayout-data-item-title">FILTER YOUR VIEW VERY VERy VERy VERY VERy VERY LOOOOOOOOOONG</a>
-                <i ng-class="$ctrl.isGroupShown(group)?'ion-chevron-up':'ion-chevron-down'" class="button button-icon gridlayout-data-item-title-icon"></i>
+        <div ng-repeat="item in $ctrl.items" class="list card">
+            <ion-item class="bar gridlayout-data-item-container" ng-click="$ctrl.toggleDetails(item)">
+                <div class="icon gridlayout-item-status "
+                     ng-class="item.overdue?['gridlayout-item-status-alert','ion-alert']:['gridlayout-item-status-normal','ion-android-person']">
+                    
+                </div>
+                <a href="" class="gridlayout-data-item-title">{{item.name}}</a>
+                <i ng-class="$ctrl.isDetailsShown(item)?'ion-chevron-up':'ion-chevron-down'" class="button button-icon gridlayout-data-item-title-icon"></i>
             </ion-item>
-            <ion-item class="item-accordion" ng-repeat="item in $ctrl.groups[$index].items" ng-show="$ctrl.isGroupShown(group)">{{item}}</ion-item>
+            <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
+                <label class="">Quote number</label>
+                <div class="">{{item.quoteNumber}}</div>
+            </ion-item>
+            <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
+                <label>Expiry</label>
+                <div class="">Expiry {{item.expiryDate | date:'dd MM yyyy'}}</div>
+            </ion-item>
         </div>
     </content>
 </grid-layout>
