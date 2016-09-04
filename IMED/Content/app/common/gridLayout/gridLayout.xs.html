@@ -1,7 +1,7 @@
 <layout user-name="$ctrl.userName" 
         has-grid-header="true"
         has-search="true"
-        has-tabs="$ctrl.hasTabs">
+        has-tabs="$ctrl.tabs">
     <subheading>
         <ion-header class="bar bar-clear bar-subheader has-menu-bar" ng-class="$ctrl.hasTabs?'has-tabs':''">
             <div class="gridlayout-heading-container">
@@ -14,7 +14,16 @@
                     <i class="ion-search padding-right"></i>
                 </label>
             </div>
-            <!--<div ng-transclude="tabbar"></div>-->
+            <div ng-if="$ctrl.tabs" class="bar bar-clear padding">
+                <div class="button-bar bar-positive">
+                    <a
+                        ng-repeat="(key,value) in $ctrl.tabs"
+                        ui-sref="{{key}}"
+                        class="button"
+                        ui-sref-active="active"
+                       >{{value}}</a>
+                </div>
+            </div>
         </ion-header>
     </subheading>
     <content ng-transclude="content">

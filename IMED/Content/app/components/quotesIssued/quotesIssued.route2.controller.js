@@ -1,4 +1,4 @@
-class QuotesIssuedController {
+class QuotesIssuedRoute2Controller {
     constructor() {
         this.groups = [];
         this.userName = 'Jon Snow';
@@ -6,25 +6,25 @@ class QuotesIssuedController {
 
         this.items = [
             {
-                name: 'Sansa Stark',
+                name: 'Sansa Stark R2',
                 quoteNumber: '123123456',
                 expiryDate: new Date(),
                 overdue : true
             },
             {
-                name: 'Margaery Tyrel',
+                name: 'Margaery Tyrel R2',
                 quoteNumber: '123123456',
                 expiryDate: new Date(),
                 overdue : false
             },
             {
-                name: 'Petyr Baelish',
+                name: 'Petyr Baelish R2',
                 quoteNumber: '123123456',
                 expiryDate: new Date(),
                 overdue : true
             },
             {
-                name: 'Gregor Clegane',
+                name: 'Gregor Clegane R2',
                 quoteNumber: '123123456',
                 expiryDate: new Date(),
                 overdue : false
@@ -45,4 +45,4 @@ class QuotesIssuedController {
     }
 }
 
-export default QuotesIssuedController;
+export default QuotesIssuedRoute2Controller;

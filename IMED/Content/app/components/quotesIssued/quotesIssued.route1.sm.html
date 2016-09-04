@@ -1,0 +1,30 @@
+<grid-layout user-name="$ctrl.userName"
+             heading="'QUOTES ISSUED Route 1'"
+             items="$ctrl.items">
+    <content>
+        <table class="gridlayout-data-table">
+            <thead>
+                <tr>
+                    <td class="gridlayout-data-table-heading">Client Name</td>
+                    <td class="gridlayout-data-table-heading">Quote Number</td>
+                    <td class="gridlayout-data-table-heading">Expiry Date</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in $ctrl.items" ng-class="{'gridlayout-data-table-row':$odd,'gridlayout-data-table-row-alternate':$even}">
+                    <td class="gridlayout-data-table-value">
+                        <div class="icon gridlayout-item-status "
+                             ng-class="item.overdue?['gridlayout-item-status-alert','ion-alert']:['gridlayout-item-status-normal','ion-android-person']">
+                        </div>
+                        <span class="gridlayout-data-item-title">{{item.name}}</span>
+                    </td>
+                    <td class="gridlayout-data-table-value gridlayout-data-table-value-borders">{{item.quoteNumber}}</td>
+                    <td class="gridlayout-data-table-value"
+                        ng-class="item.overdue?'gridlayout-item-status-alert':''">
+                        {{item.expiryDate | date:'dd MM yyyy'}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </content>
+</grid-layout>

@@ -22,6 +22,24 @@
     margin-bottom: auto !important;
 }
 
+.@{ns}-tabs-bar {
+    padding: @content-padding * 2;
+}
+
+.@{ns}-tabs-button {
+    padding: @content-padding;
+    border: 3px solid @tab-bar-border-color;
+    font-size: @font-size-large;
+    text-decoration: none;
+    color: @tab-bar-border-color;
+    font-weight: bold;
+}
+
+.@{ns}-tabs-button.active {
+    color: @light;
+    background-color:@tab-bar-border-color;
+}
+
 .@{ns}-heading {
     padding-left: @content-padding;
     margin-bottom: @list-header-margin-top;

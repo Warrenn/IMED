@@ -1,6 +1,7 @@
 class GridLayoutController {
-    constructor() {
-
+    constructor($state) {
+        'ngInject';
+        this.tabs = (((($state.current || {}).$$state() || {}).parent || {}).data || {}).tabs;
     }
 }
 
