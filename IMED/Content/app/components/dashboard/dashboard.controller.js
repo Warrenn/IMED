@@ -19,8 +19,6 @@ class DashboardController{
                 this.newBusinessSummary = results.data;
             });
 
-        this.payrollPromise = dashboardService.getPayrollSummary();
-
         dashboardService
             .getClaimsSummary()
             .then((results) => {

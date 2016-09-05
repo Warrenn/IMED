@@ -7,7 +7,12 @@
 				url: '/api/Quotes/GetIssuedQoutes?' + $httpParamSerializer(request),
 				method: 'GET'
 			}
-		    return $http(options);
+		    return $http(options).then((response) => {
+		        return {
+		            response,
+                    request
+		        }
+		    });
 		}
 	}
 }

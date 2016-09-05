@@ -8,6 +8,7 @@ import AppComponent from './app.component';
 import ionic from '../../node_modules/ionic-starter/www/lib/ionic/js/ionic';
 import ngIonic from '../../node_modules/ionic-starter/www/lib/ionic/js/ionic-angular';
 import ionicPullUp from '../../bower_components/ionic-pullup/dist/ion-pullup';
+import bootstrap from 'angular-ui-bootstrap/dist/ui-bootstrap-tpls';
 import moment from 'moment';
 
 //HighCharts configuration
@@ -24,7 +25,8 @@ angular
         ngAnimate,
         ngSanitize,
         highChartsNg,
-        'ionic'
+        'ionic',
+        'ui.bootstrap'
     ])
     .run((mediaQueryFactory, $ionicPlatform) => {
         'ngInject';
@@ -50,6 +52,36 @@ angular
         // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
         // #how-to-configure-your-server-to-work-with-html5mode
         $locationProvider.html5Mode(true).hashPrefix('!');
+    })
+    .config(($httpProvider) => {
+        'ngInject';
+
+        $httpProvider
+            .interceptors
+            .push(($log) => {
+                'ngInject';
+
+                return {
+                    'responseError': (rejection) => {
+                        $log.error('$httpProvider', rejection);
+                    }
+                }
+            });
+    })
+    .config(($provide) => {
+        'ngInject';
+
+        $provide
+            .decorator('$exceptionHandler', ($delegate, $log, $injector) => {
+                'ngInject';
+
+                return (exception, cause) => {
+                    $delegate(exception, cause);
+                    var errorData = { exception: exception, cause: cause };
+
+                    $log.error(exception.message, errorData);
+                };
+            });
     })
     .component('app', AppComponent);
 

@@ -3,7 +3,7 @@ import controller from './payrollPanel.controller';
 import './payrollPanel.less';
 
 let payrollPanelComponent = {
-    bindings: {summaryPromise: '='},
+    bindings: {},
     template,
     controller
 };

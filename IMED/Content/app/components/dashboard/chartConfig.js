@@ -38,7 +38,7 @@
         }
     },
     chartColors: {
-        'notsubmitted': '#ea7125',
+        'notSubmitted': '#ea7125',
         'submitted': '#6dab43'
     }
 };

@@ -1,16 +1,14 @@
 <grid-layout user-name="$ctrl.userName"
              heading="'QUOTES ISSUED'"
-             items="$ctrl.items"
              search-text="$ctrl.searchText"
-             amount="$ctrl.amount">
+             amount="$ctrl.count">
     <content>
-        <div ng-repeat="item in $ctrl.items" class="list card">
+        <div ng-repeat="item in $ctrl.itemsSoFar" class="list card">
             <ion-item class="bar gridlayout-data-item-container" ng-click="$ctrl.toggleDetails(item)">
                 <div class="icon gridlayout-item-status "
-                     ng-class="item.overdue?['gridlayout-item-status-alert','ion-alert']:['gridlayout-item-status-normal','ion-android-person']">
-                    
+                     ng-class="item.expired?['gridlayout-item-status-alert','ion-alert']:['gridlayout-item-status-normal','ion-android-person']">
                 </div>
-                <a href="" class="gridlayout-data-item-title">{{item.name}}</a>
+                <a href="" class="gridlayout-data-item-title">{{item.clientName}}</a>
                 <i ng-class="$ctrl.isDetailsShown(item)?'ion-chevron-up':'ion-chevron-down'" class="button button-icon gridlayout-data-item-title-icon"></i>
             </ion-item>
             <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
@@ -22,5 +20,8 @@
                 <div class="">Expiry {{item.expiryDate | date:'dd MM yyyy'}}</div>
             </ion-item>
         </div>
+        <ion-infinite-scroll distance="2"
+                             on-infinite="$ctrl.loadMoreData()"
+                             ng-if="!$ctrl.onLastPage"></ion-infinite-scroll>
     </content>
 </grid-layout>

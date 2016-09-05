@@ -6,7 +6,7 @@ let markerModule = angular.module('marker', [])
     .component('marker', {
         bindings: {
             markerType: '<',
-            amount: '<'
+            amount: '='
         },
         template
     })

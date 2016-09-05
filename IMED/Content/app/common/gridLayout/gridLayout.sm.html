@@ -6,7 +6,7 @@
                 <h2 class="gridlayout-heading">{{$ctrl.heading}}</h2>
             </div>
             <label class="item item-input dashboard-margin gridlayout-search-container-right">
-                <input type="text" ng-model="$ctrl.searchText" placeholder="Search">
+                <input type="text" ng-model="$ctrl.searchText" placeholder="Search" ng-model-options="{debounce: 500}">
                 <i class="ion-search padding-right"></i>
             </label>
         </div>
