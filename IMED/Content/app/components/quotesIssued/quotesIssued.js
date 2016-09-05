@@ -1,6 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import quotesIssuedComponent from './quotesIssued.component';
+import quotesIssuedService from './quotesIssued.service';
 
 let quotesIssuedModule = angular
     .module('quotesIssued', [
@@ -15,6 +16,7 @@ let quotesIssuedModule = angular
             });
     })
     .component('quotesIssued', quotesIssuedComponent)
+    .service('quotesIssuedService', quotesIssuedService)
     .name;
 
 export default quotesIssuedModule;

@@ -1,32 +1,31 @@
 import chartConfig from "./chartConfig";
 
 class DashboardController{
-    constructor() {
+    constructor(dashboardService) {
+        'ngInject';
+
         this.userName = 'Jon Snow';
         this.searchText = '';
         this.filterState = 'COLLAPSED';
         this.showNewBusiness = true;
         this.showPayroll = true;
         this.showClaims = true;
+        this.newBusinessSummary = {};
+        this.claimsSummary = {};
 
-        this.newBusinessSummary = {
-            quotesIssued: 4,
-            launching: 11,
-            installing: 5,
-            payrollTracking: 2
-        }
+        dashboardService
+            .getNewBusinessSummary()
+            .then((results) => {
+                this.newBusinessSummary = results.data;
+            });
 
-        this.payrollSummary = {
-            submitted: 2,
-            notsubmitted: 4,
-            payrollOverdue: 1
-        }
+        this.payrollPromise = dashboardService.getPayrollSummary();
 
-        this.claimsSummary = {
-            draft: 4,
-            processing: 5,
-            paid: 1
-        }
+        dashboardService
+            .getClaimsSummary()
+            .then((results) => {
+                this.claimsSummary = results.data;
+            });
     }
 
     toggleFilterState() {

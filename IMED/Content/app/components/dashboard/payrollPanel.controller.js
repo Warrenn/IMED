@@ -2,27 +2,31 @@ import chartConfig from "./chartConfig";
 
 class PayrollPanelController{
     constructor() {
-        this.chartConfig= {
+        'ngInject';
+
+        this.chartConfig = {
             options: chartConfig.options,
             series: [chartConfig.series.statuses],
             title: chartConfig.title
         }
-        this.totalPayPoints = this.summary.submitted + 
-            this.summary.notsubmitted + 
-            this.summary.payrollOverdue;
 
-        this.chartConfig.series[0].data = [
-            {
-                name: 'SUBMITTED',
-                y: this.summary.submitted,
-                color: chartConfig.chartColors['submitted']
-            },
-            {
-                name: 'NOT SUBMITTED',
-                y: this.summary.notsubmitted,
-                color: chartConfig.chartColors['notsubmitted']
-            }
-        ];
+        this.summaryPromise.then((results) => {
+            this.summary = results.data;
+
+            this.chartConfig.series[0].data = [
+                {
+                    name: 'SUBMITTED',
+                    y: this.summary.submitted,
+                    color: chartConfig.chartColors['submitted']
+                },
+                {
+                    name: 'NOT SUBMITTED',
+                    y: this.summary.notSubmitted,
+                    color: chartConfig.chartColors['notSubmitted']
+                }
+            ];
+
+        });
     }
 }
 

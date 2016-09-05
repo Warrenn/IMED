@@ -2,6 +2,15 @@
 .tmp
 .git
 node_modules
+wwwroot
+!wwwroot/app.bundle.js
+!wwwroot/app.bundle.js.map
+!wwwroot/app.css
+!wwwroot/app.css.map
+!wwwroot/cache.manifest
+!wwwroot/index.html
+!wwwroot/vendor.bundle.js
+!wwwroot/vendor.bundle.js.map
 .settings
 *.log
 dist/

@@ -28,7 +28,9 @@ config.plugins = config.plugins.concat([
             except: ['$super', '$', 'exports', 'require', 'angular']
         }
     }),
-    new AppCachePlugin()
+    new AppCachePlugin({
+        output: 'cache.manifest'
+    })
 ]);
 
 module.exports = config;

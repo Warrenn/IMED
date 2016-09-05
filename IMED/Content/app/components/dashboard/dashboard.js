@@ -5,6 +5,7 @@ import payrollPanelComponent from './payrollPanel.component';
 import markerComponent from '../../common/marker/marker';
 import newBusinessPanelTemplate from './newBusinessPanel.html'
 import claimsPanelTemplate from './claimsPanel.html'
+import dashboardService from './dashboard.service'
 
 let dashboardModule = angular
     .module('dashboard', [
@@ -18,16 +19,21 @@ let dashboardModule = angular
             .state('dashboard', {
                 url: '/dashboard',
                 component: 'dashboard'
+            })
+            .state('default', {
+                url: '/',
+                component: 'dashboard'
             });
     })
+    .service('dashboardService', dashboardService)
     .component('dashboard', dashboardComponent)
     .component('payrollPanel', payrollPanelComponent)
     .component('newBusinessPanel', {
-        bindings: { summary: '<' },
+        bindings: { summary: '=' },
         template: newBusinessPanelTemplate
     })
     .component('claimsPanel', {
-        bindings: { summary: '<' },
+        bindings: { summary: '=' },
         template: claimsPanelTemplate
     })
     .name;

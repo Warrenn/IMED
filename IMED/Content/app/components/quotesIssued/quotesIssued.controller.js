@@ -1,5 +1,10 @@
 class QuotesIssuedController {
-    constructor() {
+    constructor(quotesIssuedService) {
+        'ngInject';
+
+        this.pageNumber = 1;
+        this.take = 10;
+
         this.groups = [];
         this.userName = 'Jon Snow';
         this.searchText = '';

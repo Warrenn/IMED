@@ -9,6 +9,7 @@ using Microsoft.Owin.StaticFiles;
 using Microsoft.Owin.StaticFiles.Infrastructure;
 using Owin;
 using System.Web.Http;
+using Microsoft.Owin.Extensions;
 
 [assembly: OwinStartup(typeof(IMED.Startup))]
 
@@ -18,18 +19,24 @@ namespace IMED
     {
         public void Configuration(IAppBuilder app)
         {
+            app.Map("/dashboard", spa =>
+            {
+                spa.Use((ctx, next) =>
+                {
+                    ctx.Request.Path = new PathString("/index.html");
+                    return next();
+                });
+            });
+
+            var httpConfiguration = new HttpConfiguration();
+            WebApiConfig.Register(httpConfiguration);
+            app.UseWebApi(httpConfiguration);
+            
             var options = new FileServerOptions();
-            var rootPath = string.IsNullOrEmpty(ConfigurationManager.AppSettings["IMED:QueryPath"])
-                ? "./wwwroot"
-                : ConfigurationManager.AppSettings["IMED:QueryPath"];
-
-            options.ConfigureCaching(ConfigurationManager.AppSettings["IMED:Caching"]);
-            options.ConfigureRequestPath(ConfigurationManager.AppSettings["IMED:QueryPath"]);
-            app.UseAngularServer(rootPath, "/index.html", options);
-
-            var configuration = GlobalConfiguration.Configuration;
-            //WebApiConfig.Register(configuration);
-            app.UseWebApi(configuration);
+            FileServerConfig.Register(options);
+            app.UseFileServer(options);
+            
+            app.UseStageMarker(PipelineStage.MapHandler);
         }
     }
 }

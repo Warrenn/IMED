@@ -1,7 +1,7 @@
 <div class="item">
     <div class="info-panel info-panel-solid-qoutes">
         <div class="amount">
-            {{$ctrl.summary.payrollOverdue | zeropad:'00'}}
+            {{$ctrl.summary.payrollOverDue | zeropad:'00'}}
         </div>
         <div class="content">
             <a class="heading">PAYROLL OVERDUE</a>
@@ -12,7 +12,7 @@
         <highchart config="$ctrl.chartConfig"></highchart>
         <div class="payrollPanel-chartsummary-container">
             <div class="payrollPanel-chartsummary payrollPanel-chartsummary-notsubmitted">
-                <div class="amount">{{$ctrl.summary.notsubmitted | zeropad:'00'}}</div>
+                <div class="amount">{{$ctrl.summary.notSubmitted | zeropad:'00'}}</div>
                 <div>NOT SUBMITTED</div>
             </div>
             <div class="payrollPanel-chartsummary payrollPanel-chartsummary-submitted">
@@ -23,7 +23,7 @@
     </div>
     <div class="panel item">
         <div class="label">TOTAL PAYPOINTS</div>
-        <div class="total">{{$ctrl.totalPayPoints | zeropad:'00' }}</div>
+        <div class="total">{{($ctrl.summary.payrollOverDue + $ctrl.summary.notSubmitted + $ctrl.summary.submitted) | zeropad:'00' }}</div>
     </div>
     <div class="panel item content content-light">
         The total expected pay points for the due month. The due month runs from the 8th of the month to the 7th of the following month.

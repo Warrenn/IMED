@@ -50,6 +50,18 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Faker.NET4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Faker.Net.1.0.3\lib\net40\Faker.NET4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fare, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fare.1.0.3\lib\net35\Fare.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FizzWare.NBuilder, Version=3.0.1.0, Culture=neutral, PublicKeyToken=5651b03e12e42c12, processorArchitecture=MSIL">
+      <HintPath>..\packages\NBuilder.3.0.1.1\lib\FizzWare.NBuilder.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -167,15 +179,93 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\AngularServerExtension.cs" />
-    <Compile Include="App_Start\AngularServerMiddleware.cs" />
+    <Compile Include="App_Start\FileServerConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\QuotesController.cs" />
+    <Compile Include="Models\ClaimsSummary.cs" />
+    <Compile Include="Models\IssuedQuote.cs" />
+    <Compile Include="Models\NewBusinessSummary.cs" />
+    <Compile Include="Models\PagedRequest.cs" />
+    <Compile Include="Models\PagedResult.cs" />
+    <Compile Include="Models\PayrollSummary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="bower_components\ionic-filter-bar\dist\ionic.filter.bar.css" />
+    <Content Include="bower_components\ionic-filter-bar\dist\ionic.filter.bar.js" />
+    <Content Include="bower_components\ionic-filter-bar\dist\ionic.filter.bar.min.css" />
+    <Content Include="bower_components\ionic-filter-bar\dist\ionic.filter.bar.min.js" />
+    <Content Include="bower_components\ionic-pullup\dist\ion-pullup.js" />
+    <Content Include="bower_components\ionic-pullup\dist\ion-pullup.min.js" />
+    <Content Include="bower_components\ionic-pullup\example\config.xml" />
+    <Content Include="bower_components\ionic-pullup\example\gulpfile.js" />
+    <Content Include="bower_components\ionic-pullup\example\hooks\after_prepare\010_add_platform_class.js" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\icon\drawable-hdpi-icon.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\icon\drawable-ldpi-icon.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\icon\drawable-mdpi-icon.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\icon\drawable-xhdpi-icon.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\icon\drawable-xxhdpi-icon.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\icon\drawable-xxxhdpi-icon.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\splash\drawable-land-hdpi-screen.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\splash\drawable-land-ldpi-screen.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\splash\drawable-land-mdpi-screen.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\splash\drawable-land-xhdpi-screen.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\splash\drawable-land-xxhdpi-screen.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\splash\drawable-land-xxxhdpi-screen.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\splash\drawable-port-hdpi-screen.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\splash\drawable-port-ldpi-screen.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\splash\drawable-port-mdpi-screen.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\splash\drawable-port-xhdpi-screen.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\splash\drawable-port-xxhdpi-screen.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\android\splash\drawable-port-xxxhdpi-screen.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\icon.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\icon\icon%402x.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\icon\icon-40%402x.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\icon\icon-40.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\icon\icon-50%402x.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\icon\icon-50.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\icon\icon-60%402x.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\icon\icon-60%403x.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\icon\icon-60.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\icon\icon-72%402x.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\icon\icon-72.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\icon\icon-76%402x.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\icon\icon-76.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\icon\icon-small%402x.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\icon\icon-small%403x.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\icon\icon-small.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\icon\icon.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\splash\Default%402x~iphone.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\splash\Default-568h%402x~iphone.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\splash\Default-667h.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\splash\Default-736h.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\splash\Default-Landscape%402x~ipad.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\splash\Default-Landscape-736h.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\splash\Default-Landscape~ipad.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\splash\Default-Portrait%402x~ipad.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\splash\Default-Portrait~ipad.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\ios\splash\Default~iphone.png" />
+    <Content Include="bower_components\ionic-pullup\example\resources\splash.png" />
+    <Content Include="bower_components\ionic-pullup\example\www\css\style.css" />
+    <Content Include="bower_components\ionic-pullup\example\www\img\ionic.png" />
+    <Content Include="bower_components\ionic-pullup\example\www\index.html" />
+    <Content Include="bower_components\ionic-pullup\example\www\js\app.js" />
+    <Content Include="bower_components\ionic-pullup\example\www\js\controllers.js" />
+    <Content Include="bower_components\ionic-pullup\example\www\js\ion-pullup.js" />
+    <Content Include="bower_components\ionic-pullup\example\www\js\services.js" />
+    <Content Include="bower_components\ionic-pullup\example\www\templates\chat-detail.html" />
+    <Content Include="bower_components\ionic-pullup\example\www\templates\page1.html" />
+    <Content Include="bower_components\ionic-pullup\example\www\templates\tab-account.html" />
+    <Content Include="bower_components\ionic-pullup\example\www\templates\tab-chats.html" />
+    <Content Include="bower_components\ionic-pullup\example\www\templates\tab-dash.html" />
+    <Content Include="bower_components\ionic-pullup\example\www\templates\tabs.html" />
+    <Content Include="bower_components\ionic-pullup\gulpfile.js" />
+    <Content Include="bower_components\ionic-pullup\karma.conf.js" />
+    <Content Include="bower_components\ionic-pullup\src\ion-pullup.js" />
     <Content Include="Content\app\app.component.js" />
     <Content Include="Content\app\app.html" />
     <Content Include="Content\app\app.js" />
@@ -221,6 +311,7 @@
     <Content Include="Content\app\components\dashboard\claimsPanel.html" />
     <Content Include="Content\app\components\dashboard\payrollPanel.html" />
     <Content Include="Content\app\components\dashboard\newBusinessPanel.html" />
+    <Content Include="Content\app\components\dashboard\dashboard.service.js" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.component.js" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.controller.js" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.js" />
@@ -256,8 +347,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
     <Folder Include="Providers\" />
   </ItemGroup>
   <ItemGroup>
@@ -266,6 +355,27 @@
     </Content>
     <Content Include=".bowerrc" />
     <Content Include="bower.json" />
+    <Content Include="bower_components\ionic-filter-bar\.bower.json" />
+    <Content Include="bower_components\ionic-filter-bar\bower.json" />
+    <Content Include="bower_components\ionic-filter-bar\scss\ionic.filter.bar.scss" />
+    <Content Include="bower_components\ionic-pullup\.bower.json" />
+    <Content Include="bower_components\ionic-pullup\.bowerrc" />
+    <Content Include="bower_components\ionic-pullup\.gitignore" />
+    <Content Include="bower_components\ionic-pullup\.jshintrc" />
+    <Content Include="bower_components\ionic-pullup\.travis.yml" />
+    <Content Include="bower_components\ionic-pullup\bower.json" />
+    <Content Include="bower_components\ionic-pullup\CHANGELOG.md" />
+    <Content Include="bower_components\ionic-pullup\example\.bowerrc" />
+    <Content Include="bower_components\ionic-pullup\example\.gitignore" />
+    <Content Include="bower_components\ionic-pullup\example\bower.json" />
+    <Content Include="bower_components\ionic-pullup\example\hooks\README.md" />
+    <Content Include="bower_components\ionic-pullup\example\ionic.config.json" />
+    <Content Include="bower_components\ionic-pullup\example\package.json" />
+    <Content Include="bower_components\ionic-pullup\example\scss\ionic.app.scss" />
+    <Content Include="bower_components\ionic-pullup\jsconfig.json" />
+    <Content Include="bower_components\ionic-pullup\LICENSE" />
+    <Content Include="bower_components\ionic-pullup\package.json" />
+    <Content Include="bower_components\ionic-pullup\README.md" />
     <None Include="Content\app\app.less" />
     <Content Include="Content\app\components\dashboard\dashboard.less" />
     <Content Include="Content\app\common\marker\marker.less" />
@@ -279,11 +389,12 @@
     <Content Include="Content\app\common\gridLayout\gridLayout.less" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.less" />
     <Content Include="Content\app\common\ionic-bar.less" />
+    <Content Include="Content\app\components\quotesIssued\quotesIssued.service.js" />
     <None Include="Project_Readme.html" />
     <Content Include="wwwroot\app.bundle.js.map" />
     <Content Include="wwwroot\app.css.map" />
-    <Content Include="wwwroot\manifest.appcache" />
     <Content Include="wwwroot\vendor.bundle.js.map" />
+    <Content Include="wwwroot\cache.manifest" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
