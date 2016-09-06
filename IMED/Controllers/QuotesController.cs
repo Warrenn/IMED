@@ -14,7 +14,9 @@ namespace IMED.Controllers
     public class QuotesController : ApiController
     {
         static readonly IEnumerable<IssuedQuote> IssuedQuotes;
+
         static readonly Xeger QuoteNumberGenerator = new Xeger("R(\\d{6})S", new Random((int)DateTime.Now.Ticks));
+
         static readonly RandomGenerator RandomGeneratorGenerator = new RandomGenerator();
 
         static QuotesController()

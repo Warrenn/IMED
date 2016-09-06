@@ -50,6 +50,10 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Faker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Faker.1.2\lib\Faker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Faker.NET4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Faker.Net.1.0.3\lib\net40\Faker.NET4.dll</HintPath>
       <Private>True</Private>
@@ -183,9 +187,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\NewBusinessLaunchingController.cs" />
+    <Compile Include="Controllers\NewBusinessInstallingController.cs" />
     <Compile Include="Controllers\QuotesController.cs" />
     <Compile Include="Models\ClaimsSummary.cs" />
     <Compile Include="Models\IssuedQuote.cs" />
+    <Compile Include="Models\NewBusinessLaunchingIncoplete.cs" />
+    <Compile Include="Models\NewBusinessLaunchingCompleted.cs" />
     <Compile Include="Models\NewBusinessSummary.cs" />
     <Compile Include="Models\PagedRequest.cs" />
     <Compile Include="Models\PagedResult.cs" />
