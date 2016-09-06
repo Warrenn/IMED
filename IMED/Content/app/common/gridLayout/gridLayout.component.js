@@ -10,7 +10,8 @@ let gridLayoutComponent = {
         amount: '=',
         heading: '<',
         hasTabs: '<',
-        searchText: '='
+        searchText: '=',
+        markerType: '<'
     },
     mediaTemplates: {
         xs: template_xs,
