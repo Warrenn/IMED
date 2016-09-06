@@ -16,9 +16,9 @@
             <ion-toggle  ng-hide="$ctrl.filterState !== 'EXPANDED'" class="am-fade-and-slide-top" ng-model="$ctrl.dashboardSettings.showNewBusiness">NEW BUSINESS</ion-toggle>
             <ion-toggle  ng-hide="$ctrl.filterState !== 'EXPANDED'" class="am-fade-and-slide-top" ng-model="$ctrl.dashboardSettings.showPayroll">PAYROLL</ion-toggle>
             <ion-toggle ng-hide="$ctrl.filterState !== 'EXPANDED'" class="am-fade-and-slide-top" ng-model="$ctrl.dashboardSettings.showClaims">CLAIMS</ion-toggle>
-            <button ng-hide="$ctrl.filterState !== 'EXPANDED'" ng-click="$ctrl.saveSettings()" class="button button-clear button-stable">
+            <a href="" ng-hide="$ctrl.filterState !== 'EXPANDED'" ng-click="$ctrl.saveSettings()" class="button button-clear button-stable">
                 Save View
-            </button>
+            </a>
         </div>
         <div class="list card am-fade-and-slide-top" ng-if="$ctrl.dashboardSettings.showNewBusiness">
             <div class="item item-divider">

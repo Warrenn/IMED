@@ -1,5 +1,5 @@
 class GridLayoutControllerBase {
-    constructor($rootScope, userProfileService) {
+    constructor($rootScope) {
         'ngInject';
 
         this.take = 10;
@@ -21,12 +21,6 @@ class GridLayoutControllerBase {
                 this.clearState();
                 this.fetchData();
             });
-
-            userProfileService
-                .getUserProfile()
-                .then((response) => {
-                    this.userProfile = response;
-                });
         };
 
 
