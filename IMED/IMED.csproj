@@ -273,6 +273,7 @@
     <Content Include="Content\app\common\filters\filters.js" />
     <Content Include="Content\app\common\filters\zeropad.js" />
     <Content Include="Content\app\common\gridLayout\gridLayout.component.js" />
+    <Content Include="Content\app\common\gridLayout\gridLayout.controller.base.js" />
     <Content Include="Content\app\common\gridLayout\gridLayout.controller.js" />
     <Content Include="Content\app\common\gridLayout\gridLayout.js" />
     <Content Include="Content\app\common\gridLayout\gridLayout.sm.html" />

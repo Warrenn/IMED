@@ -1,5 +1,5 @@
 <layout user-name="$ctrl.userName">
-    <subheading >
+    <subheading>
         <div class="gridlayout-subheading">
             <div class="gridlayout-heading-container gridlayout-heading-container-left">
                 <marker class="pull-left"  marker-type="$ctrl.markerType" amount="$ctrl.amount"></marker>
@@ -10,8 +10,11 @@
                 <i class="ion-search padding-right"></i>
             </label>
         </div>
-        <div>
-            <!--<div ng-transclude="tabbar"></div>-->
+        <div ng-if="$ctrl.tabs" class="gridlayout-tabs-bar">
+            <a ng-repeat="(key,value) in $ctrl.tabs"
+               ui-sref="{{key}}"
+               class="gridlayout-tabs-button"
+               ui-sref-active="active">{{value}}</a>
         </div>
     </subheading>
     <content>

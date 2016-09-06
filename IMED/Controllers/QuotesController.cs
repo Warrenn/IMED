@@ -37,7 +37,8 @@ namespace IMED.Controllers
         public PagedResult<IssuedQuote> GetIssuedQoutes([FromUri]PagedRequest<string> request)
         {
 
-            var allMatches = IssuedQuotes.Where(q =>
+            var allMatches = IssuedQuotes
+                .Where(q =>
                 string.IsNullOrEmpty(request.Filter) ||
                 q.ClientName.Contains(request.Filter) ||
                 q.QuoteNumber.Contains(request.Filter));
