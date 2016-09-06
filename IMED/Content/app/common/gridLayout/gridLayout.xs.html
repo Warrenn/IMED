@@ -1,5 +1,4 @@
-<layout user-name="$ctrl.userName" 
-        has-grid-header="true"
+<layout has-grid-header="true"
         has-search="true"
         has-tabs="$ctrl.tabs">
     <subheading>
@@ -10,7 +9,7 @@
             </div>
             <div>
                 <label class="item item-input item-input-inset">
-                    <input type="text" ng-model="$ctrl.searchText" placeholder="Search" ng-model-options="{ debounce: 500 }">
+                    <input type="text" ng-model="$ctrl.searchText" placeholder="Search" ng-model-options="{ debounce: 500 }" ng-change="$ctrl.onSearchChange()">
                     <i class="ion-search padding-right"></i>
                 </label>
             </div>

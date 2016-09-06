@@ -1,7 +1,6 @@
-<grid-layout user-name="$ctrl.userName"
+<grid-layout grid-model="$ctrl.gridModel"
+             on-search-change = "$ctrl.onSearchChange()"
              heading="'QUOTES ISSUED'"
-             search-text="$ctrl.searchText"
-             amount="$ctrl.count"
              marker-type="'quote'">
     <content>
         <div ng-repeat="item in $ctrl.itemsSoFar" class="list card">
@@ -23,6 +22,7 @@
         </div>
         <ion-infinite-scroll distance="2"
                              on-infinite="$ctrl.loadMoreData()"
-                             ng-if="!$ctrl.onLastPage"></ion-infinite-scroll>
+                             ng-if="!$ctrl.onLastPage">
+        </ion-infinite-scroll>
     </content>
 </grid-layout>

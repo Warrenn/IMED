@@ -3,7 +3,7 @@ import uiRouter from 'angular-ui-router';
 import mediaQueryFactory from './mediaQuery.factory';
 
 let mediaQueryModule = angular
-    .module('mediaQuery', [
+    .module('common.mediaQuery', [
         uiRouter
     ])
     .factory('mediaQueryFactory', mediaQueryFactory)

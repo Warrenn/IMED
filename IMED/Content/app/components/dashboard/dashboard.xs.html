@@ -1,8 +1,8 @@
-<layout user-name="$ctrl.userName" has-search="true">
+<layout has-search="true">
     <subheading>
         <ion-header class="bar bar-clear bar-subheader has-menu-bar">
             <label class="item item-input">
-                <input type="text" ng-model="$ctrl.searchText" placeholder="Search">
+                <input type="text" ng-model="$ctrl.gridModel.searchText" placeholder="Search">
                 <i class="ion-search padding-right"></i>
             </label>
         </ion-header>
@@ -13,26 +13,26 @@
                 <h2 class="title title-left">FILTER YOUR VIEW</h2>
                 <i ng-class="$ctrl.filterState === 'EXPANDED'?'ion-chevron-up':'ion-chevron-down'" class="button button-icon"></i>
             </ion-item>
-            <ion-checkbox ng-hide="$ctrl.filterState !== 'EXPANDED'" class="item-accordion" ng-model="$ctrl.showNewBusiness">NEW BUSINESS</ion-checkbox>
-            <ion-checkbox ng-hide="$ctrl.filterState !== 'EXPANDED'" class="item-accordion" ng-model="$ctrl.showPayroll">PAYROLL</ion-checkbox>
-            <ion-checkbox ng-hide="$ctrl.filterState !== 'EXPANDED'" class="item-accordion" ng-model="$ctrl.showClaims">CLAIMS</ion-checkbox>
-            <ion-item ng-hide="$ctrl.filterState !== 'EXPANDED'" class="item-accordion bar item-stable">
-                <a href="">Save View</a>
-            </ion-item>
+            <ion-toggle  ng-hide="$ctrl.filterState !== 'EXPANDED'" class="am-fade-and-slide-top" ng-model="$ctrl.dashboardSettings.showNewBusiness">NEW BUSINESS</ion-toggle>
+            <ion-toggle  ng-hide="$ctrl.filterState !== 'EXPANDED'" class="am-fade-and-slide-top" ng-model="$ctrl.dashboardSettings.showPayroll">PAYROLL</ion-toggle>
+            <ion-toggle ng-hide="$ctrl.filterState !== 'EXPANDED'" class="am-fade-and-slide-top" ng-model="$ctrl.dashboardSettings.showClaims">CLAIMS</ion-toggle>
+            <button ng-hide="$ctrl.filterState !== 'EXPANDED'" ng-click="$ctrl.saveSettings()" class="button button-clear button-stable">
+                Save View
+            </button>
         </div>
-        <div class="list card am-fade-and-slide-top" ng-if="$ctrl.showNewBusiness">
+        <div class="list card am-fade-and-slide-top" ng-if="$ctrl.dashboardSettings.showNewBusiness">
             <div class="item item-divider">
                 NEW BUSINESS
             </div>
             <new-business-panel summary="$ctrl.newBusinessSummary"></new-business-panel>
         </div>
-        <div class="list card am-fade-and-slide-top" ng-if="$ctrl.showPayroll">
+        <div class="list card am-fade-and-slide-top" ng-if="$ctrl.dashboardSettings.showPayroll">
             <div class="item item-divider">
                 PAYROLL
             </div>
             <payroll-panel></payroll-panel>
         </div>
-        <div class="list card am-fade-and-slide-top" ng-if="$ctrl.showClaims">
+        <div class="list card am-fade-and-slide-top" ng-if="$ctrl.dashboardSettings.showClaims">
             <div class="item item-divider">
                 CLAIMS
             </div>

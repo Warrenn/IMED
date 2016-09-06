@@ -2,7 +2,7 @@ import angular from 'angular';
 import zeropad from './zeropad';
 
 let filtersModule = angular
-    .module('filters', [])
+    .module('common.filters', [])
     .filter('zeropad', zeropad)
     .name;
 
