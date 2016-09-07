@@ -207,6 +207,10 @@
     <Compile Include="Models\InstallingSchemeInstalled.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DashboardService.cs" />
+    <Compile Include="Services\IDashboardService.cs" />
+    <Compile Include="Services\IInstallingService.cs" />
+    <Compile Include="Services\InstallingService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
