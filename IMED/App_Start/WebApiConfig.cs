@@ -15,7 +15,7 @@ namespace IMED
     {
         public static void ConfigureFormatters(HttpConfiguration config)
         {
-            var json =config.Formatters.JsonFormatter;
+            var json = config.Formatters.JsonFormatter;
             var jsonSettings = json.SerializerSettings;
 
             jsonSettings.DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate;

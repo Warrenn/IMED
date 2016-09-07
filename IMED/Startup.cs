@@ -15,7 +15,7 @@ namespace IMED
     {
         public void Configuration(IAppBuilder app)
         {
-            app.ConfigureRoutes();
+            app.RegisterRoutes();
 
             var httpConfiguration = new HttpConfiguration();
             UnityConfig.RegisterComponents(httpConfiguration);
