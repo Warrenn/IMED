@@ -5,7 +5,6 @@ class QuotesIssuedController extends GridLayoutControllerBase {
         'ngInject';
 
         super($rootScope);
-        this.userName = 'Jon Snow';
         this.serverRequest = quotesIssuedService.getIssuedQoutes;
     }
 }
