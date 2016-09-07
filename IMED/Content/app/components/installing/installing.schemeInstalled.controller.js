@@ -1,10 +1,10 @@
 import GridLayoutControllerBase from '../../common/gridLayout/gridLayout.controller.base';
 
 class NewbusinessinstallingController extends GridLayoutControllerBase {
-    constructor(newBusinessInstallingService, $rootScope) {
+    constructor(installingService, $rootScope) {
         'ngInject';
         super($rootScope);
-        this.serverRequest = newBusinessInstallingService.getNewBusinessInstalling;
+        this.serverRequest = installingService.getNewBusinessInstalling;
     }
 }
 

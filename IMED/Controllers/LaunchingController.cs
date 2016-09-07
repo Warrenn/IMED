@@ -11,49 +11,45 @@ using System.Web.Http;
 
 namespace IMED.Controllers
 {
-    public class NewBusinessInstallingController : ApiController
+    public class LaunchingController : ApiController
     {
+        static readonly IEnumerable<LaunchingCompleted> LaunchingCompleted;
 
-        static readonly IEnumerable<NewBusinessInstallingPayRollSupportInProgress> payRollSupportProgress;
-
-        static readonly IEnumerable<NewBusinessInstallingSchemeInstalled> SchemedInstalled;
+        static readonly IEnumerable<LaunchingIncomplete> LaunchingInComplete;
 
         static readonly Xeger QuoteNumberGenerator = new Xeger("R(\\d{6})S", new Random((int)DateTime.Now.Ticks));
 
-        static readonly Xeger SchemeNumberGenerator = new Xeger("R(\\d{10})S", new Random((int)DateTime.Now.Ticks));
-
         static readonly RandomGenerator RandomGeneratorGenerator = new RandomGenerator();
 
-        static NewBusinessInstallingController()
+        static LaunchingController()
         {
-            //New Business Installing  Pay Roll Suport In Progress fake data
-            payRollSupportProgress = Builder<NewBusinessInstallingPayRollSupportInProgress>
+
+            //launching complete fake data
+            LaunchingCompleted = Builder<LaunchingCompleted>
                .CreateListOfSize(100)
                .All()
                .With(q => q.ClientName = Name.FullName(NameFormats.Standard))
-               .With(q => q.QuoteNumber = QuoteNumberGenerator.Generate())
-               .With(q => q.SchemeName = Name.FullName(NameFormats.Standard))
-               .With(q=> q.SchemeNumber = SchemeNumberGenerator.Generate())
-               .With(q=> q.PayPointNamer = Name.FullName(NameFormats.Standard)).Build();
+               .With(q => q.QuoteNumber = QuoteNumberGenerator.Generate()).Build();
 
 
-            // New Business Installing Scheme Installed  fake data
+            // launching Incompleted fake data
 
-            SchemedInstalled = Builder<NewBusinessInstallingSchemeInstalled>
+            LaunchingInComplete = Builder<LaunchingIncomplete>
              .CreateListOfSize(100)
              .All()
              .With(q => q.ClientName = Name.FullName(NameFormats.Standard))
              .With(q => q.QuoteNumber = QuoteNumberGenerator.Generate())
-             .With(q => q.SchemeNumber = SchemeNumberGenerator.Generate())
-             .With(q => q.SchemeName = Name.FullName(NameFormats.Standard))
+             .With(q=> q.Comments = Lorem.Paragraph(10))
              .Build();
+
         }
 
+
         [HttpGet]
-        public PagedResult<NewBusinessInstallingPayRollSupportInProgress> GetPayRollSupportInProgress([FromUri]PagedRequest<string> request)
+        public PagedResult<LaunchingCompleted> Completed([FromUri]PagedRequest<string> request)
         {
 
-            var allMatches = payRollSupportProgress
+            var allMatches = LaunchingCompleted
                 .Where(q =>
                 string.IsNullOrEmpty(request.Filter) ||
                 q.ClientName.Contains(request.Filter) ||
@@ -61,17 +57,18 @@ namespace IMED.Controllers
             var count = allMatches.Count();
             var data = allMatches.Skip(request.Skip).Take(request.Take);
 
-            return new PagedResult<NewBusinessInstallingPayRollSupportInProgress>
+            return new PagedResult<LaunchingCompleted>
             {
                 Count = count,
                 Data = data
             };
         }
+
         [HttpGet]
-        public PagedResult<NewBusinessInstallingSchemeInstalled> GetSchemeInstalled([FromUri]PagedRequest<string> request)
+        public PagedResult<LaunchingIncomplete> Incomplete([FromUri]PagedRequest<string> request)
         {
 
-            var allMatches = SchemedInstalled
+            var allMatches = LaunchingInComplete
                 .Where(q =>
                 string.IsNullOrEmpty(request.Filter) ||
                 q.ClientName.Contains(request.Filter) ||
@@ -79,7 +76,7 @@ namespace IMED.Controllers
             var count = allMatches.Count();
             var data = allMatches.Skip(request.Skip).Take(request.Take);
 
-            return new PagedResult<NewBusinessInstallingSchemeInstalled>
+            return new PagedResult<LaunchingIncomplete>
             {
                 Count = count,
                 Data = data

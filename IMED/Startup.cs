@@ -28,7 +28,7 @@ namespace IMED
                 });
             });
 
-            app.Map("/newbusinesslaunching/incomplete", spa =>
+            app.Map("/launching/incomplete", spa =>
             {
                 spa.Use((ctx, next) =>
                 {
@@ -37,7 +37,7 @@ namespace IMED
                 });
             });
 
-            app.Map("/newbusinessinstalling/installing", spa =>
+            app.Map("/installing/installing", spa =>
             {
                 spa.Use((ctx, next) =>
                 {

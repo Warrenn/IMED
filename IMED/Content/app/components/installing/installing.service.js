@@ -7,7 +7,7 @@ class NewBusinessInstallingService {
 
 		this.getNewBusinessInstalling = (request) => {
 			const  options = {
-			    url: '/api/NewBusinessInstalling/GetSchemeInstalled?' + $httpParamSerializer(request),
+			    url: '/api/Installing/GetSchemeInstalled?' + $httpParamSerializer(request),
 				method: 'GET'
 			}
 			return $http(options).then((response) => {
@@ -20,7 +20,7 @@ class NewBusinessInstallingService {
 
         this.getNewBusinessPayRollSupportInProgress = (request) => {
         	const  options = {
-        	    url: '/api/NewBusinessInstalling/GetPayRollSupportInProgress?' + $httpParamSerializer(request),
+        	    url: '/api/Installing/GetPayRollSupportInProgress?' + $httpParamSerializer(request),
         		method: 'GET'
         	}
         	return $http(options).then((response) => {

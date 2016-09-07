@@ -1,10 +1,11 @@
+
 import MediaQueryFactory from '../../common/mediaQuery/mediaQuery.factory';
 
-import controller from './newBusinessInstalling.payRollSupportInProgress.controller';
-import './newbusinessinstalling.less';
+import controller from './installing.schemeInstalled.controller';
+import './installing.less';
+import template_xs from './installing.schemeInstalled.xs.html'
+import template_sm from './installing.schemeInstalled.sm.html'
 
-import template_xs from './newBusinessInstalling.payRollSupportInProgress.xs.html'
-import template_sm from './newBusinessInstalling.payRollSupportInProgress.sm.html'
 
 let newbusinessinstallingComponent = {
   restrict: 'E',

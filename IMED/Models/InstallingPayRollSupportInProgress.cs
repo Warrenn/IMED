@@ -5,14 +5,17 @@ using System.Web;
 
 namespace IMED.Models
 {
-    public class NewBusinessLaunchingIncomplete
+    public class InstallingPayRollSupportInProgress
     {
-        public int ClientID { get; set; }
-
         public string ClientName { get; set; }
 
         public string QuoteNumber { get; set; }
 
-        public string Comments { get; set; }
+        public string SchemeNumber { get; set; }
+
+        public string SchemeName { get; set; }
+
+        public string PayPointNamer { get; set; }
+
     }
 }

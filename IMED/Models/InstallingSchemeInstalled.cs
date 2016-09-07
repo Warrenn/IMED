@@ -5,7 +5,7 @@ using System.Web;
 
 namespace IMED.Models
 {
-    public class NewBusinessInstallingSchemeInstalled
+    public class InstallingSchemeInstalled
     {
         public string ClientName { get; set; }
 

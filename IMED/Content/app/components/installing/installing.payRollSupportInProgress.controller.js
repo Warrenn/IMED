@@ -3,10 +3,10 @@
 import GridLayoutControllerBase from '../../common/gridLayout/gridLayout.controller.base';
 
 class NewbusinessPayRollSuportProgressController extends GridLayoutControllerBase {
-    constructor(newBusinessInstallingService, $rootScope) {
+    constructor(installingService, $rootScope) {
         'ngInject';
         super($rootScope);
-        this.serverRequest = newBusinessInstallingService.getNewBusinessPayRollSupportInProgress;
+        this.serverRequest = installingService.getNewBusinessPayRollSupportInProgress;
     }
 }
 

@@ -1,7 +1,6 @@
-<<grid-layout user-name="$ctrl.userName"
+<<grid-layout grid-model="$ctrl.gridModel"
              heading="'NEW BUSINESS INSTALLING'"
-             search-text="$ctrl.searchText"
-             amount="$ctrl.count"
+               on-search-change="$ctrl.onSearchChange()"
              marker-type="'install'">
     <content>
         <table class="gridlayout-data-table">
@@ -31,7 +30,7 @@
             </tbody>
         </table>
         <div class="gridlayout-paging-bar">
-            <ul uib-pagination total-items="$ctrl.count" ng-model="$ctrl.pageNumber" boundary-link-numbers="true" max-size="5" ng-change="$ctrl.fetchData()"></ul>
+            <ul uib-pagination total-items="$ctrl.gridModel.amount" ng-model="$ctrl.pageNumber" boundary-link-numbers="true" max-size="5" ng-change="$ctrl.fetchData()"></ul>
         </div>
     </content>
 </grid-layout>

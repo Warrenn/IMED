@@ -1,7 +1,6 @@
-<grid-layout user-name="$ctrl.userName"
+<grid-layout grid-model="$ctrl.gridModel"
+             on-search-change = "$ctrl.onSearchChange()"
              heading="'NEW BUSINESS INSTALLING'"
-             search-text="$ctrl.searchText"
-             amount="$ctrl.count"
              marker-type="'install'">
     <content>
         <div ng-repeat="item in $ctrl.itemsSoFar" class="list card">

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace IMED.Models
 {
-    public class NewBusinessLaunchingCompleted
+    public class LaunchingCompleted
     {
         public int ClientID { get; set;}
 

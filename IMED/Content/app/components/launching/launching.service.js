@@ -1,10 +1,10 @@
-﻿class NewBusinessLaunchingService {
+﻿class launchingService {
     constructor($http, $httpParamSerializer) {
         'ngInject';
 
-        this.getNewBusinessLaunchingCompleted = (request) => {
+        this.getiaunchingCompleted = (request) => {
             const  options = {
-                url: '/api/NewBusinessLaunching/Completed?' + $httpParamSerializer(request),
+                url: '/api/Launching/Completed?' + $httpParamSerializer(request),
                 method: 'GET'
             }
             return $http(options).then((response) => {
@@ -15,9 +15,9 @@
             });
         },
 
-        this.getNewBusinessLaunchingIncomplete = (request) => {
+        this.getiaunchingIncomplete = (request) => {
             const  options = {
-                url: '/api/NewBusinessLaunching/Incomplete?' + $httpParamSerializer(request),
+                url: '/api/Launching/Incomplete?' + $httpParamSerializer(request),
                 method: 'GET'
             }
             return $http(options).then((response) => {
@@ -30,4 +30,4 @@
     }
 }
 
-export default NewBusinessLaunchingService;
+export default launchingService;
