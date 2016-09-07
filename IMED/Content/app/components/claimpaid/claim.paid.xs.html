@@ -1,0 +1,47 @@
+<grid-layout heading="'CLAIMS PAID'"
+             grid-model="$ctrl.gridModel"
+             on-search-change="$ctrl.onSearchChange()"
+             marker-type="'payroll'">
+    <content>
+        <div ng-repeat="item in $ctrl.itemsSoFar" class="list card">
+            <ion-item class="bar gridlayout-data-item-container" ng-click="$ctrl.toggleDetails(item)">
+                <div class="icon gridlayout-item-status "
+                     ng-class="item.expired?['gridlayout-item-status-alert','ion-alert']:['gridlayout-item-status-normal','ion-android-person']">
+                </div>
+                <a href="" class="gridlayout-data-item-title">{{item.memberName}}</a>
+                <i ng-class="$ctrl.isDetailsShown(item)?'ion-chevron-up':'ion-chevron-down'" class="button button-icon gridlayout-data-item-title-icon"></i>
+            </ion-item>
+            <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
+                <label class=""><b>Claim Type</b></label>
+                <div class="">{{item.claimType}}</div>
+            </ion-item>
+            <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
+                <label class=""><b>Member Number</b></label>
+                <div class="">{{item.memberNumber}}</div>
+            </ion-item>
+            <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
+                <label class=""><b>Scheme Code</b></label>
+                <div class="">{{item.schemeCode}}</div>
+            </ion-item>
+            <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
+                <label class=""><b>Date of status</b></label>
+                <div class="">{{item.dayInStatus  | date:'dd MM yyyy'}}</div>
+            </ion-item>
+            <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
+                <label class=""><b>Date of Notification</b></label>
+                <div class="">{{item.dayOfNotification  | date:'dd MM yyyy'}}</div>
+            </ion-item>
+            <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
+                <label class=""><b>Member Telephone Number </b></label>
+                <div class="">{{item.memberTelephoneNumber}}</div>
+            </ion-item>
+            <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
+                <label class=""><b>Member Email </b></label>
+                <div class="">{{item.memberEmail}}</div>
+            </ion-item>
+        </div>
+        <ion-infinite-scroll distance="2"
+                             on-infinite="$ctrl.loadMoreData()"
+                             ng-if="!$ctrl.onLastPage"></ion-infinite-scroll>
+    </content>
+</grid-layout>
