@@ -4,6 +4,8 @@ import QuotesIssued from './quotesIssued/quotesIssued';
 import Launching from './launching/launching';
 import Installing from './installing/installing';
 import Payroll from './payroll/payroll';
+import ClaimPaid from './claimpaid/claimpaid';
+
 
 let componentModule = angular
     .module('app.components', [
@@ -11,7 +13,8 @@ let componentModule = angular
         QuotesIssued,
         Launching,
         Installing,
-        Payroll
+        Payroll,
+        ClaimPaid
     ])
     .name;
 
