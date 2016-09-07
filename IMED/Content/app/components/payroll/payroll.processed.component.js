@@ -1,8 +1,8 @@
-import MediaQueryFactory from '../mediaQuery/mediaQuery.factory';
-import controller from './payroll.controller';
+import MediaQueryFactory from '../../common/mediaQuery/mediaQuery.factory';
+import controller from './payroll.processed.controller';
 import './payroll.less';
-import template_xs from './payroll.xs.html'
-import template_sm from './payroll.sm.html'
+import template_xs from './payroll.processed.xs.html';
+import template_sm from './payroll.processed.sm.html';
 
 
 let payrollComponent = {

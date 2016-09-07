@@ -1,0 +1,28 @@
+<grid-layout user-name="$ctrl.userName"
+             heading="'PAYROLL TRACKING'"
+             search-text="$ctrl.searchText"
+             amount="$ctrl.count"
+             marker-type="'payroll'">
+    <content>
+        <div ng-repeat="item in $ctrl.itemsSoFar" class="list card">
+            <ion-item class="bar gridlayout-data-item-container" ng-click="$ctrl.toggleDetails(item)">
+                <div class="icon gridlayout-item-status "
+                     ng-class="item.expired?['gridlayout-item-status-alert','ion-alert']:['gridlayout-item-status-normal','ion-android-person']">
+                </div>
+                <a href="" class="gridlayout-data-item-title">{{item.schemeName}}</a>
+                <i ng-class="$ctrl.isDetailsShown(item)?'ion-chevron-up':'ion-chevron-down'" class="button button-icon gridlayout-data-item-title-icon"></i>
+            </ion-item>
+            <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
+                <label class=""><b>Scheme number</b></label>
+                <div class="">{{item.schemeNumber}}</div>
+            </ion-item>
+            <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
+                <label class=""><b>Pay point name</b></label>
+                <div class="">{{item.payPointName}}</div>
+            </ion-item>        
+        </div>
+        <ion-infinite-scroll distance="2"
+                             on-infinite="$ctrl.loadMoreData()"
+                             ng-if="!$ctrl.onLastPage"></ion-infinite-scroll>
+    </content>
+</grid-layout>
