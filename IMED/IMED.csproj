@@ -207,6 +207,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ClaimsPaidController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Services\IPayrollService.cs" />
@@ -216,6 +217,8 @@
     <Compile Include="Controllers\InstallingController.cs" />
     <Compile Include="Controllers\PayrollController.cs" />
     <Compile Include="Controllers\QuotesController.cs" />
+    <Compile Include="Controllers\UserProfileController.cs" />
+    <Compile Include="Models\ClaimsPaid.cs" />
     <Compile Include="Services\PayrollFakeService.cs" />
     <Compile Include="Services\QuotesFakeService.cs" />
     <Compile Include="Services\UserProfileFakeService.cs" />
@@ -338,6 +341,11 @@
     <Content Include="Content\app\common\menubar\menubar.xs.html" />
     <Content Include="Content\app\common\userProfile\userProfile.js" />
     <Content Include="Content\app\common\userProfile\userProfile.service.js" />
+    <Content Include="Content\app\components\claimpaid\claim.paid.component.js" />
+    <Content Include="Content\app\components\claimpaid\claim.paid.controller.js" />
+    <Content Include="Content\app\components\claimpaid\claimpaid.js" />
+    <Content Include="Content\app\components\claimpaid\claim.paid.sm.html" />
+    <Content Include="Content\app\components\claimpaid\claim.paid.xs.html" />
     <Content Include="Content\app\components\components.js" />
     <Content Include="Content\app\components\dashboard\chartConfig.js" />
     <Content Include="Content\app\components\dashboard\payrollPanel.controller.js" />
@@ -463,6 +471,8 @@
     <Content Include="Content\app\components\installing\installing.less" />
     <Content Include="Content\app\components\installing\installing.service.js" />
     <Content Include="Content\app\components\payroll\payroll.less" />
+    <Content Include="Content\app\components\claimpaid\claimpaid.less" />
+    <Content Include="Content\app\components\claimpaid\claims.paid.service.js" />
     <None Include="Project_Readme.html" />
     <Content Include="wwwroot\app.bundle.js.map" />
     <Content Include="wwwroot\app.css.map" />

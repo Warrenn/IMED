@@ -41,6 +41,15 @@ namespace IMED
                 });
             });
 
+            app.Map("/claimpaid/claimpaid", spa =>
+            {
+                spa.Use((ctx, next) =>
+                {
+                    ctx.Request.Path = new PathString("/index.html");
+                    return next();
+                });
+            });
+
             var httpConfiguration = new HttpConfiguration();
             UnityConfig.RegisterComponents(httpConfiguration);
             WebApiConfig.Register(httpConfiguration);
