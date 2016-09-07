@@ -1,7 +1,6 @@
-<grid-layout user-name="$ctrl.userName"
-             heading="'PAYROLL TRACKING'"
-             search-text="$ctrl.searchText"
-             amount="$ctrl.count"
+<grid-layout heading="'PAYROLL TRACKING'"
+             grid-model="$ctrl.gridModel"
+             on-search-change = "$ctrl.onSearchChange()"  
              marker-type="'payroll'">
     <content>
         <div ng-repeat="item in $ctrl.itemsSoFar" class="list card">

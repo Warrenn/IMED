@@ -5,7 +5,6 @@ class PayrollNotSubmittedController extends GridLayoutControllerBase {
         'ngInject';
 
         super($rootScope);
-        this.userName = 'Jon Snow';
         this.serverRequest = payrollService.getNotSubmittedPayroll;
     }
 }

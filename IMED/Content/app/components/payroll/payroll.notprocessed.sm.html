@@ -1,7 +1,6 @@
-<grid-layout user-name="$ctrl.userName"
-             heading="'PAYROLL TRACKING'"
-             search-text="$ctrl.searchText"
-             amount="$ctrl.count"
+<grid-layout heading="'PAYROLL TRACKING'"
+             grid-model="$ctrl.gridModel"
+             on-search-change = "$ctrl.onSearchChange()"             
              marker-type="'payroll'">
     <content>
         <table class="gridlayout-data-table">
@@ -26,7 +25,7 @@
             </tbody>
         </table>
         <div class="gridlayout-paging-bar">
-            <ul uib-pagination total-items="$ctrl.count" ng-model="$ctrl.pageNumber" boundary-link-numbers="true" max-size="5" ng-change="$ctrl.fetchData()"></ul>
+            <ul uib-pagination total-items="$ctrl.gridModel.amount" ng-model="$ctrl.pageNumber" boundary-link-numbers="true" max-size="5" ng-change="$ctrl.fetchData()"></ul>
         </div>
     </content>
 </grid-layout>

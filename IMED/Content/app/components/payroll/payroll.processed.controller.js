@@ -5,7 +5,6 @@ class PayrollProcessedController extends GridLayoutControllerBase {
         'ngInject';
 
         super($rootScope);
-        this.userName = 'Jon Snow';
         this.serverRequest = payrollService.getProcessedPayroll;
     }
 }
