@@ -220,7 +220,6 @@
     <Compile Include="Controllers\InstallingController.cs" />
     <Compile Include="Controllers\PayrollController.cs" />
     <Compile Include="Controllers\QuotesController.cs" />
-    <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Models\ClaimsPaid.cs" />
     <Compile Include="Services\PayrollFakeService.cs" />
     <Compile Include="Services\QuotesFakeService.cs" />
@@ -428,7 +427,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Providers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
