@@ -4,6 +4,7 @@ using IMED.App_Start;
 using Microsoft.Owin;
 using Microsoft.Owin.Extensions;
 using Microsoft.Owin.StaticFiles;
+using Microsoft.Owin.StaticFiles.Infrastructure;
 using Owin;
 
 [assembly: OwinStartup(typeof(Startup))]
@@ -14,41 +15,7 @@ namespace IMED
     {
         public void Configuration(IAppBuilder app)
         {
-            app.Map("/dashboard", spa =>
-            {
-                spa.Use((ctx, next) =>
-                {
-                    ctx.Request.Path = new PathString("/index.html");
-                    return next();
-                });
-            });
-
-            app.Map("/launching/incomplete", spa =>
-            {
-                spa.Use((ctx, next) =>
-                {
-                    ctx.Request.Path = new PathString("/index.html");
-                    return next();
-                });
-            });
-
-            app.Map("/installing/installing", spa =>
-            {
-                spa.Use((ctx, next) =>
-                {
-                    ctx.Request.Path = new PathString("/index.html");
-                    return next();
-                });
-            });
-
-            app.Map("/claimpaid/claimpaid", spa =>
-            {
-                spa.Use((ctx, next) =>
-                {
-                    ctx.Request.Path = new PathString("/index.html");
-                    return next();
-                });
-            });
+            app.ConfigureRoutes();
 
             var httpConfiguration = new HttpConfiguration();
             UnityConfig.RegisterComponents(httpConfiguration);
