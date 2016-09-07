@@ -28,6 +28,24 @@ namespace IMED
                 });
             });
 
+            app.Map("/newbusinesslaunching/incomplete", spa =>
+            {
+                spa.Use((ctx, next) =>
+                {
+                    ctx.Request.Path = new PathString("/index.html");
+                    return next();
+                });
+            });
+
+            app.Map("/newbusinessinstalling/installing", spa =>
+            {
+                spa.Use((ctx, next) =>
+                {
+                    ctx.Request.Path = new PathString("/index.html");
+                    return next();
+                });
+            });
+
             var httpConfiguration = new HttpConfiguration();
             WebApiConfig.Register(httpConfiguration);
             app.UseWebApi(httpConfiguration);

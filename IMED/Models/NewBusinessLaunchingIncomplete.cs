@@ -5,7 +5,7 @@ using System.Web;
 
 namespace IMED.Models
 {
-    public class NewBusinessLaunchingIncoplete
+    public class NewBusinessLaunchingIncomplete
     {
         public int ClientID { get; set; }
 
