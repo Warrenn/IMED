@@ -1,5 +1,5 @@
 ﻿class DashboardService {
-	constructor($http, $httpParamSerializer) {
+    constructor($http, $httpParamSerializer, localStorageService) {
 		'ngInject';
 
 		this.getNewBusinessSummary = () => {
@@ -24,6 +24,23 @@
 				method: 'GET'
 			}
 		    return $http(options);
+		}
+
+		this.saveSettings= (settings) => {
+		    localStorageService.set('dashboardService.settings', settings);
+		}
+
+		this.getDashboardSettings= () => {
+		    var settings = localStorageService.get('dashboardService.settings');
+		    if (!settings) {
+		        settings = {
+		            showNewBusiness: true,
+		            showPayroll: true,
+		            showClaims: true
+		        }
+		        this.saveSettings(settings);
+		    }
+		    return settings;
 		}
 	}
 }

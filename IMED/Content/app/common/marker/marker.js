@@ -2,7 +2,7 @@ import angular from 'angular';
 import template from './marker.html';
 import './marker.less';
 
-let markerModule = angular.module('marker', [])
+let markerModule = angular.module('common.marker', [])
     .component('marker', {
         bindings: {
             markerType: '<',

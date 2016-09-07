@@ -2,7 +2,7 @@ import angular from 'angular';
 import gridLayoutComponent from './gridLayout.component';
 
 let gridLayoutModule = angular
-    .module('gridLayout', [])
+    .module('common.gridLayout', [])
     .component('gridLayout', gridLayoutComponent)
     .name;
 

@@ -1,10 +1,10 @@
-<layout user-name="$ctrl.userName">
+<layout grid-model="$ctrl.gridModel">
     <subheading class="dashboard-subheading">
         <ion-item class="bar sm-hidden lg-min60 no-activated dashboard-margin" ng-click="$ctrl.toggleFilterState()">
             <div ng-include src="'templates/filter.html'"></div>
         </ion-item>
         <label class="item item-input dashboard-margin lg-min40">
-            <input type="text" ng-model="$ctrl.searchText" placeholder="Search">
+            <input type="text" ng-model="$ctrl.gridModel.searchText" placeholder="Search">
             <i class="ion-search padding-right"></i>
         </label>
         <div class="bar item dashboard-filter-bar lg-hidden">
@@ -12,16 +12,16 @@
         </div>
     </subheading>
     <content>
-        <div class="list card am-fade-and-slide-top dashboard-margin" ng-if="$ctrl.showNewBusiness">
+        <div class="list card am-fade-and-slide-top dashboard-margin" ng-if="$ctrl.dashboardSettings.showNewBusiness">
             <div class="item item-divider">NEW BUSINESS</div>
             <new-business-panel summary="$ctrl.newBusinessSummary"></new-business-panel>
         </div>
         <div class="dashboard-split-panels">
-            <div class="list card dashboard-split-item am-fade-and-slide-top dashboard-margin" ng-if="$ctrl.showPayroll">
+            <div class="list card dashboard-split-item am-fade-and-slide-top dashboard-margin" ng-if="$ctrl.dashboardSettings.showPayroll">
                 <div class="item item-divider">PAYROLL</div>
                 <payroll-panel></payroll-panel>
             </div>
-            <div class="list card dashboard-split-item am-fade-and-slide-top dashboard-margin" ng-if="$ctrl.showClaims">
+            <div class="list card dashboard-split-item am-fade-and-slide-top dashboard-margin" ng-if="$ctrl.dashboardSettings.showClaims">
                 <div class="item item-divider">CLAIMS</div>
                 <claims-panel summary="$ctrl.claimsSummary"></claims-panel>
             </div>
@@ -30,10 +30,10 @@
 </layout>
 <script id="templates/filter.html" type="text/ng-template">
     <span class="dashboard-filter-label">FILTER YOUR VIEW</span>
-    <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showNewBusiness" value="">NEW BUSINESS</label>
-    <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.showPayroll" value="">PAYROLL</label>
-    <label><input type="checkbox" ng-model="$ctrl.showClaims" value="">CLAIMS</label>
+    <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.dashboardSettings.showNewBusiness" value="">NEW BUSINESS</label>
+    <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.dashboardSettings.showPayroll" value="">PAYROLL</label>
+    <label><input type="checkbox" ng-model="$ctrl.dashboardSettings.showClaims" value="">CLAIMS</label>
     <div class="dashboard-filter-save">
-        <a href="" class="right">Save View</a>
+        <a href="" ng-click="$ctrl.saveSettings()" class="right">Save View</a>
     </div>
 </script>
