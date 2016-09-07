@@ -4,11 +4,11 @@ import ngAnimate from 'angular-animate';
 import ngSanitize from 'angular-sanitize';
 import Common from './common/common';
 import Components from './components/components';
-import AppComponent from './app.component';
 import ionic from '../../node_modules/ionic-starter/www/lib/ionic/js/ionic';
 import ngIonic from '../../node_modules/ionic-starter/www/lib/ionic/js/ionic-angular';
 import ionicPullUp from '../../bower_components/ionic-pullup/dist/ion-pullup';
 import bootstrap from 'angular-ui-bootstrap/dist/ui-bootstrap-tpls';
+import angularLocalStorage from 'angular-local-storage/dist/angular-local-storage';
 import moment from 'moment';
 
 //HighCharts configuration
@@ -26,7 +26,8 @@ angular
         ngSanitize,
         highChartsNg,
         'ionic',
-        'ui.bootstrap'
+        'ui.bootstrap',
+        'LocalStorageModule'
     ])
     .run((mediaQueryFactory, $ionicPlatform) => {
         'ngInject';
@@ -83,6 +84,6 @@ angular
                 };
             });
     })
-    .component('app', AppComponent);
+    .component('app', {template:'<ui-view></ui-view>'});
 
 angular.bootstrap(window.document.body, ['app'], { strictDi: true });

@@ -3,13 +3,15 @@ class GridLayoutControllerBase {
         'ngInject';
 
         this.take = 10;
-        this.searchText = '';
         this.onLastPage = false;
         this.pageNumber = 1;
         this.itemsOnPage = [];
         this.itemsSoFar = [];
         this.shownItem = null;
-        this.count = 0;
+        this.gridModel = {
+            searchText: '',
+            amount: 0
+        }
 
         this.$onInit = () => {
             this.clearState();
@@ -19,15 +21,12 @@ class GridLayoutControllerBase {
                 this.clearState();
                 this.fetchData();
             });
+        };
 
-            $rootScope
-                .$watch(
-                () => {
-                    return this.searchText;
-                }, () => {
-                    this.clearState();
-                    this.fetchData();
-                });
+
+        this.onSearchChange = () => {
+            this.clearState();
+            this.fetchData();
         };
 
         this.clearState = () => {
@@ -36,7 +35,7 @@ class GridLayoutControllerBase {
             this.itemsOnPage = [];
             this.itemsSoFar = [];
             this.shownItem = null;
-            this.count = 0;
+            this.gridModel.amount = 0;
         };
 
         this.loadMoreData = () => {
@@ -46,10 +45,10 @@ class GridLayoutControllerBase {
 
         this.fetchData = () => {
             return this.serverRequest({
-                skip: ((this.pageNumber - 1) * this.take),
-                take: this.take,
-                filter: this.searchText
-            })
+                    skip: ((this.pageNumber - 1) * this.take),
+                    take: this.take,
+                    filter: this.gridModel.searchText
+                })
                 .then((callInfo) => {
                     let originalRequest = callInfo.request,
                         response = callInfo.response.data,
@@ -59,7 +58,7 @@ class GridLayoutControllerBase {
 
                     Array.prototype.splice.apply(this.itemsSoFar, args);
                     this.itemsOnPage = data;
-                    this.count = response.count;
+                    this.gridModel.amount = response.count;
                     this.onLastPage = (start + data.length) >= response.count;
                     $rootScope.$broadcast('scroll.infiniteScrollComplete');
                 });

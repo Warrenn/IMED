@@ -5,9 +5,7 @@ import template_xs from './menubar.xs.html'
 import template_lg from './menubar.lg.html'
 
 let menubarComponent = {
-    bindings: {
-        userName: '<'
-    },
+    bindings: {},
     mediaTemplates: {
         xs: template_xs,
         sm: template_xs,

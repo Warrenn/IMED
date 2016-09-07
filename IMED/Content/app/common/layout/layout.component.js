@@ -6,7 +6,6 @@ import './layout.less';
 
 let layoutComponent = {
     bindings: {
-        userName: '<',
         scrollOffset: '<',
         hasTabs: '<',
         hasGridHeader: '<',

@@ -1,9 +1,13 @@
 class MenubarController {
-    constructor($scope, $ionicPopover) {
+    constructor($scope, userProfileService, $ionicPopover) {
         'ngInject';
 
-        this.name = 'menubar';
-        $scope.userName = this.userName;
+        userProfileService
+            .getUserProfile()
+            .then((result) => {
+                $scope.userName = result.data.userName;
+            });
+
         $ionicPopover.fromTemplateUrl('templates/popover.html', {
             scope: $scope,
             animation: 'am-fade-and-slide-right',

@@ -6,11 +6,10 @@ import template_sm from './gridLayout.sm.html'
 
 let gridLayoutComponent = {
     bindings: {
-        userName: '<',
-        amount: '=',
+        onSearchChange : '&',
+        gridModel: '=',
         heading: '<',
         hasTabs: '<',
-        searchText: '=',
         markerType: '<'
     },
     mediaTemplates: {

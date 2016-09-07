@@ -5,7 +5,7 @@ import footer_template from './footer.html';
 import menubar from '../menubar/menubar';
 
 let layoutModule = angular
-    .module('layout', [
+    .module('common.layout', [
         uiRouter,
         menubar,
         'ionic-pullup'

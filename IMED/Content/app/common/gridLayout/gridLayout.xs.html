@@ -1,16 +1,15 @@
-<layout user-name="$ctrl.userName" 
-        has-grid-header="true"
+<layout has-grid-header="true"
         has-search="true"
         has-tabs="$ctrl.tabs">
     <subheading>
         <ion-header class="bar bar-clear bar-subheader has-menu-bar" ng-class="$ctrl.hasTabs?'has-tabs':''">
             <div class="gridlayout-heading-container">
-                <marker class="pull-left" marker-type="$ctrl.markerType" amount="$ctrl.amount"></marker>
+                <marker class="pull-left" marker-type="$ctrl.markerType" amount="$ctrl.gridModel.amount"></marker>
                 <h2 class="gridlayout-heading">{{$ctrl.heading}}</h2>
             </div>
             <div>
                 <label class="item item-input item-input-inset">
-                    <input type="text" ng-model="$ctrl.searchText" placeholder="Search" ng-model-options="{ debounce: 500 }">
+                    <input type="text" ng-model="$ctrl.gridModel.searchText" placeholder="Search" ng-model-options="{ debounce: 500 }" ng-change="$ctrl.onSearchChange()">
                     <i class="ion-search padding-right"></i>
                 </label>
             </div>

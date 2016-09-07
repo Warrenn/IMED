@@ -4,32 +4,39 @@ class DashboardController{
     constructor(dashboardService) {
         'ngInject';
 
-        this.userName = 'Jon Snow';
-        this.searchText = '';
         this.filterState = 'COLLAPSED';
-        this.showNewBusiness = true;
-        this.showPayroll = true;
-        this.showClaims = true;
+        this.dashboardSettings = {};
         this.newBusinessSummary = {};
         this.claimsSummary = {};
+        this.gridModel = {};
 
-        dashboardService
-            .getNewBusinessSummary()
-            .then((results) => {
-                this.newBusinessSummary = results.data;
-            });
+        this.$onInit = () => {
 
-        dashboardService
-            .getClaimsSummary()
-            .then((results) => {
-                this.claimsSummary = results.data;
-            });
-    }
+            dashboardService
+                .getNewBusinessSummary()
+                .then((results) => {
+                    this.newBusinessSummary = results.data;
+                });
 
-    toggleFilterState() {
-        this.filterState = this.filterState === 'EXPANDED' ?
-            'COLLAPSED' :
-            'EXPANDED';
+            dashboardService
+                .getClaimsSummary()
+                .then((results) => {
+                    this.claimsSummary = results.data;
+                });
+
+            this.dashboardSettings = dashboardService.getDashboardSettings();
+        };
+
+        this.saveSettings = () => {
+            dashboardService
+                .saveSettings(this.dashboardSettings);
+        }
+
+        this.toggleFilterState = () => {
+            this.filterState = this.filterState === 'EXPANDED' ?
+                'COLLAPSED' :
+                'EXPANDED';
+        }
     }
 }
 

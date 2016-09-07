@@ -5,6 +5,7 @@ import GridLayout from  './gridLayout/gridLayout'
 import Marker from  './marker/marker'
 import Menubar from  './menubar/menubar'
 import Filters from  './filters/filters'
+import UserProfile from  './userProfile/userProfile'
 import './common.less';
 
 let commonModule = angular
@@ -14,7 +15,8 @@ let commonModule = angular
         Marker,
         Menubar,
         Filters,
-        GridLayout
+        GridLayout,
+        UserProfile
     ])
     .name;
 

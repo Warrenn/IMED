@@ -1,12 +1,12 @@
-<layout user-name="$ctrl.userName">
+<layout>
     <subheading>
         <div class="gridlayout-subheading">
             <div class="gridlayout-heading-container gridlayout-heading-container-left">
-                <marker class="pull-left"  marker-type="$ctrl.markerType" amount="$ctrl.amount"></marker>
+                <marker class="pull-left"  marker-type="$ctrl.markerType" amount="$ctrl.gridModel.amount"></marker>
                 <h2 class="gridlayout-heading">{{$ctrl.heading}}</h2>
             </div>
             <label class="item item-input dashboard-margin gridlayout-search-container-right">
-                <input type="text" ng-model="$ctrl.searchText" placeholder="Search" ng-model-options="{debounce: 500}">
+                <input type="text" ng-model="$ctrl.gridModel.searchText" placeholder="Search" ng-model-options="{debounce: 500}" ng-change="$ctrl.onSearchChange()">
                 <i class="ion-search padding-right"></i>
             </label>
         </div>
