@@ -1,0 +1,32 @@
+<grid-layout grid-model="$ctrl.gridModel"
+             on-search-change = "$ctrl.onSearchChange()"
+             heading="'NEW BUSINESS INSTALLING'"
+             marker-type="'install'">
+    <content>
+        <div ng-repeat="item in $ctrl.itemsSoFar" class="list card">
+            <ion-item class="bar gridlayout-data-item-container" ng-click="$ctrl.toggleDetails(item)">
+                <div class="icon gridlayout-item-status "
+                     ng-class="['ion-android-person']">
+                </div>
+                <a href="" class="gridlayout-data-item-title">{{item.clientName}}</a>
+                <i ng-class="$ctrl.isDetailsShown(item)?'ion-chevron-up':'ion-chevron-down'" class="button button-icon gridlayout-data-item-title-icon"></i>
+            </ion-item>
+            <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
+                <label class="">Quote number</label>
+                <div class="">{{item.quoteNumber}}</div>
+            </ion-item>
+            <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
+                <label>Scheme Number</label>
+                <div class="">{{item.schemaNumber}}</div>
+            </ion-item>
+
+            <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
+                <label>Scheme Name</label>
+                <div class="">{{item.schemaName}}</div>
+            </ion-item>
+        </div>
+        <ion-infinite-scroll distance="2"
+                             on-infinite="$ctrl.loadMoreData()"
+                             ng-if="!$ctrl.onLastPage"></ion-infinite-scroll>
+    </content>
+</grid-layout>

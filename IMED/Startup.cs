@@ -28,15 +28,7 @@ namespace IMED
                 });
             });
 
-            app.Map("/payroll/notprocessed", spa =>
-            {
-                spa.Use((ctx, next) =>
-                {
-                    ctx.Request.Path = new PathString("/index.html");
-                    return next();
-                });
-            });
-            app.Map("/payroll/processed", spa =>
+            app.Map("/launching/incomplete", spa =>
             {
                 spa.Use((ctx, next) =>
                 {
@@ -45,7 +37,7 @@ namespace IMED
                 });
             });
 
-            app.Map("/payroll/notsubmitted", spa =>
+            app.Map("/installing/installing", spa =>
             {
                 spa.Use((ctx, next) =>
                 {

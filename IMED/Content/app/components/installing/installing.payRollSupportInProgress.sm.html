@@ -1,0 +1,36 @@
+<<grid-layout grid-model="$ctrl.gridModel"
+             heading="'NEW BUSINESS INSTALLING'"
+               on-search-change="$ctrl.onSearchChange()"
+             marker-type="'install'">
+    <content>
+        <table class="gridlayout-data-table">
+            <thead>
+                <tr>
+                    <td class="gridlayout-data-table-heading">Client Name</td>
+                    <td class="gridlayout-data-table-heading">Quote Number</td>
+                    <td class="gridlayout-data-table-heading">Scheme Number</td>
+                    <td class="gridlayout-data-table-heading">Scheme Name</td>
+                    <td class="gridlayout-data-table-heading">Pay Point Namer</td>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in $ctrl.itemsOnPage" ng-class="{'gridlayout-data-table-row':$odd,'gridlayout-data-table-row-alternate':$even}">
+                    <td class="gridlayout-data-table-value">
+                        <div class="icon gridlayout-item-status "
+                             ng-class="['ion-android-person']">
+                        </div>
+                        <span class="gridlayout-data-item-title">{{item.clientName}}</span>
+                    </td>
+                    <td class="gridlayout-data-table-value gridlayout-data-table-value-borders">{{item.quoteNumber}}</td>
+                    <td class="gridlayout-data-table-value gridlayout-data-table-value-borders">{{item.schemeNumber}}</td>
+                    <td class="gridlayout-data-table-value gridlayout-data-table-value-borders">{{item.schemeName}}</td>
+                    <td class="gridlayout-data-table-value gridlayout-data-table-value-borders">{{item.payPointNamer}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="gridlayout-paging-bar">
+            <ul uib-pagination total-items="$ctrl.gridModel.amount" ng-model="$ctrl.pageNumber" boundary-link-numbers="true" max-size="5" ng-change="$ctrl.fetchData()"></ul>
+        </div>
+    </content>
+</grid-layout>

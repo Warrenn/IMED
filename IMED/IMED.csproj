@@ -50,6 +50,10 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Faker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Faker.1.2\lib\Faker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Faker.NET4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Faker.Net.1.0.3\lib\net40\Faker.NET4.dll</HintPath>
       <Private>True</Private>
@@ -184,12 +188,16 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ClaimsPaidController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\LaunchingController.cs" />
+    <Compile Include="Controllers\InstallingController.cs" />
     <Compile Include="Controllers\PayrollController.cs" />
     <Compile Include="Controllers\QuotesController.cs" />
     <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Models\ClaimsPaid.cs" />
     <Compile Include="Models\ClaimsSummary.cs" />
     <Compile Include="Models\IssuedQuote.cs" />
+    <Compile Include="Models\LaunchingIncomplete.cs" />
+    <Compile Include="Models\LaunchingCompleted.cs" />
     <Compile Include="Models\NewBusinessSummary.cs" />
     <Compile Include="Models\PagedRequest.cs" />
     <Compile Include="Models\PagedResult.cs" />
@@ -197,6 +205,8 @@
     <Compile Include="Models\PayrollNotSubmitted.cs" />
     <Compile Include="Models\PayrollProcessed.cs" />
     <Compile Include="Models\PayrollSummary.cs" />
+    <Compile Include="Models\InstallingPayRollSupportInProgress.cs" />
+    <Compile Include="Models\InstallingSchemeInstalled.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -301,8 +311,8 @@
     <Content Include="Content\app\common\menubar\menubar.js" />
     <Content Include="Content\app\common\menubar\menubar.lg.html" />
     <Content Include="Content\app\common\menubar\menubar.xs.html" />
-    <Content Include="Content\app\common\userProfile\userProfile.service.js" />
     <Content Include="Content\app\common\userProfile\userProfile.js" />
+    <Content Include="Content\app\common\userProfile\userProfile.service.js" />
     <Content Include="Content\app\components\claimpaid\claim.paid.component.js" />
     <Content Include="Content\app\components\claimpaid\claim.paid.controller.js" />
     <Content Include="Content\app\components\claimpaid\claimpaid.js" />
@@ -321,20 +331,39 @@
     <Content Include="Content\app\components\dashboard\payrollPanel.html" />
     <Content Include="Content\app\components\dashboard\newBusinessPanel.html" />
     <Content Include="Content\app\components\dashboard\dashboard.service.js" />
+    <Content Include="Content\app\components\installing\installing.schemeInstalled.xs.html" />
+    <Content Include="Content\app\components\installing\installing.payRollSupportInProgress.sm.html" />
+    <Content Include="Content\app\components\installing\installing.schemeInstalled.controller.js" />
+    <Content Include="Content\app\components\installing\installing.schemeInstalled.component.js" />
+    <Content Include="Content\app\components\installing\installing.payRollSupportInProgress.component.js" />
+    <Content Include="Content\app\components\installing\installing.payRollSupportInProgress.controller.js" />
+    <Content Include="Content\app\components\installing\installing.js" />
+    <Content Include="Content\app\components\installing\installing.schemeInstalled.sm.html" />
+    <Content Include="Content\app\components\installing\installing.payRollSupportInProgress.xs.html" />
+    <Content Include="Content\app\components\launching\launching.service.js" />
+    <Content Include="Content\app\components\launching\launching.incomplete.component.js" />
+    <Content Include="Content\app\components\launching\launching.incomplete.controller.js" />
+    <Content Include="Content\app\components\launching\launching.completed.sm.html" />
+    <Content Include="Content\app\components\launching\launching.completed.xs.html" />
+    <Content Include="Content\app\components\launching\launching.completed.component.js" />
+    <Content Include="Content\app\components\launching\launching.completed.controller.js" />
+    <Content Include="Content\app\components\launching\launching.js" />
+    <Content Include="Content\app\components\launching\launching.incomplete.sm.html" />
+    <Content Include="Content\app\components\launching\launching.incomplete.xs.html" />
+    <Content Include="Content\app\components\payroll\payroll.js" />
     <Content Include="Content\app\components\payroll\payroll.notprocessed.component.js" />
+    <Content Include="Content\app\components\payroll\payroll.notprocessed.controller.js" />
     <Content Include="Content\app\components\payroll\payroll.notprocessed.sm.html" />
     <Content Include="Content\app\components\payroll\payroll.notprocessed.xs.html" />
+    <Content Include="Content\app\components\payroll\payroll.notsubmitted.component.js" />
+    <Content Include="Content\app\components\payroll\payroll.notsubmitted.controller.js" />
     <Content Include="Content\app\components\payroll\payroll.notsubmitted.sm.html" />
     <Content Include="Content\app\components\payroll\payroll.notsubmitted.xs.html" />
+    <Content Include="Content\app\components\payroll\payroll.processed.component.js" />
+    <Content Include="Content\app\components\payroll\payroll.processed.controller.js" />
+    <Content Include="Content\app\components\payroll\payroll.processed.sm.html" />
     <Content Include="Content\app\components\payroll\payroll.processed.xs.html" />
     <Content Include="Content\app\components\payroll\payroll.service.js" />
-    <Content Include="Content\app\components\payroll\payroll.notsubmitted.component.js" />
-    <Content Include="Content\app\components\payroll\payroll.processed.component.js" />
-    <Content Include="Content\app\components\payroll\payroll.notprocessed.controller.js" />
-    <Content Include="Content\app\components\payroll\payroll.notsubmitted.controller.js" />
-    <Content Include="Content\app\components\payroll\payroll.processed.controller.js" />
-    <Content Include="Content\app\components\payroll\payroll.js" />
-    <Content Include="Content\app\components\payroll\payroll.processed.sm.html" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.component.js" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.controller.js" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.js" />
@@ -410,6 +439,9 @@
     <Content Include="Content\app\components\quotesIssued\quotesIssued.less" />
     <Content Include="Content\app\common\ionic-bar.less" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.service.js" />
+    <Content Include="Content\app\components\launching\launching.less" />
+    <Content Include="Content\app\components\installing\installing.less" />
+    <Content Include="Content\app\components\installing\installing.service.js" />
     <Content Include="Content\app\components\payroll\payroll.less" />
     <Content Include="Content\app\components\claimpaid\claimpaid.less" />
     <Content Include="Content\app\components\claimpaid\claims.paid.service.js" />
