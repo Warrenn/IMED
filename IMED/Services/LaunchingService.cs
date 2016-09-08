@@ -5,6 +5,7 @@ using IMED.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace IMED.Services
@@ -40,7 +41,7 @@ namespace IMED.Services
              .Build();
         }
 
-        public PagedResult<LaunchingCompleted> Completed(PagedRequest<string> request)
+        public async Task<PagedResult<LaunchingCompleted>> Completed(PagedRequest<string> request)
         {
 
             var allMatches = LaunchingCompleted
@@ -51,14 +52,14 @@ namespace IMED.Services
             var count = allMatches.Count();
             var data = allMatches.Skip(request.Skip).Take(request.Take);
 
-            return new PagedResult<LaunchingCompleted>
+            return await Task.FromResult(new PagedResult<LaunchingCompleted>
             {
                 Count = count,
                 Data = data
-            };
+            });
         }
 
-        public PagedResult<LaunchingIncomplete> Incomplete(PagedRequest<string> request)
+        public async Task<PagedResult<LaunchingIncomplete>> Incomplete(PagedRequest<string> request)
         {
             var allMatches = LaunchingInComplete
                             .Where(q =>
@@ -68,11 +69,11 @@ namespace IMED.Services
             var count = allMatches.Count();
             var data = allMatches.Skip(request.Skip).Take(request.Take);
 
-            return new PagedResult<LaunchingIncomplete>
+            return await Task.FromResult(new PagedResult<LaunchingIncomplete>
             {
                 Count = count,
                 Data = data
-            };
+            });
         }
     }
 }

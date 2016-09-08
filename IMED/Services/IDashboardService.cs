@@ -9,8 +9,8 @@ namespace IMED.Services
 {
     public interface IDashboardService
     {
-        NewBusinessSummary GetNewBusinessSummary();
-        PayrollSummary GetPayrollSummary();
-        ClaimsSummary GetClaimsSummary();
+        Task<NewBusinessSummary> GetNewBusinessSummary();
+        Task<PayrollSummary> GetPayrollSummary();
+        Task<ClaimsSummary> GetClaimsSummary();
     }
 }

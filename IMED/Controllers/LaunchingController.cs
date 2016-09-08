@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace IMED.Controllers
@@ -23,15 +24,15 @@ namespace IMED.Controllers
         }
 
         [HttpGet]
-        public PagedResult<LaunchingCompleted> Completed([FromUri]PagedRequest<string> request)
+        public async Task<PagedResult<LaunchingCompleted>> Completed([FromUri]PagedRequest<string> request)
         {
-            return service.Completed(request);
+            return await service.Completed(request);
         }
 
         [HttpGet]
-        public PagedResult<LaunchingIncomplete> Incomplete([FromUri]PagedRequest<string> request)
+        public async Task<PagedResult<LaunchingIncomplete>> Incomplete([FromUri]PagedRequest<string> request)
         {
-            return service.Incomplete(request);
+            return await service.Incomplete(request);
         }
     }
 }

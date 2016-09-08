@@ -8,7 +8,7 @@ namespace IMED.Services
 {
     public interface IUserProfileService
     {
-        UserProfile GetUserProfile();
+        Task<UserProfile> GetUserProfile();
 
         Task<ClaimsIdentity> CreateIdentity(IOwinContext context,string IMEDCode);
 

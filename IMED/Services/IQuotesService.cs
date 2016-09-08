@@ -1,10 +1,11 @@
-﻿using System.Web.Http;
+﻿using System.Threading.Tasks;
+using System.Web.Http;
 using IMED.Models;
 
 namespace IMED.Services
 {
     public interface IQuotesService
     {
-        PagedResult<IssuedQuote> GetIssuedQoutes([FromUri]PagedRequest<string> request);
+        Task<PagedResult<IssuedQuote>> GetIssuedQoutes([FromUri]PagedRequest<string> request);
     }
 }

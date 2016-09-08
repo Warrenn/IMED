@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using IMED.Models;
 using Fare;
@@ -46,7 +47,7 @@ namespace IMED.Services
              .With(q => q.SchemeName = Name.FullName(NameFormats.Standard))
              .Build();
         }
-        public PagedResult<InstallingPayRollSupportInProgress> GetPayRollSupportInProgress(PagedRequest<string> request)
+        public async Task<PagedResult<InstallingPayRollSupportInProgress>> GetPayRollSupportInProgress(PagedRequest<string> request)
         {
 
             var allMatches = payRollSupportProgress
@@ -57,14 +58,14 @@ namespace IMED.Services
             var count = allMatches.Count();
             var data = allMatches.Skip(request.Skip).Take(request.Take);
 
-            return new PagedResult<InstallingPayRollSupportInProgress>
+            return await Task.FromResult(new PagedResult<InstallingPayRollSupportInProgress>
             {
                 Count = count,
                 Data = data
-            };
+            });
         }
 
-        public PagedResult<InstallingSchemeInstalled> GetSchemeInstalled(PagedRequest<string> request)
+        public async Task<PagedResult<InstallingSchemeInstalled>> GetSchemeInstalled(PagedRequest<string> request)
         {
             var allMatches = SchemedInstalled
                 .Where(q =>
@@ -74,11 +75,11 @@ namespace IMED.Services
             var count = allMatches.Count();
             var data = allMatches.Skip(request.Skip).Take(request.Take);
 
-            return new PagedResult<InstallingSchemeInstalled>
+            return await Task.FromResult(new PagedResult<InstallingSchemeInstalled>
             {
                 Count = count,
                 Data = data
-            };
+            });
         }
     }
 }

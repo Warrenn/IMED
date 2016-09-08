@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Threading.Tasks;
+using System.Web.Http;
 using IMED.Models;
 using IMED.Security;
 using IMED.Services;
@@ -16,9 +17,9 @@ namespace IMED.Controllers
         }
 
         [HttpGet]
-        public UserProfile GetUserProfile()
+        public async Task<UserProfile> GetUserProfile()
         {
-            return service.GetUserProfile();
+            return await service.GetUserProfile();
         }
     }
 }

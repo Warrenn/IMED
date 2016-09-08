@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Threading.Tasks;
+using System.Web.Http;
 using IMED.Models;
 using IMED.Services;
 
@@ -15,21 +16,21 @@ namespace IMED.Controllers
         }
 
         [HttpGet]
-        public NewBusinessSummary GetNewBusinessSummary()
+        public async Task<NewBusinessSummary> GetNewBusinessSummary()
         {
-            return service.GetNewBusinessSummary();
+            return await service.GetNewBusinessSummary();
         }
 
         [HttpGet]
-        public PayrollSummary GetPayrollSummary()
+        public async Task<PayrollSummary> GetPayrollSummary()
         {
-            return service.GetPayrollSummary();
+            return await service.GetPayrollSummary();
         }
 
         [HttpGet]
-        public ClaimsSummary GetClaimsSummary()
+        public async Task<ClaimsSummary> GetClaimsSummary()
         {
-            return service.GetClaimsSummary();
+            return await service.GetClaimsSummary();
         }
     }
 }

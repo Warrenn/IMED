@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using IMED.Models;
 using Fare;
@@ -32,7 +33,7 @@ namespace IMED.Services
                 .Build();
         }
 
-        public PagedResult<ClaimsPaid> GetPaidClaims(PagedRequest<string> request)
+        public async Task<PagedResult<ClaimsPaid>> GetPaidClaims(PagedRequest<string> request)
         {
             var allMatches = ClaimPaid
                 .Where(q =>
@@ -45,11 +46,11 @@ namespace IMED.Services
             var count = allMatches.Count();
             var data = allMatches.Skip(request.Skip).Take(request.Take);
 
-            return new PagedResult<ClaimsPaid>
+            return await Task.FromResult(new PagedResult<ClaimsPaid>
             {
                 Count = count,
                 Data = data
-            };
+            });
         }
     }
 }

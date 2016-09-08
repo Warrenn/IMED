@@ -9,7 +9,7 @@ namespace IMED.Services
 {
     public interface IInstallingService
     {
-        PagedResult<InstallingPayRollSupportInProgress> GetPayRollSupportInProgress(PagedRequest<string> request);
-        PagedResult<InstallingSchemeInstalled> GetSchemeInstalled(PagedRequest<string> request);
+        Task<PagedResult<InstallingPayRollSupportInProgress>> GetPayRollSupportInProgress(PagedRequest<string> request);
+        Task<PagedResult<InstallingSchemeInstalled>> GetSchemeInstalled(PagedRequest<string> request);
     }
 }

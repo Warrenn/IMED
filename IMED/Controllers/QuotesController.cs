@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Threading.Tasks;
+using System.Web.Http;
 using IMED.Models;
 using IMED.Services;
 
@@ -15,9 +16,9 @@ namespace IMED.Controllers
         }
 
         [HttpGet]
-        public PagedResult<IssuedQuote> GetIssuedQoutes([FromUri]PagedRequest<string> request)
+        public async Task<PagedResult<IssuedQuote>> GetIssuedQoutes([FromUri]PagedRequest<string> request)
         {
-            return service.GetIssuedQoutes(request);
+            return await service.GetIssuedQoutes(request);
         }
     }
 }

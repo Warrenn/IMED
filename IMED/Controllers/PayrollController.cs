@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Threading.Tasks;
+using System.Web.Http;
 using IMED.Models;
 using IMED.Services;
 
@@ -15,21 +16,21 @@ namespace IMED.Controllers
         }
 
         [HttpGet]
-        public PagedResult<PayrollNotSubmitted> GetNotSubmittedPayroll([FromUri]PagedRequest<string> request)
+        public async Task<PagedResult<PayrollNotSubmitted>> GetNotSubmittedPayroll([FromUri]PagedRequest<string> request)
         {
-            return service.GetNotSubmittedPayroll(request);
+            return await service.GetNotSubmittedPayroll(request);
         }
 
         [HttpGet]
-        public PagedResult<PayrollNotProcessed> GetNotProcessedPayroll([FromUri]PagedRequest<string> request)
+        public async Task<PagedResult<PayrollNotProcessed>> GetNotProcessedPayroll([FromUri]PagedRequest<string> request)
         {
-            return service.GetNotProcessedPayroll(request);
+            return await service.GetNotProcessedPayroll(request);
         }
 
         [HttpGet]
-        public PagedResult<PayrollProcessed> GetProcessedPayroll([FromUri]PagedRequest<string> request)
+        public async Task<PagedResult<PayrollProcessed>> GetProcessedPayroll([FromUri]PagedRequest<string> request)
         {
-            return service.GetProcessedPayroll(request);
+            return await service.GetProcessedPayroll(request);
         }
     }
 }

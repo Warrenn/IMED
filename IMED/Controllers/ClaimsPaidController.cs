@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using Faker;
 using Fare;
@@ -23,9 +24,9 @@ namespace IMED.Controllers
         }
 
         [HttpGet]
-        public PagedResult<ClaimsPaid> GetPaidClaims([FromUri]PagedRequest<string> request)
+        public async Task<PagedResult<ClaimsPaid>> GetPaidClaims([FromUri]PagedRequest<string> request)
         {
-            return service.GetPaidClaims(request);
+            return await service.GetPaidClaims(request);
         }
     }
 }

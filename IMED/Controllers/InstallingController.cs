@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace IMED.Controllers
@@ -23,14 +24,14 @@ namespace IMED.Controllers
         }
 
         [HttpGet]
-        public PagedResult<InstallingPayRollSupportInProgress> GetPayRollSupportInProgress([FromUri]PagedRequest<string> request)
+        public async Task<PagedResult<InstallingPayRollSupportInProgress>> GetPayRollSupportInProgress([FromUri]PagedRequest<string> request)
         {
-            return service.GetPayRollSupportInProgress(request);
+            return await service.GetPayRollSupportInProgress(request);
         }
         [HttpGet]
-        public PagedResult<InstallingSchemeInstalled> GetSchemeInstalled([FromUri]PagedRequest<string> request)
+        public async Task<PagedResult<InstallingSchemeInstalled>> GetSchemeInstalled([FromUri]PagedRequest<string> request)
         {
-            return service.GetSchemeInstalled(request);
+            return await service.GetSchemeInstalled(request);
         }
     }
 }

@@ -9,7 +9,6 @@ namespace IMED.Services
 {
     public interface IClaimsPaidService
     {
-
-        PagedResult<ClaimsPaid> GetPaidClaims(PagedRequest<string> request);
+        Task<PagedResult<ClaimsPaid>> GetPaidClaims(PagedRequest<string> request);
     }
 }

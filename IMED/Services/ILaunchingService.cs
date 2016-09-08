@@ -9,7 +9,7 @@ namespace IMED.Services
 {
     public interface ILaunchingService
     {
-        PagedResult<LaunchingCompleted> Completed(PagedRequest<string> request);
-        PagedResult<LaunchingIncomplete> Incomplete(PagedRequest<string> request);
+        Task<PagedResult<LaunchingCompleted>> Completed(PagedRequest<string> request);
+        Task<PagedResult<LaunchingIncomplete>> Incomplete(PagedRequest<string> request);
     }
 }

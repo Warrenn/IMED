@@ -25,13 +25,13 @@ namespace IMED.Services
                 : new DateTimeOffset(DateTime.Now, expiration);
         }
 
-        public UserProfile GetUserProfile()
+        public Task<UserProfile> GetUserProfile()
         {
-            return new UserProfile
+            return Task.FromResult(new UserProfile
             {
                 UserName = ClaimsPrincipal.Current.Identity.Name,
                 WelcomeMessage = "Welcome"
-            };
+            });
         }
 
         private static Task<ClaimsIdentity> CreateFromContext(IOwinContext context, string IMEDCode)
