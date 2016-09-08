@@ -8,6 +8,7 @@ using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
+using Owin;
 
 namespace IMED
 {
@@ -24,7 +25,7 @@ namespace IMED
             jsonSettings.Converters.Add(new StringEnumConverter(true));
         }
 
-        public static void Register(HttpConfiguration config)
+        public static void RegisterWebApi(this IAppBuilder app, HttpConfiguration config)
         {
             ConfigureFormatters(config);
 
@@ -34,6 +35,8 @@ namespace IMED
                 routeTemplate: "api/{controller}/{action}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            app.UseWebApi(config);
         }
     }
 }

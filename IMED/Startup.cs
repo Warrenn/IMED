@@ -4,10 +4,13 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
+using Elmah.Contrib.WebApi;
 using IMED;
 using IMED.App_Start;
 using IMED.Models;
 using IMED.Security;
+using MB.Owin.Logging.Log4Net;
 using Microsoft.Owin;
 using Microsoft.Owin.Extensions;
 using Microsoft.Owin.Security;
@@ -30,14 +33,11 @@ namespace IMED
             var container = UnityConfig.RegisterComponents(httpConfiguration);
             var options = new FileServerOptions();
 
+            app.RegisterLogging(httpConfiguration);
             app.ConfigureSecurity(container);
             app.RegisterRoutes();
-
-            WebApiConfig.Register(httpConfiguration);
-            app.UseWebApi(httpConfiguration);
-
-            FileServerConfig.Register(options);
-            app.UseFileServer(options);
+            app.RegisterWebApi(httpConfiguration);
+            app.RegisterFileServer(options);
 
             app.UseStageMarker(PipelineStage.MapHandler);
         }
