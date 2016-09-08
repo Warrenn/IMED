@@ -6,6 +6,6 @@ namespace IMED.Services
 {
     public interface IQuotesService
     {
-        Task<PagedResult<IssuedQuote>> GetIssuedQoutes([FromUri]PagedRequest<string> request);
+        Task<PagedResult<IssuedQuote>> GetIssuedQoutes(PagedRequest<string> request);
     }
 }

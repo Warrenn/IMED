@@ -61,7 +61,7 @@ namespace IMED.Services
 
         public Task<string> GetIMEDCode(IOwinContext context)
         {
-            return Task.FromResult("code");
+            return Task.FromResult("");
         }
     }
 }
