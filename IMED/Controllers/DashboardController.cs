@@ -1,42 +1,34 @@
 ﻿using System.Web.Http;
 using IMED.Models;
+using IMED.Services;
 
 namespace IMED.Controllers
 {
     public class DashboardController : ApiController
     {
+        private IDashboardService service;
+
+        public DashboardController(IDashboardService service)
+        {
+            this.service = service;
+        }
+
         [HttpGet]
         public NewBusinessSummary GetNewBusinessSummary()
         {
-            return new NewBusinessSummary()
-            {
-                Installing = 6,
-                Launching = 12,
-                PayrollTracking = 3,
-                QuotesIssued = 5
-            };
+            return service.GetNewBusinessSummary();
         }
 
         [HttpGet]
         public PayrollSummary GetPayrollSummary()
         {
-            return new PayrollSummary
-            {
-                PayrollOverDue = 2,
-                NotSubmitted = 5,
-                Submitted = 3
-            };
+            return service.GetPayrollSummary();
         }
 
         [HttpGet]
         public ClaimsSummary GetClaimsSummary()
         {
-            return new ClaimsSummary
-            {
-                Draft = 5,
-                Paid = 2,
-                Processing = 6
-            };
+            return service.GetClaimsSummary();
         }
     }
 }
