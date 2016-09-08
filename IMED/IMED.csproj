@@ -399,6 +399,10 @@
     <Content Include="Content\app\components\quotesIssued\quotesIssued.js" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.sm.html" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.xs.html" />
+    <Content Include="Content\app\components\welcomepage\welcome.page.component.js" />
+    <Content Include="Content\app\components\welcomepage\welcome.page.controller.js" />
+    <Content Include="Content\app\components\welcomepage\welcomepage.js" />
+    <Content Include="Content\app\components\welcomepage\welcome.page.html" />
     <Content Include="Content\index.html" />
     <Content Include="favicon.ico" />
     <Content Include="gulpfile.babel.js" />
@@ -474,6 +478,7 @@
     <Content Include="Content\app\components\payroll\payroll.less" />
     <Content Include="Content\app\components\claimpaid\claimpaid.less" />
     <Content Include="Content\app\components\claimpaid\claims.paid.service.js" />
+    <Content Include="Content\app\components\welcomepage\welcomepage.less" />
     <None Include="Project_Readme.html" />
     <Content Include="wwwroot\app.bundle.js.map" />
     <Content Include="wwwroot\app.css.map" />

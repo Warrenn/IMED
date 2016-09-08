@@ -5,6 +5,7 @@ import Launching from './launching/launching';
 import Installing from './installing/installing';
 import Payroll from './payroll/payroll';
 import ClaimPaid from './claimpaid/claimpaid';
+import WelcomePage from './welcomepage/welcomepage';
 
 
 let componentModule = angular
@@ -14,7 +15,8 @@ let componentModule = angular
         Launching,
         Installing,
         Payroll,
-        ClaimPaid
+        ClaimPaid,
+        WelcomePage
     ])
     .name;
 
