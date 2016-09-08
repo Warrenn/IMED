@@ -212,7 +212,9 @@
     <Compile Include="Services\DashboardService.cs" />
     <Compile Include="Services\IDashboardService.cs" />
     <Compile Include="Services\IInstallingService.cs" />
+    <Compile Include="Services\ILynchingService.cs" />
     <Compile Include="Services\InstallingService.cs" />
+    <Compile Include="Services\LynchingService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
