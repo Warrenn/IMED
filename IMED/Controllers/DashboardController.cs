@@ -8,11 +8,6 @@ namespace IMED.Controllers
     {
         private IDashboardService service;
 
-        public DashboardController():this(new DashboardService())
-        {
-
-        }
-
         public DashboardController(IDashboardService service)
         {
             this.service = service;

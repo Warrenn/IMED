@@ -16,11 +16,6 @@ namespace IMED.Controllers
     {
         private IInstallingService service;
 
-        public InstallingController():this(new InstallingService())
-        {
-
-        }
-
         public InstallingController(IInstallingService service)
         {
             this.service = service;

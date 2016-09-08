@@ -213,6 +213,9 @@
     <Compile Include="Controllers\ClaimsPaidController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\UserProfileController.cs" />
+    <Compile Include="Services\ClaimsPaidService.cs" />
+    <Compile Include="Services\IClaimsPaidService.cs" />
+    <Compile Include="Services\ILaunchingService.cs" />
     <Compile Include="Services\IPayrollService.cs" />
     <Compile Include="Services\IQuotesService.cs" />
     <Compile Include="Services\IUserProfileService.cs" />
@@ -221,6 +224,7 @@
     <Compile Include="Controllers\PayrollController.cs" />
     <Compile Include="Controllers\QuotesController.cs" />
     <Compile Include="Models\ClaimsPaid.cs" />
+    <Compile Include="Services\LaunchingService.cs" />
     <Compile Include="Services\PayrollFakeService.cs" />
     <Compile Include="Services\QuotesFakeService.cs" />
     <Compile Include="Services\UserProfileFakeService.cs" />
@@ -242,9 +246,7 @@
     <Compile Include="Services\DashboardService.cs" />
     <Compile Include="Services\IDashboardService.cs" />
     <Compile Include="Services\IInstallingService.cs" />
-    <Compile Include="Services\ILynchingService.cs" />
     <Compile Include="Services\InstallingService.cs" />
-    <Compile Include="Services\LynchingService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -419,7 +421,9 @@
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="spec.bundle.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

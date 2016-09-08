@@ -14,14 +14,9 @@ namespace IMED.Controllers
 {
     public class LaunchingController : ApiController
     {
-        private ILynchingService service;
+        private ILaunchingService service;
 
-        public LaunchingController():this(new LynchingService())
-        {
-
-        }
-
-        public LaunchingController(ILynchingService service)
+        public LaunchingController(ILaunchingService service)
         {
             this.service = service;
         }
