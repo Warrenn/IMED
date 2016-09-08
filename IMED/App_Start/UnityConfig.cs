@@ -14,6 +14,10 @@ namespace IMED
             container.RegisterType<IQuotesService, QuotesFakeService>();
             container.RegisterType<IPayrollService, PayrollFakeService>();
             container.RegisterType<IUserProfileService, UserProfileFakeService>();
+            container.RegisterType<IDashboardService, DashboardService>();
+            container.RegisterType<ILaunchingService, LaunchingService>();
+            container.RegisterType<IClaimsPaidService, ClaimsPaidService>();
+            container.RegisterType<IInstallingService, InstallingService>();
 
             configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
