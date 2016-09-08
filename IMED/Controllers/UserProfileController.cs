@@ -1,22 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+﻿using System.Web.Http;
 using IMED.Models;
+using IMED.Services;
 
 namespace IMED.Controllers
 {
     public class UserProfileController : ApiController
     {
+        private readonly IUserProfileService service;
+
+        public UserProfileController(IUserProfileService service)
+        {
+            this.service = service;
+        }
+
         [HttpGet]
         public UserProfile GetUserProfile()
         {
-            return new UserProfile
-            {
-                UserName = "Johnny Snot"
-            };
+            return service.GetUserProfile();
         }
     }
 }

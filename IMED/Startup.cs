@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
+﻿using System.Web.Http;
+using IMED;
 using IMED.App_Start;
 using Microsoft.Owin;
-using Microsoft.Owin.FileSystems;
+using Microsoft.Owin.Extensions;
 using Microsoft.Owin.StaticFiles;
 using Microsoft.Owin.StaticFiles.Infrastructure;
 using Owin;
-using System.Web.Http;
-using Microsoft.Owin.Extensions;
 
-[assembly: OwinStartup(typeof(IMED.Startup))]
+[assembly: OwinStartup(typeof(Startup))]
 
 namespace IMED
 {
@@ -19,50 +15,17 @@ namespace IMED
     {
         public void Configuration(IAppBuilder app)
         {
-            app.Map("/dashboard", spa =>
-            {
-                spa.Use((ctx, next) =>
-                {
-                    ctx.Request.Path = new PathString("/index.html");
-                    return next();
-                });
-            });
-
-            app.Map("/launching/incomplete", spa =>
-            {
-                spa.Use((ctx, next) =>
-                {
-                    ctx.Request.Path = new PathString("/index.html");
-                    return next();
-                });
-            });
-
-            app.Map("/installing/installing", spa =>
-            {
-                spa.Use((ctx, next) =>
-                {
-                    ctx.Request.Path = new PathString("/index.html");
-                    return next();
-                });
-            });
-
-            app.Map("/claimpaid/claimpaid", spa =>
-            {
-                spa.Use((ctx, next) =>
-                {
-                    ctx.Request.Path = new PathString("/index.html");
-                    return next();
-                });
-            });
+            app.ConfigureRoutes();
 
             var httpConfiguration = new HttpConfiguration();
+            UnityConfig.RegisterComponents(httpConfiguration);
             WebApiConfig.Register(httpConfiguration);
             app.UseWebApi(httpConfiguration);
             
             var options = new FileServerOptions();
             FileServerConfig.Register(options);
             app.UseFileServer(options);
-            
+
             app.UseStageMarker(PipelineStage.MapHandler);
         }
     }
