@@ -44,13 +44,19 @@ namespace IMED.Services
             return Task.FromResult(identity);
         }
 
-        public Task<ClaimsIdentity> CreateIdentity(IOwinContext context, string IMEDCode)
+        public async Task<ClaimsIdentity> CreateIdentity(IOwinContext context, string IMEDCode)
         {
-            return Task.FromResult(Cache
-                    .AddOrGetExisting(
-                        "IMED:IMEDCode:" + IMEDCode,
-                        CreateFromContext(context, IMEDCode),
-                        AbsoluteExpiration()) as ClaimsIdentity);
+            ClaimsIdentity identity;
+            if (Cache.Contains("IMED:IMEDCode:" + IMEDCode))
+            {
+                identity = Cache.GetCacheItem("IMED:IMEDCode:" + IMEDCode).Value as ClaimsIdentity;
+            }
+            else
+            {
+                identity = await CreateFromContext(context, IMEDCode);
+                Cache.Add("IMED:IMEDCode:" + IMEDCode, identity, AbsoluteExpiration());
+            }
+            return identity;
         }
 
         public Task<string> GetIMEDCode(IOwinContext context)
