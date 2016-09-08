@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using IMED.Models;
 using IMED.Security;
+using Microsoft.Owin;
 
 namespace IMED.Services
 {
@@ -9,8 +10,8 @@ namespace IMED.Services
     {
         UserProfile GetUserProfile();
 
-        Task<ClaimsIdentity> RegenerateIdentity(IMEDUserManager userManager, UserProfile profile);
+        Task<ClaimsIdentity> CreateIdentity(IOwinContext context,string IMEDCode);
 
-        string GetUserId(ClaimsIdentity identity);
+        Task<string> GetIMEDCode(IOwinContext context);
     }
 }

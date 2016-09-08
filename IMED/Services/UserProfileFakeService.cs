@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using IMED.Models;
 using IMED.Security;
+using Microsoft.Owin;
 
 namespace IMED.Services
 {
@@ -16,14 +17,19 @@ namespace IMED.Services
             };
         }
 
-        public Task<ClaimsIdentity> RegenerateIdentity(IMEDUserManager userManager, UserProfile profile)
+        public Task<ClaimsIdentity> CreateIdentity(IOwinContext context, string IMEDCode)
         {
-            return Task.FromResult(new ClaimsIdentity());
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.Name, "Badri")
+            };
+            var identity = new ClaimsIdentity(claims, "Basic");
+            return Task.FromResult(identity);
         }
 
-        public string GetUserId(ClaimsIdentity identity)
+        public Task<string> GetIMEDCode(IOwinContext context)
         {
-            return string.Empty;
+            return Task.FromResult("code");
         }
     }
 }

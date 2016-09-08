@@ -12,11 +12,11 @@ using IMED.Services;
 
 namespace IMED.Controllers
 {
+    [Authorize]
     public class ClaimsPaidController : ApiController
     {
-
-        private IClaimsPaidService service;
-
+        private readonly IClaimsPaidService service;
+       
         public ClaimsPaidController(IClaimsPaidService service)
         {
             this.service = service;

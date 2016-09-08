@@ -6,9 +6,8 @@ using Microsoft.AspNet.Identity;
 
 namespace IMED.Models
 {
-    public class UserProfile : IUser<string>
+    public class UserProfile
     {
-        public string Id { get; }
         public string UserName { get; set; }
         public string WelcomeMessage { get; set; }
     }

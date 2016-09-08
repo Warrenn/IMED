@@ -26,18 +26,19 @@ namespace IMED
     {
         public void Configuration(IAppBuilder app)
         {
-            app.RegisterRoutes();
-
             var httpConfiguration = new HttpConfiguration();
             var container = UnityConfig.RegisterComponents(httpConfiguration);
+            var options = new FileServerOptions();
+
+            app.ConfigureSecurity(container);
+            app.RegisterRoutes();
+
             WebApiConfig.Register(httpConfiguration);
             app.UseWebApi(httpConfiguration);
 
-            var options = new FileServerOptions();
             FileServerConfig.Register(options);
             app.UseFileServer(options);
 
-            app.ConfigureSecurity(container);
             app.UseStageMarker(PipelineStage.MapHandler);
         }
     }

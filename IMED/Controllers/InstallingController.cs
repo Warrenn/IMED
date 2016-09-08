@@ -12,9 +12,10 @@ using System.Web.Http;
 
 namespace IMED.Controllers
 {
+    [Authorize]
     public class InstallingController : ApiController
     {
-        private IInstallingService service;
+        private readonly IInstallingService service;
 
         public InstallingController(IInstallingService service)
         {

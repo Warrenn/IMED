@@ -4,9 +4,10 @@ using IMED.Services;
 
 namespace IMED.Controllers
 {
+    [Authorize]
     public class DashboardController : ApiController
     {
-        private IDashboardService service;
+        private readonly IDashboardService service;
 
         public DashboardController(IDashboardService service)
         {

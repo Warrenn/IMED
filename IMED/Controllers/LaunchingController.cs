@@ -12,9 +12,10 @@ using System.Web.Http;
 
 namespace IMED.Controllers
 {
+    [Authorize]
     public class LaunchingController : ApiController
     {
-        private ILaunchingService service;
+        private readonly ILaunchingService service;
 
         public LaunchingController(ILaunchingService service)
         {

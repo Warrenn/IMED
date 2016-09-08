@@ -242,10 +242,10 @@
     <Compile Include="Controllers\ClaimsPaidController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\UserProfileController.cs" />
+    <Compile Include="Security\AuthenticationHandler.cs" />
     <Compile Include="Security\ClaimsAuthoriseAttribute .cs" />
-    <Compile Include="Security\IMEDUserManager.cs" />
+    <Compile Include="Security\IAuthenticationHandler.cs" />
     <Compile Include="Security\SecurityConfig.cs" />
-    <Compile Include="Security\UserStore.cs" />
     <Compile Include="Services\ClaimsPaidService.cs" />
     <Compile Include="Services\IClaimsPaidService.cs" />
     <Compile Include="Services\ILaunchingService.cs" />
