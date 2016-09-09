@@ -17,7 +17,7 @@ namespace IMED.Security
         public static void ConfigureSecurity(this IAppBuilder app, IUnityContainer container)
         {
             var handler = container.Resolve<IAuthenticationHandler>();
-            app.Use((ctx, next) => handler.Authenticate(ctx, next));
+            app.Use(handler.Authenticate);
         }
     }
 }
