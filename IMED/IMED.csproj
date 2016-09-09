@@ -362,6 +362,9 @@
     <Content Include="bower_components\ionic-pullup\src\ion-pullup.js" />
     <Content Include="Content\app\app.js" />
     <Content Include="Content\app\common\common.js" />
+    <Content Include="Content\app\common\interceptors\interceptors.js" />
+    <Content Include="Content\app\common\interceptors\logging.factory.js" />
+    <Content Include="Content\app\common\interceptors\unAuthenticated.factory.js" />
     <Content Include="Content\app\common\filters\filters.js" />
     <Content Include="Content\app\common\filters\zeropad.js" />
     <Content Include="Content\app\common\gridLayout\gridLayout.component.js" />

@@ -6,6 +6,7 @@ import Marker from  './marker/marker'
 import Menubar from  './menubar/menubar'
 import Filters from  './filters/filters'
 import UserProfile from  './userProfile/userProfile'
+import Interceptors from  './interceptors/interceptors'
 import './common.less';
 
 let commonModule = angular
@@ -16,7 +17,8 @@ let commonModule = angular
         Menubar,
         Filters,
         GridLayout,
-        UserProfile
+        UserProfile,
+        Interceptors
     ])
     .name;
 
