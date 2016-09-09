@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Faker;
 using Fare;
 using FizzWare.NBuilder;
@@ -45,7 +46,7 @@ namespace IMED.Services
                .Build();
         }
 
-        public PagedResult<PayrollNotSubmitted> GetNotSubmittedPayroll(PagedRequest<string> request)
+        public async Task<PagedResult<PayrollNotSubmitted>> GetNotSubmittedPayroll(PagedRequest<string> request)
         {
             var allMatches = NotSubmittedPayroll
                 .Where(q =>
@@ -55,14 +56,14 @@ namespace IMED.Services
             var count = allMatches.Count();
             var data = allMatches.Skip(request.Skip).Take(request.Take);
 
-            return new PagedResult<PayrollNotSubmitted>
+            return await Task.FromResult(new PagedResult<PayrollNotSubmitted>
             {
                 Count = count,
                 Data = data
-            };
+            });
         }
 
-        public PagedResult<PayrollNotProcessed> GetNotProcessedPayroll(PagedRequest<string> request)
+        public async Task<PagedResult<PayrollNotProcessed>> GetNotProcessedPayroll(PagedRequest<string> request)
         {
             var allMatches = NotProcessedPayroll
                 .Where(q =>
@@ -72,14 +73,14 @@ namespace IMED.Services
             var count = allMatches.Count();
             var data = allMatches.Skip(request.Skip).Take(request.Take);
 
-            return new PagedResult<PayrollNotProcessed>
+            return await Task.FromResult(new PagedResult<PayrollNotProcessed>
             {
                 Count = count,
                 Data = data
-            };
+            });
         }
 
-        public PagedResult<PayrollProcessed> GetProcessedPayroll(PagedRequest<string> request)
+        public async Task<PagedResult<PayrollProcessed>> GetProcessedPayroll(PagedRequest<string> request)
         {
             var allMatches = ProcessedPayroll
                 .Where(q =>
@@ -89,11 +90,11 @@ namespace IMED.Services
             var count = allMatches.Count();
             var data = allMatches.Skip(request.Skip).Take(request.Take);
 
-            return new PagedResult<PayrollProcessed>
+            return await Task.FromResult(new PagedResult<PayrollProcessed>
             {
                 Count = count,
                 Data = data
-            };
+            });
         }
     }
 }

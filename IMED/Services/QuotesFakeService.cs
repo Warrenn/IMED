@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Faker;
 using Fare;
 using FizzWare.NBuilder;
@@ -29,7 +30,7 @@ namespace IMED.Services
                 .Build();
         }
 
-        public PagedResult<IssuedQuote> GetIssuedQoutes(PagedRequest<string> request)
+        public async Task<PagedResult<IssuedQuote>> GetIssuedQoutes(PagedRequest<string> request)
         {
             var allMatches = IssuedQuotes
                 .Where(q =>
@@ -39,11 +40,11 @@ namespace IMED.Services
             var count = allMatches.Count();
             var data = allMatches.Skip(request.Skip).Take(request.Take);
 
-            return new PagedResult<IssuedQuote>
+            return await Task.FromResult(new PagedResult<IssuedQuote>
             {
                 Count = count,
                 Data = data
-            };
+            });
         }
     }
 }
