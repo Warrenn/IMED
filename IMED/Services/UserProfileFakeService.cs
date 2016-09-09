@@ -15,7 +15,7 @@ namespace IMED.Services
 
         private static DateTimeOffset AbsoluteExpiration()
         {
-            var cacheExpirationConfig = ConfigurationManager.AppSettings["IMED:CacheExpiration"];
+            var cacheExpirationConfig = ConfigurationManager.AppSettings["IMED:Identity:CacheExpiration"];
             double expirationMinutes;
             var expiration = double.TryParse(cacheExpirationConfig, out expirationMinutes)
                 ? TimeSpan.FromMinutes(expirationMinutes)

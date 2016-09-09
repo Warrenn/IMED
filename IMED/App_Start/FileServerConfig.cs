@@ -14,7 +14,7 @@ namespace IMED.App_Start
                 ? "./wwwroot"
                 : ConfigurationManager.AppSettings["IMED:QueryPath"];
             
-            ConfigureCaching(options,ConfigurationManager.AppSettings["IMED:Caching"]);
+            ConfigureCaching(options,ConfigurationManager.AppSettings["IMED:FileServer:Caching"]);
             options.RequestPath = new PathString(ConfigurationManager.AppSettings["IMED:QueryPath"] ?? string.Empty);
             options.FileSystem = new PhysicalFileSystem(rootPath);
 
