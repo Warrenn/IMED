@@ -30,7 +30,7 @@ namespace IMED.Services
             return Task.FromResult(new UserProfile
             {
                 UserName = ClaimsPrincipal.Current.Identity.Name,
-                WelcomeMessage = "Welcome"
+                WelcomeMessage = "This prototype illustrates a proof of concept for the IMED Responsive Site Please note that this is a work in progress and some section may still be incomplete This prototype is Low Fidelity i.e.no UI Styling has been applied Navigate through this prototype by interacting with components that are blue such as blue links buttons icons etc"
             });
         }
 
