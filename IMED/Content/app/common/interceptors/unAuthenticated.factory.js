@@ -5,7 +5,8 @@
         'responseError': (response) => {
             const status = response.status;
             if (status === 401) {
-                window.location = "/account/login?redirectUrl=" + encodeURIComponent(document.URL);
+                //window.location = "/welcomepage/welcomepage";
+                ////window.location = "/welcomepage/welcomepage?redirectUrl=" + encodeURIComponent(document.URL);
                 return;
             }
             return $q.reject(response);
