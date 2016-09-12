@@ -291,7 +291,6 @@
     <Content Include="Content\app\common\gridLayout\gridLayout.controller.js" />
     <Content Include="Content\app\common\gridLayout\gridLayout.js" />
     <Content Include="Content\app\common\gridLayout\gridLayout.sm.html" />
-    <Content Include="Content\app\common\gridLayout\gridLayout.spec.js" />
     <Content Include="Content\app\common\gridLayout\gridLayout.xs.html" />
     <Content Include="Content\app\common\internal.js" />
     <Content Include="Content\app\common\layout\footer.html" />
@@ -300,10 +299,8 @@
     <Content Include="Content\app\common\layout\layout.sm.html" />
     <Content Include="Content\app\common\layout\layout.xs.html" />
     <Content Include="Content\app\common\layout\layout.js" />
-    <Content Include="Content\app\common\layout\layout.spec.js" />
     <Content Include="Content\app\common\marker\marker.html" />
     <Content Include="Content\app\common\marker\marker.js" />
-    <Content Include="Content\app\common\marker\marker.spec.js" />
     <Content Include="Content\app\common\mediaQuery\mediaQuery.factory.js" />
     <Content Include="Content\app\common\mediaQuery\mediaQuery.js" />
     <Content Include="Content\app\common\menubar\logo.png" />
@@ -311,7 +308,6 @@
     <Content Include="Content\app\common\menubar\menubar.controller.js" />
     <Content Include="Content\app\common\menubar\menubar.js" />
     <Content Include="Content\app\common\menubar\menubar.lg.html" />
-    <Content Include="Content\app\common\menubar\menubar.spec.js" />
     <Content Include="Content\app\common\menubar\menubar.xs.html" />
     <Content Include="Content\app\components\components.js" />
     <Content Include="Content\app\components\dashboard\chartConfig.js" />
@@ -367,6 +363,7 @@
     <Content Include="Content\index.html" />
     <Content Include="favicon.ico" />
     <Content Include="gulpfile.babel.js" />
+    <Content Include="Content\app\common\images\loading.png" />
     <Content Include="karma.conf.js" />
     <Content Include="paths.js" />
     <Content Include="webpack.config.js" />

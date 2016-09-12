@@ -10,6 +10,7 @@
                 <i class="ion-search padding-right"></i>
             </label>
         </div>
+       
         <div ng-if="$ctrl.tabs" class="gridlayout-tabs-bar">
             <a ng-repeat="(key,value) in $ctrl.tabs"
                ui-sref="{{key}}"
@@ -17,7 +18,7 @@
                ui-sref-active="active">{{value}}</a>
         </div>
     </subheading>
-    <content>
+    <content ng-if="!$ctrl.gridModel.loadingWithItems">
         <div ng-transclude="content"></div>
     </content>
 </layout>

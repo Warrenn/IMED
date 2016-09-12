@@ -8,6 +8,7 @@ using Faker;
 using Fare;
 using FizzWare.NBuilder;
 using IMED.Models;
+using System.Threading;
 
 namespace IMED.Controllers
 {
@@ -38,7 +39,7 @@ namespace IMED.Controllers
         [HttpGet]
         public PagedResult<IssuedQuote> GetIssuedQoutes([FromUri]PagedRequest<string> request)
         {
-
+            Thread.Sleep(2000);
             var allMatches = IssuedQuotes
                 .Where(q =>
                 string.IsNullOrEmpty(request.Filter) ||

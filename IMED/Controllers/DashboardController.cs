@@ -1,5 +1,6 @@
 ﻿using System.Web.Http;
 using IMED.Models;
+using System.Threading;
 
 namespace IMED.Controllers
 {
@@ -8,6 +9,7 @@ namespace IMED.Controllers
         [HttpGet]
         public NewBusinessSummary GetNewBusinessSummary()
         {
+            Thread.Sleep(5000);
             return new NewBusinessSummary()
             {
                 Installing = 6,
@@ -20,6 +22,7 @@ namespace IMED.Controllers
         [HttpGet]
         public PayrollSummary GetPayrollSummary()
         {
+            Thread.Sleep(5000);
             return new PayrollSummary
             {
                 PayrollOverDue = 2,
@@ -31,6 +34,7 @@ namespace IMED.Controllers
         [HttpGet]
         public ClaimsSummary GetClaimsSummary()
         {
+            Thread.Sleep(5000);
             return new ClaimsSummary
             {
                 Draft = 5,

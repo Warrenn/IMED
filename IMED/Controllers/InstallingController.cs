@@ -52,7 +52,7 @@ namespace IMED.Controllers
         [HttpGet]
         public PagedResult<InstallingPayRollSupportInProgress> GetPayRollSupportInProgress([FromUri]PagedRequest<string> request)
         {
-
+            
             var allMatches = payRollSupportProgress
                 .Where(q =>
                 string.IsNullOrEmpty(request.Filter) ||
