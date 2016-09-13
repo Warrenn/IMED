@@ -1,46 +1,36 @@
-﻿using System.Web.Http;
+﻿using System.Threading.Tasks;
+using System.Web.Http;
 using IMED.Models;
-using System.Threading;
+using IMED.Services;
 
 namespace IMED.Controllers
 {
+    [Authorize]
     public class DashboardController : ApiController
     {
-        [HttpGet]
-        public NewBusinessSummary GetNewBusinessSummary()
+        private readonly IDashboardService service;
+
+        public DashboardController(IDashboardService service)
         {
-            Thread.Sleep(5000);
-            return new NewBusinessSummary()
-            {
-                Installing = 6,
-                Launching = 12,
-                PayrollTracking = 3,
-                QuotesIssued = 5
-            };
+            this.service = service;
         }
 
         [HttpGet]
-        public PayrollSummary GetPayrollSummary()
+        public async Task<NewBusinessSummary> GetNewBusinessSummary()
         {
-            Thread.Sleep(5000);
-            return new PayrollSummary
-            {
-                PayrollOverDue = 2,
-                NotSubmitted = 5,
-                Submitted = 3
-            };
+            return await service.GetNewBusinessSummary();
         }
 
         [HttpGet]
-        public ClaimsSummary GetClaimsSummary()
+        public async Task<PayrollSummary> GetPayrollSummary()
         {
-            Thread.Sleep(5000);
-            return new ClaimsSummary
-            {
-                Draft = 5,
-                Paid = 2,
-                Processing = 6
-            };
+            return await service.GetPayrollSummary();
+        }
+
+        [HttpGet]
+        public async Task<ClaimsSummary> GetClaimsSummary()
+        {
+            return await service.GetClaimsSummary();
         }
     }
 }

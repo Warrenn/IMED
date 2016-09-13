@@ -59,15 +59,7 @@ angular
 
         $httpProvider
             .interceptors
-            .push(($log) => {
-                'ngInject';
-
-                return {
-                    'responseError': (rejection) => {
-                        $log.error('$httpProvider', rejection);
-                    }
-                }
-            });
+            .push('loggingInterceptor','unAuthenticatedInterceptor');
     })
     .config(($provide) => {
         'ngInject';

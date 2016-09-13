@@ -1,22 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Threading.Tasks;
 using System.Web.Http;
 using IMED.Models;
+using IMED.Security;
+using IMED.Services;
 
 namespace IMED.Controllers
 {
+    [Authorize]
     public class UserProfileController : ApiController
     {
-        [HttpGet]
-        public UserProfile GetUserProfile()
+        private readonly IUserProfileService service;
+
+        public UserProfileController(IUserProfileService service)
         {
-            return new UserProfile
-            {
-                UserName = "Johnny Snot"
-            };
+            this.service = service;
+        }
+
+        [HttpGet]
+        public async Task<UserProfile> GetUserProfile()
+        {
+            return await service.GetUserProfile();
         }
     }
 }

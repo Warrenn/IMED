@@ -1,17 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
+using Elmah.Contrib.WebApi;
+using IMED;
 using IMED.App_Start;
+using IMED.Models;
+using IMED.Security;
+using MB.Owin.Logging.Log4Net;
 using Microsoft.Owin;
-using Microsoft.Owin.FileSystems;
+using Microsoft.Owin.Extensions;
+using Microsoft.Owin.Security;
+using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.StaticFiles;
 using Microsoft.Owin.StaticFiles.Infrastructure;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using Owin;
-using System.Web.Http;
-using Microsoft.Owin.Extensions;
 
-[assembly: OwinStartup(typeof(IMED.Startup))]
+[assembly: OwinStartup(typeof(Startup))]
 
 namespace IMED
 {
@@ -19,41 +29,16 @@ namespace IMED
     {
         public void Configuration(IAppBuilder app)
         {
-            app.Map("/dashboard", spa =>
-            {
-                spa.Use((ctx, next) =>
-                {
-                    ctx.Request.Path = new PathString("/index.html");
-                    return next();
-                });
-            });
-
-            app.Map("/launching/incomplete", spa =>
-            {
-                spa.Use((ctx, next) =>
-                {
-                    ctx.Request.Path = new PathString("/index.html");
-                    return next();
-                });
-            });
-
-            app.Map("/installing/installing", spa =>
-            {
-                spa.Use((ctx, next) =>
-                {
-                    ctx.Request.Path = new PathString("/index.html");
-                    return next();
-                });
-            });
-
             var httpConfiguration = new HttpConfiguration();
-            WebApiConfig.Register(httpConfiguration);
-            app.UseWebApi(httpConfiguration);
-            
+            var container = UnityConfig.RegisterComponents(httpConfiguration);
             var options = new FileServerOptions();
-            FileServerConfig.Register(options);
-            app.UseFileServer(options);
-            
+
+            app.RegisterLogging(httpConfiguration);
+            app.ConfigureSecurity(container);
+            app.RegisterRoutes();
+            app.RegisterWebApi(httpConfiguration);
+            app.RegisterFileServer(options);
+
             app.UseStageMarker(PipelineStage.MapHandler);
         }
     }

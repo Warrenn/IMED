@@ -19,11 +19,8 @@ let dashboardModule = angular
             .state('dashboard', {
                 url: '/dashboard',
                 component: 'dashboard'
-            })
-            .state('default', {
-                url: '/',
-                component: 'dashboard'
             });
+            
     })
     .service('dashboardService', dashboardService)
     .component('dashboard', dashboardComponent)

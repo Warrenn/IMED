@@ -50,6 +50,22 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah.Contrib.WebApi, Version=1.0.10.25, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elmah.Contrib.WebApi.1.0.10.25\lib\net45\Elmah.Contrib.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah.Io, Version=2.0.29.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.io.core.2.0.29\lib\net40\Elmah.Io.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah.Io.Client, Version=2.0.29.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.io.client.2.0.29\lib\net40\Elmah.Io.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Faker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Faker.1.2\lib\Faker.dll</HintPath>
       <Private>True</Private>
@@ -66,6 +82,22 @@
       <HintPath>..\packages\NBuilder.3.0.1.1\lib\FizzWare.NBuilder.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MB.Owin.Logging.Log4Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MB.Owin.Logging.Log4Net.1.0.2\lib\net45\MB.Owin.Logging.Log4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -79,6 +111,22 @@
       <HintPath>..\packages\Microsoft.Owin.StaticFiles.3.0.1\lib\net45\Microsoft.Owin.StaticFiles.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -86,6 +134,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETPortable\v4.5\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -142,6 +194,10 @@
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.WebApi, Version=5.2.3.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.WebAPI.5.2.3\lib\net45\Unity.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
@@ -183,15 +239,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\LoggingConfig.cs" />
     <Compile Include="App_Start\FileServerConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ClaimsPaidController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\UserProfileController.cs" />
+    <Compile Include="Security\AuthenticationHandler.cs" />
+    <Compile Include="Security\ClaimsAuthoriseAttribute .cs" />
+    <Compile Include="Security\IAuthenticationHandler.cs" />
+    <Compile Include="Security\SecurityConfig.cs" />
+    <Compile Include="Services\ClaimsPaidService.cs" />
+    <Compile Include="Services\IClaimsPaidService.cs" />
+    <Compile Include="Services\ILaunchingService.cs" />
+    <Compile Include="Services\IPayrollService.cs" />
+    <Compile Include="Services\IQuotesService.cs" />
+    <Compile Include="Services\IUserProfileService.cs" />
     <Compile Include="Controllers\LaunchingController.cs" />
     <Compile Include="Controllers\InstallingController.cs" />
     <Compile Include="Controllers\PayrollController.cs" />
     <Compile Include="Controllers\QuotesController.cs" />
-    <Compile Include="Controllers\UserProfileController.cs" />
+    <Compile Include="Models\ClaimsPaid.cs" />
+    <Compile Include="Services\LaunchingService.cs" />
+    <Compile Include="Services\PayrollFakeService.cs" />
+    <Compile Include="Services\QuotesFakeService.cs" />
+    <Compile Include="Services\UserProfileFakeService.cs" />
     <Compile Include="Models\ClaimsSummary.cs" />
     <Compile Include="Models\IssuedQuote.cs" />
     <Compile Include="Models\LaunchingIncomplete.cs" />
@@ -207,6 +281,10 @@
     <Compile Include="Models\InstallingSchemeInstalled.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DashboardService.cs" />
+    <Compile Include="Services\IDashboardService.cs" />
+    <Compile Include="Services\IInstallingService.cs" />
+    <Compile Include="Services\InstallingService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -284,6 +362,9 @@
     <Content Include="bower_components\ionic-pullup\src\ion-pullup.js" />
     <Content Include="Content\app\app.js" />
     <Content Include="Content\app\common\common.js" />
+    <Content Include="Content\app\common\interceptors\interceptors.js" />
+    <Content Include="Content\app\common\interceptors\logging.factory.js" />
+    <Content Include="Content\app\common\interceptors\unAuthenticated.factory.js" />
     <Content Include="Content\app\common\filters\filters.js" />
     <Content Include="Content\app\common\filters\zeropad.js" />
     <Content Include="Content\app\common\gridLayout\gridLayout.component.js" />
@@ -309,6 +390,13 @@
     <Content Include="Content\app\common\menubar\menubar.js" />
     <Content Include="Content\app\common\menubar\menubar.lg.html" />
     <Content Include="Content\app\common\menubar\menubar.xs.html" />
+    <Content Include="Content\app\common\userProfile\userProfile.js" />
+    <Content Include="Content\app\common\userProfile\userProfile.service.js" />
+    <Content Include="Content\app\components\claimpaid\claim.paid.component.js" />
+    <Content Include="Content\app\components\claimpaid\claim.paid.controller.js" />
+    <Content Include="Content\app\components\claimpaid\claimpaid.js" />
+    <Content Include="Content\app\components\claimpaid\claim.paid.sm.html" />
+    <Content Include="Content\app\components\claimpaid\claim.paid.xs.html" />
     <Content Include="Content\app\components\components.js" />
     <Content Include="Content\app\components\dashboard\chartConfig.js" />
     <Content Include="Content\app\components\dashboard\payrollPanel.controller.js" />
@@ -360,6 +448,10 @@
     <Content Include="Content\app\components\quotesIssued\quotesIssued.js" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.sm.html" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.xs.html" />
+    <Content Include="Content\app\components\welcomepage\welcome.page.component.js" />
+    <Content Include="Content\app\components\welcomepage\welcome.page.controller.js" />
+    <Content Include="Content\app\components\welcomepage\welcomepage.js" />
+    <Content Include="Content\app\components\welcomepage\welcome.page.html" />
     <Content Include="Content\index.html" />
     <Content Include="favicon.ico" />
     <Content Include="gulpfile.babel.js" />
@@ -375,7 +467,9 @@
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="spec.bundle.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -389,7 +483,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Providers\" />
+    <Folder Include="Filters\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
@@ -435,6 +529,9 @@
     <Content Include="Content\app\components\installing\installing.less" />
     <Content Include="Content\app\components\installing\installing.service.js" />
     <Content Include="Content\app\components\payroll\payroll.less" />
+    <Content Include="Content\app\components\claimpaid\claimpaid.less" />
+    <Content Include="Content\app\components\claimpaid\claims.paid.service.js" />
+    <Content Include="Content\app\components\welcomepage\welcomepage.less" />
     <None Include="Project_Readme.html" />
     <Content Include="wwwroot\app.bundle.js.map" />
     <Content Include="wwwroot\app.css.map" />
