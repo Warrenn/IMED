@@ -1,8 +1,6 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Http;
 using IMED.Models;
-using IMED.Services;
-using System.Threading;
 
 namespace IMED.Controllers
 {
@@ -19,8 +17,6 @@ namespace IMED.Controllers
         [HttpGet]
         public async Task<PagedResult<IssuedQuote>> GetIssuedQoutes([FromUri]PagedRequest<string> request)
         {
-            Thread.Sleep(3000);
-        
             return await service.GetIssuedQoutes(request);
         }
     }
