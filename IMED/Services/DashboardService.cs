@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -13,6 +14,7 @@ namespace IMED.Services
 
         public async Task<NewBusinessSummary> GetNewBusinessSummary()
         {
+            Thread.Sleep(3000);
             return await Task.FromResult(new NewBusinessSummary()
             {
                 Installing = 6,
@@ -24,6 +26,7 @@ namespace IMED.Services
 
         public async Task<PayrollSummary> GetPayrollSummary()
         {
+            Thread.Sleep(3000);
             return await Task.FromResult(new PayrollSummary
             {
                 PayrollOverDue = 2,
@@ -34,6 +37,7 @@ namespace IMED.Services
 
         public async Task<ClaimsSummary> GetClaimsSummary()
         {
+            Thread.Sleep(3000);
             return await Task.FromResult(new ClaimsSummary
             {
                 Draft = 5,
