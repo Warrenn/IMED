@@ -1,8 +1,10 @@
 class WelcomepageController {  
     constructor($scope, userProfileService,$ionicLoading) {
         'ngInject';
+
         $scope.loadingspinner = true;
         $scope.dashboardBtn = false;
+
         userProfileService
             .getUserProfile()
             .then((result) => {
