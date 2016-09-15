@@ -17,6 +17,13 @@
                class="gridlayout-tabs-button"
                ui-sref-active="active">{{value}}</a>
         </div>
+        <br />
+
+        <div class="mySpinnerload" ng-show="$ctrl.gridModel.showfetchDataSpinner">
+            <ion-spinner icon="ios"></ion-spinner>
+        </div>
+        <br />
+        <br />
     </subheading>
     <content ng-if="!$ctrl.gridModel.loadingWithItems">
         <div ng-transclude="content"></div>

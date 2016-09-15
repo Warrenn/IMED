@@ -10,6 +10,7 @@ using Fare;
 using FizzWare.NBuilder;
 using IMED.Models;
 using IMED.Services;
+using System.Threading;
 
 namespace IMED.Controllers
 {
@@ -26,6 +27,7 @@ namespace IMED.Controllers
         [HttpGet]
         public async Task<PagedResult<ClaimsPaid>> GetPaidClaims([FromUri]PagedRequest<string> request)
         {
+            Thread.Sleep(3000);
             return await service.GetPaidClaims(request);
         }
     }

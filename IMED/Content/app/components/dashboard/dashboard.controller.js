@@ -1,7 +1,7 @@
 import chartConfig from "./chartConfig";
 
 class DashboardController{
-    constructor(dashboardService) {
+    constructor(dashboardService, $scope) {
         'ngInject';
 
         this.filterState = 'COLLAPSED';
@@ -10,8 +10,8 @@ class DashboardController{
         this.claimsSummary = {};
         this.gridModel = {};
 
-        this.showClaimpanel = false;
-        this.showClaimSpinner = true;
+        $scope.showClaimpanel = false;
+        $scope.showClaimSpinner = true;
 
         this.$onInit = () => {
 
@@ -28,8 +28,8 @@ class DashboardController{
                 });
 
             this.dashboardSettings = dashboardService.getDashboardSettings();
-            this.showClaimpanel = true;
-            this.showClaimSpinner = false;
+            $scope.showClaimpanel = true;
+            $scope.showClaimSpinner = false;
         };
 
         this.saveSettings = () => {

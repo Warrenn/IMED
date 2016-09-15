@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -26,12 +27,14 @@ namespace IMED.Controllers
         [HttpGet]
         public async Task<PagedResult<LaunchingCompleted>> Completed([FromUri]PagedRequest<string> request)
         {
+            Thread.Sleep(3000);
             return await service.Completed(request);
         }
 
         [HttpGet]
         public async Task<PagedResult<LaunchingIncomplete>> Incomplete([FromUri]PagedRequest<string> request)
         {
+            Thread.Sleep(3000);
             return await service.Incomplete(request);
         }
     }

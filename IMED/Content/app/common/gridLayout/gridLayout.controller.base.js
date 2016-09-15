@@ -1,7 +1,7 @@
 class GridLayoutControllerBase {
-    constructor($rootScope, $ionicLoading) {
+    constructor($rootScope, $ionicLoading, $scope) {
         'ngInject';
-
+      
         this.take = 10;
         this.onLastPage = false;
         this.pageNumber = 1;
@@ -12,13 +12,16 @@ class GridLayoutControllerBase {
         this.gridModel = {
             searchText: '',
             amount: 0,
-            loadingWithItems:false
+            loadingWithItems:false,
+           showfetchDataSpinner :true
+
 
         }
 
         this.$onInit = () => {
             this.clearState();
             this.fetchData();
+            this.gridModel.showfetchDataSpinner = true;
             this.gridModel.loadingWithItems=true;
             $rootScope.$on('mediaQuery.stateChange', () => {
                 this.clearState();
@@ -55,7 +58,8 @@ class GridLayoutControllerBase {
 
         this.fetchData = () => {
             if(this.currentMediaState !=='xs'){
-                $ionicLoading.show();
+                this.gridModel.showfetchDataSpinner = true;
+              
             }
             return this.serverRequest({
                     skip: ((this.pageNumber - 1) * this.take),
@@ -76,8 +80,13 @@ class GridLayoutControllerBase {
                     $rootScope.$broadcast('scroll.infiniteScrollComplete');
                     this.loadingMoreItems = false;
                     this.gridModel.loadingWithItems=false;
-                    $ionicLoading.hide();
+                    this.gridModel.showfetchDataSpinner = false;
 
+                }, function onFailure (callInfo)
+                {
+
+                    console.log(callInfo);
+                    this.gridModel.showfetchDataSpinner = false;
                 });
         };
 
