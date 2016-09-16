@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Http;
 using IMED.Models;
+using IMED.Services;
 
 namespace IMED.Controllers
 {
