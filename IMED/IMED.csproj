@@ -429,6 +429,11 @@
     <Content Include="Content\app\components\launching\launching.js" />
     <Content Include="Content\app\components\launching\launching.incomplete.sm.html" />
     <Content Include="Content\app\components\launching\launching.incomplete.xs.html" />
+    <Content Include="Content\app\common\loadingSpinner\loadingSpinner.component.js" />
+    <Content Include="Content\app\common\loadingSpinner\loadingSpinner.controller.js" />
+    <Content Include="Content\app\common\loadingSpinner\loadingSpinner.js" />
+    <Content Include="Content\app\common\loadingSpinner\loadingSpinner.page.html" />
+    <Content Include="Content\app\common\loadingSpinner\loadingSpinner.xs.html" />
     <Content Include="Content\app\components\payroll\payroll.js" />
     <Content Include="Content\app\components\payroll\payroll.notprocessed.component.js" />
     <Content Include="Content\app\components\payroll\payroll.notprocessed.controller.js" />
@@ -532,6 +537,7 @@
     <Content Include="Content\app\components\claimpaid\claimpaid.less" />
     <Content Include="Content\app\components\claimpaid\claims.paid.service.js" />
     <Content Include="Content\app\components\welcomepage\welcomepage.less" />
+    <Content Include="Content\app\common\loadingSpinner\loadingSpinner.less" />
     <None Include="Project_Readme.html" />
     <Content Include="wwwroot\app.bundle.js.map" />
     <Content Include="wwwroot\app.css.map" />

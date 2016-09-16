@@ -7,6 +7,7 @@ import Menubar from  './menubar/menubar'
 import Filters from  './filters/filters'
 import UserProfile from  './userProfile/userProfile'
 import Interceptors from  './interceptors/interceptors'
+import LoadingSpinner from  './loadingSpinner/loadingSpinner'
 import './common.less';
 
 let commonModule = angular
@@ -18,7 +19,8 @@ let commonModule = angular
         Filters,
         GridLayout,
         UserProfile,
-        Interceptors
+        Interceptors,
+        LoadingSpinner
     ])
     .name;
 
