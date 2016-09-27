@@ -244,3 +244,4 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 /IMED/bower_components
+/Desktop - Shortcut.lnk

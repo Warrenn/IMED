@@ -14,6 +14,7 @@ namespace IMED.Services
         static readonly IEnumerable<PayrollNotSubmitted> NotSubmittedPayroll;
         static readonly IEnumerable<PayrollNotProcessed> NotProcessedPayroll;
         static readonly IEnumerable<PayrollProcessed> ProcessedPayroll;
+        static readonly IEnumerable<PayrollOverdue> PayrollOverdue;
         static readonly Xeger PayrollNumberGenerator = new Xeger("R(\\d{6})S", new Random((int)DateTime.Now.Ticks));
         static readonly RandomGenerator RandomGeneratorGenerator = new RandomGenerator();
 
@@ -44,6 +45,15 @@ namespace IMED.Services
                .With(q => q.AgreedDueDate = RandomGeneratorGenerator.Next(DateTime.Today.AddMonths(-1), DateTime.Today.AddMonths(3)))
                .With(q => q.PayPointName = Name.FullName(NameFormats.Standard))
                .Build();
+
+            PayrollOverdue = Builder<PayrollOverdue>
+           .CreateListOfSize(100)
+           .All()
+           .With(q => q.SchemeName = Name.FullName(NameFormats.Standard))
+           .With(q => q.SchemeNumber = PayrollNumberGenerator.Generate())
+           .With(q => q.AgreedDueDate = RandomGeneratorGenerator.Next(DateTime.Today.AddMonths(-1), DateTime.Today.AddMonths(3)))
+           .With(q => q.PayPointName = Name.FullName(NameFormats.Standard))
+           .Build();
         }
 
         public async Task<PagedResult<PayrollNotSubmitted>> GetNotSubmittedPayroll(PagedRequest<string> request)
@@ -96,5 +106,24 @@ namespace IMED.Services
                 Data = data
             });
         }
+
+        public async Task<PagedResult<PayrollOverdue>> GetOverduePayroll(PagedRequest<string> request)
+        {
+            var allMatches = PayrollOverdue.Where(q =>
+
+            string.IsNullOrEmpty(request.Filter) ||
+            q.SchemeName.Contains(request.Filter) ||
+            q.SchemeNumber.Contains(request.Filter));
+
+            var count = allMatches.Count();
+            var data = allMatches.Skip(request.Skip).Take(request.Take);
+
+            return await Task.FromResult(new PagedResult<PayrollOverdue>
+            {
+                Count = count,
+                Data = data
+            });
+        }
+
     }
 }

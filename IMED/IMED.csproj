@@ -247,6 +247,7 @@
     <Compile Include="Controllers\ClaimsPaidController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\UserProfileController.cs" />
+    <Compile Include="Models\PayrollOverdue.cs" />
     <Compile Include="Security\AuthenticationHandler.cs" />
     <Compile Include="Security\ClaimsAuthoriseAttribute .cs" />
     <Compile Include="Security\IAuthenticationHandler.cs" />
@@ -362,6 +363,7 @@
     <Content Include="bower_components\ionic-pullup\src\ion-pullup.js" />
     <Content Include="Content\app\app.js" />
     <Content Include="Content\app\common\common.js" />
+    <Content Include="Content\app\common\layout\footer.html" />
     <Content Include="Content\app\common\interceptors\interceptors.js" />
     <Content Include="Content\app\common\interceptors\logging.factory.js" />
     <Content Include="Content\app\common\interceptors\unAuthenticated.factory.js" />
@@ -374,12 +376,12 @@
     <Content Include="Content\app\common\gridLayout\gridLayout.sm.html" />
     <Content Include="Content\app\common\gridLayout\gridLayout.xs.html" />
     <Content Include="Content\app\common\internal.js" />
-    <Content Include="Content\app\common\layout\footer.html" />
     <Content Include="Content\app\common\layout\layout.component.js" />
     <Content Include="Content\app\common\layout\layout.controller.js" />
     <Content Include="Content\app\common\layout\layout.sm.html" />
     <Content Include="Content\app\common\layout\layout.xs.html" />
     <Content Include="Content\app\common\layout\layout.js" />
+    <Content Include="Content\app\common\layout\loadingSpinner.html" />
     <Content Include="Content\app\common\marker\marker.html" />
     <Content Include="Content\app\common\marker\marker.js" />
     <Content Include="Content\app\common\mediaQuery\mediaQuery.factory.js" />
@@ -429,12 +431,11 @@
     <Content Include="Content\app\components\launching\launching.js" />
     <Content Include="Content\app\components\launching\launching.incomplete.sm.html" />
     <Content Include="Content\app\components\launching\launching.incomplete.xs.html" />
-    <Content Include="Content\app\common\loadingSpinner\loadingSpinner.component.js" />
-    <Content Include="Content\app\common\loadingSpinner\loadingSpinner.controller.js" />
-    <Content Include="Content\app\common\loadingSpinner\loadingSpinner.js" />
-    <Content Include="Content\app\common\loadingSpinner\loadingSpinner.page.html" />
-    <Content Include="Content\app\common\loadingSpinner\loadingSpinner.xs.html" />
     <Content Include="Content\app\components\payroll\payroll.js" />
+    <Content Include="Content\app\components\payroll\payroll.overdue.xs.html" />
+    <Content Include="Content\app\components\payroll\payroll.overdue.sm.html" />
+    <Content Include="Content\app\components\payroll\payroll.overdue.controller.js" />
+    <Content Include="Content\app\components\payroll\payroll.overdue.component.js" />
     <Content Include="Content\app\components\payroll\payroll.notprocessed.component.js" />
     <Content Include="Content\app\components\payroll\payroll.notprocessed.controller.js" />
     <Content Include="Content\app\components\payroll\payroll.notprocessed.sm.html" />
@@ -537,7 +538,6 @@
     <Content Include="Content\app\components\claimpaid\claimpaid.less" />
     <Content Include="Content\app\components\claimpaid\claims.paid.service.js" />
     <Content Include="Content\app\components\welcomepage\welcomepage.less" />
-    <Content Include="Content\app\common\loadingSpinner\loadingSpinner.less" />
     <None Include="Project_Readme.html" />
     <Content Include="wwwroot\app.bundle.js.map" />
     <Content Include="wwwroot\app.css.map" />

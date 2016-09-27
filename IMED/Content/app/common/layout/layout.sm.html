@@ -4,9 +4,20 @@
         </menubar>
     </ion-header-bar>
     <div ng-transclude="subheading">
-
     </div>
-    <div ng-transclude="content"></div>
+    <div class="mySpinnerload" ng-show="$ctrl.gridModel.isLoading">
+        <loading></loading>
+    </div>
+    
+    <div>
+        <div ng-transclude="content"></div>
+      
+    </div>
+    <div>
+        <button class="button">
+            button-balanced
+        </button>
+    </div>
     <div class="layout-footer">
         <div class="layout-footer-heading">MyClient Disclaimer</div>
         <footer></footer>

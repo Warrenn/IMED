@@ -9,5 +9,7 @@ namespace IMED.Services
         Task<PagedResult<PayrollNotSubmitted>> GetNotSubmittedPayroll(PagedRequest<string> request);
         Task<PagedResult<PayrollNotProcessed>> GetNotProcessedPayroll(PagedRequest<string> request);
         Task<PagedResult<PayrollProcessed>> GetProcessedPayroll(PagedRequest<string> request);
+        Task<PagedResult<PayrollOverdue>> GetOverduePayroll(PagedRequest<string> request);
+      
     }
 }

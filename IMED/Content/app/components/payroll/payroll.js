@@ -3,6 +3,7 @@ import uiRouter from 'angular-ui-router';
 import payrollnotprocessedComponent from './payroll.notprocessed.component';
 import payrollprocessedComponent from './payroll.processed.component';
 import payrollnotsubmittedComponent from './payroll.notsubmitted.component';
+import payrolloverdueComponent from './payroll.overdue.component';
 import PayrollService from './payroll.service';
 
 let payrollModule = angular
@@ -20,7 +21,8 @@ let payrollModule = angular
                     tabs: {                                            
                         'payroll.notsubmitted': 'Not Submitted',                      
                         'payroll.notprocessed': 'Not Processed',
-                        'payroll.processed': 'Processed'
+                        'payroll.processed': 'Processed',
+                        'payroll.overdue' :'Overdue'
                     }
                 }
 
@@ -36,12 +38,17 @@ let payrollModule = angular
         .state('payroll.processed', {
             url: '/processed',
             component: 'payrollProcessed'
+        })
+        .state('payroll.overdue', {
+            url: '/overdue',
+            component: 'payrollOverdue'
         });
         
     })
    .component('payrollNotSubmitted', payrollnotsubmittedComponent)
    .component('payrollNotProcessed', payrollnotprocessedComponent)
    .component('payrollProcessed', payrollprocessedComponent)
+    .component('payrollOverdue', payrolloverdueComponent)
    .service('payrollService', PayrollService)
     .name;
 

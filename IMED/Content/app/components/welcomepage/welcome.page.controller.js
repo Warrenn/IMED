@@ -10,8 +10,7 @@ class WelcomepageController {
             .then((result) => {
                 $scope.userName = result.data.userName;
                 $scope.welcomeMessage = result.data.welcomeMessage;
-                $scope.loadingspinner = false; 
-                
+                $scope.loadingspinner= false;
                 $scope.dashboardBtn =true;
             });
     }

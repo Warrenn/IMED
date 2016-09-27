@@ -8,12 +8,16 @@ class GridLayoutControllerBase {
         this.itemsOnPage = [];
         this.itemsSoFar = [];
         this.shownItem = null;
+
+       
         this.loadingMoreItems = false;
+       
         this.gridModel = {
             searchText: '',
             amount: 0,
             loadingWithItems:false,
-           showfetchDataSpinner :true
+            showfetchDataSpinner :true,
+            isLoading : false
 
 
         }
@@ -23,6 +27,7 @@ class GridLayoutControllerBase {
             this.fetchData();
             this.gridModel.showfetchDataSpinner = true;
             this.gridModel.loadingWithItems=true;
+            this.gridModel.isLoading = true;
             $rootScope.$on('mediaQuery.stateChange', () => {
                 this.clearState();
                 this.fetchData();

@@ -1,5 +1,4 @@
 <div>
-   
     <div class="item">
         <div class="info-panel info-panel-qoutes">
             <div class="amount">
@@ -29,7 +28,7 @@
             </div>
         </div>
         <div class="panel item">
-            <div class="label">TOTAL CLAIMS</div>
+            <a ui-sref="claimpaid" class="claimLink">TOTAL CLAIMS</a>
             <div class="total">{{($ctrl.summary.draft + $ctrl.summary.processing + $ctrl.summary.paid) | zeropad:'00' }}</div>
         </div>
         <div class="panel item content content-light">
@@ -37,4 +36,5 @@
         </div>
     </div>
     </div>
-
+ 
+ 

@@ -36,5 +36,12 @@ namespace IMED.Controllers
             Thread.Sleep(3000);
             return await service.GetProcessedPayroll(request);
         }
+
+        [HttpGet]
+        public async Task<PagedResult<PayrollOverdue>> GetOverduePayroll([FromUri] PagedRequest<string> request)
+        {
+            Thread.Sleep(3000);
+            return await service.GetOverduePayroll(request);
+        }
     }
 }
