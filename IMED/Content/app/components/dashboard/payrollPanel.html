@@ -28,8 +28,7 @@
             </div>
         </div>
         <div class="panel item">
-            <a ui-sref="payroll.notsubmitted" class="payRollLink">TOTAL PAY POINTS</a>
-
+            <a ui-sref="claimpaid" class="dashboard-title">TOTAL PAYPOINTS</a>
             <div class="total">{{($ctrl.summary.payrollOverDue + $ctrl.summary.notSubmitted + $ctrl.summary.submitted) | zeropad:'00' }}</div>
         </div>
         <div class="panel item content content-light">

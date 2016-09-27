@@ -28,7 +28,9 @@
             </div>
         </div>
         <div class="panel item">
-            <a ui-sref="claimpaid" class="claimLink">TOTAL CLAIMS</a>
+            <div class="dashboard-title">
+                <a ui-sref="claimpaid">TOTAL CLAIMS</a>
+            </div>
             <div class="total">{{($ctrl.summary.draft + $ctrl.summary.processing + $ctrl.summary.paid) | zeropad:'00' }}</div>
         </div>
         <div class="panel item content content-light">
