@@ -14,6 +14,19 @@
 				}
 			});
 		}
+
+		this.getDraftClaims = (request)=> {
+		    const options = {
+		        url: '/api/ClaimsPaid/GetPaidClaims?' + $httpParamSerializer(request),
+		        method: 'GET'
+		    }
+		    return $http(options).then((response) => {
+		        return {
+		            response,
+		            request
+		        }
+		    });
+		}
 	}
 }
 

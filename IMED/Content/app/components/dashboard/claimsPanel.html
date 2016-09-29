@@ -5,7 +5,7 @@
                 {{$ctrl.summary.draft | zeropad:'00'}}
             </div>
             <div class="content">
-                <a class="heading">DRAFT CLAIMS</a>
+                <a ui-sref="claimdraft" class="heading">DRAFT CLAIMS</a>
                 <div class="description">You can see all  draft eClaims which must still be completed by your client. Your intervention may be required. If left in draft for 60 days these will be default to Preserver.</div>
             </div>
         </div>
@@ -28,9 +28,7 @@
             </div>
         </div>
         <div class="panel item">
-            <div class="dashboard-title">
-                <a ui-sref="claimpaid">TOTAL CLAIMS</a>
-            </div>
+            <a ui-sref="claimpaid" class="payRollLink">TOTAL CLAIMS</a>
             <div class="total">{{($ctrl.summary.draft + $ctrl.summary.processing + $ctrl.summary.paid) | zeropad:'00' }}</div>
         </div>
         <div class="panel item content content-light">

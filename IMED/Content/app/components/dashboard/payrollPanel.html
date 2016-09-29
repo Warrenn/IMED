@@ -10,25 +10,30 @@
                 {{$ctrl.summary.payrollOverDue | zeropad:'00'}}
             </div>
             <div class="content">
-                <a class="heading">PAYROLL OVERDUE</a>
+                <a ui-sref="payroll.overdue" class="headingpay">PAYROLL OVERDUE</a>
                 <div class="description">You can see which paypoints will be incurring late payment interest. Your intervention may be required.</div>
+               
             </div>
         </div>
         <div class="payroll-highchart-section">
             <highchart config="$ctrl.chartConfig"></highchart>
             <div class="payrollPanel-chartsummary-container">
-                <div class="payrollPanel-chartsummary payrollPanel-chartsummary-notsubmitted">
-                    <div class="amount">{{$ctrl.summary.notSubmitted | zeropad:'00'}}</div>
-                    <div>NOT SUBMITTED</div>
-                </div>
-                <div class="payrollPanel-chartsummary payrollPanel-chartsummary-submitted">
-                    <div class="amount">{{$ctrl.summary.submitted | zeropad:'00'}}</div>
-                    <div>SUBMITTED</div>
-                </div>
+                <a ui-sref="payroll.notsubmitted">
+                    <div class="payrollPanel-chartsummary payrollPanel-chartsummary-notsubmitted">
+                        <div class="amount">{{$ctrl.summary.notSubmitted | zeropad:'00'}}</div>
+                        <div>NOT SUBMITTED</div>
+                    </div>
+                </a>
+                <a ui-sref="payroll.processed">
+                    <div class="payrollPanel-chartsummary payrollPanel-chartsummary-submitted">
+                        <div class="amount">{{$ctrl.summary.submitted | zeropad:'00'}}</div>
+                        <div>SUBMITTED</div>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="panel item">
-            <a ui-sref="claimpaid" class="dashboard-title">TOTAL PAYPOINTS</a>
+            <a ui-sref="payroll.notsubmitted" class="payRollLink">TOTAL PAYPOINTS</a>
             <div class="total">{{($ctrl.summary.payrollOverDue + $ctrl.summary.notSubmitted + $ctrl.summary.submitted) | zeropad:'00' }}</div>
         </div>
         <div class="panel item content content-light">

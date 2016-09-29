@@ -4,6 +4,7 @@ import QuotesIssued from './quotesIssued/quotesIssued';
 import Launching from './launching/launching';
 import Installing from './installing/installing';
 import Payroll from './payroll/payroll';
+
 import ClaimPaid from './claimpaid/claimpaid';
 import WelcomePage from './welcomepage/welcomepage';
 
@@ -14,9 +15,9 @@ let componentModule = angular
         QuotesIssued,
         Launching,
         Installing,
-        Payroll,
         ClaimPaid,
-        WelcomePage
+        WelcomePage,
+        Payroll
     ])
     .name;
 

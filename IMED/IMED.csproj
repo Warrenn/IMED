@@ -394,8 +394,12 @@
     <Content Include="Content\app\common\menubar\menubar.xs.html" />
     <Content Include="Content\app\common\userProfile\userProfile.js" />
     <Content Include="Content\app\common\userProfile\userProfile.service.js" />
+    <Content Include="Content\app\components\claimpaid\claim.draft.component.js" />
     <Content Include="Content\app\components\claimpaid\claim.paid.component.js" />
+    <Content Include="Content\app\components\claimpaid\claim.draft.controller.js" />
     <Content Include="Content\app\components\claimpaid\claim.paid.controller.js" />
+    <Content Include="Content\app\components\claimpaid\claim.draft.sm.html" />
+    <Content Include="Content\app\components\claimpaid\claim.draft.xs.html" />
     <Content Include="Content\app\components\claimpaid\claimpaid.js" />
     <Content Include="Content\app\components\claimpaid\claim.paid.sm.html" />
     <Content Include="Content\app\components\claimpaid\claim.paid.xs.html" />
@@ -431,6 +435,12 @@
     <Content Include="Content\app\components\launching\launching.js" />
     <Content Include="Content\app\components\launching\launching.incomplete.sm.html" />
     <Content Include="Content\app\components\launching\launching.incomplete.xs.html" />
+    <Content Include="Content\app\components\payrolltracking\payrolltracking.component.js" />
+    <Content Include="Content\app\components\payrolltracking\payrolltracking.controller.js" />
+    <Content Include="Content\app\components\payrolltracking\payrolltracking.js" />
+    <Content Include="Content\app\components\payrolltracking\payrolltracking.sm.html" />
+    <Content Include="Content\app\components\payrolltracking\payrolltracking.spec.js" />
+    <Content Include="Content\app\components\payrolltracking\payrolltracking.xs.html" />
     <Content Include="Content\app\components\payroll\payroll.js" />
     <Content Include="Content\app\components\payroll\payroll.overdue.xs.html" />
     <Content Include="Content\app\components\payroll\payroll.overdue.sm.html" />
@@ -538,6 +548,7 @@
     <Content Include="Content\app\components\claimpaid\claimpaid.less" />
     <Content Include="Content\app\components\claimpaid\claims.paid.service.js" />
     <Content Include="Content\app\components\welcomepage\welcomepage.less" />
+    <Content Include="Content\app\components\payrolltracking\payrolltracking.less" />
     <None Include="Project_Readme.html" />
     <Content Include="wwwroot\app.bundle.js.map" />
     <Content Include="wwwroot\app.css.map" />
