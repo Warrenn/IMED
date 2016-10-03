@@ -10,7 +10,7 @@
     <content>
         <div class="list card">
             <ion-item class="bar" ng-click="$ctrl.toggleFilterState()">
-                <h2 class="title title-left">FILTER YOUR VIEW</h2>
+                <h2 class="title title-left right-border">FILTER YOUR VIEW</h2>
                 <i ng-class="$ctrl.filterState === 'EXPANDED'?'ion-chevron-up':'ion-chevron-down'" class="button button-icon"></i>
             </ion-item>
             <ion-toggle  ng-hide="$ctrl.filterState !== 'EXPANDED'" class="am-fade-and-slide-top" ng-model="$ctrl.dashboardSettings.showNewBusiness">NEW BUSINESS</ion-toggle>

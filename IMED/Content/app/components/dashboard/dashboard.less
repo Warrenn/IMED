@@ -1,4 +1,5 @@
 @import "../../variables.less";
+
 @ns: dashboard;
 
 .@{ns}-filter-input {
@@ -11,7 +12,8 @@
 }
 
 .@{ns}-filter-label {
-    padding-right: 5%;
+    padding-right: 2%;
+    border-right: 1px solid green;
 }
 
 .@{ns}-newbusiness-marker {
@@ -36,30 +38,23 @@
     }
 }
 
-@media (min-width: @screen-sm) and (max-width: @screen-lg) {
+@media (min-width: @screen-sm) {
+    .@{ns}-panel-item-left {
+        width: 40%;
+        float: left;
+        font: bold;
+    }
+
+    .@{ns}-panel-item-right {
+        float: right;
+        width: 40%;
+        border: 1px solid black;
+    }
+}
+
     .sm-hidden {
         display: none;
     }
-}
-
-@media (min-width: @screen-lg) {
-    .lg-hidden {
-        display: none;
-    }
-
-    .lg-min60 {
-        width: 60%;
-    }
-
-    .@{ns}-subheading {
-        display: flex;
-    }
-
-    .lg-min40 {
-        width: 39%;
-        float: right;
-    }
-}
 
 .@{ns}-margin {
     margin: @list-header-margin-top !important;
@@ -72,6 +67,100 @@
     margin-left: 0px;
     margin-right: 0px;
     height: auto;
+}
+
+.@{ns}-newbusiness {
+    display: flex;
+
+    @media (max-width: @screen-sm) {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    @media (min-width: @screen-sm) {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+
+    position: relative;
+
+    .@{ns}-linkbar {
+        position: absolute;
+        z-index: -1;
+    }
+
+    @media (min-width: @screen-sm) {
+        .@{ns}-linkbar {
+            border-top: 6px dotted @stable;
+            height: 1px;
+            width: 75%;
+            top: unit((@marker-size/2) + (@marker-thickness*2),px);
+        }
+    }
+
+    @media (max-width: @screen-sm) {
+        .marker {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .@{ns}-linkbar {
+            border-right: 6px dotted @stable;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            right: 49%;
+        }
+    }
+
+    .@{ns}-title {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: @padding-base-vertical;
+    }
+
+    .@{ns}-content {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: @font-size-base;
+        padding-bottom: @item-padding * 2;
+    }
+}
+
+.no-activated {
+    background-color: @light !important;
+}
+
+
+div.spinner {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  height: 85px;
+  text-align: center;
+}
+
+.@{ns}-label {
+    font-size: 18px;
+    float: left;
+}
+
+.@{ns}-label-total {
+    font-size: 18px;
+    float: right;
+}
+
+.claimLink{
+    text-align: center; 
+    color: #6eab24;
+    margin-left: auto;
+    margin-right: auto; 
+    padding-bottom: 1px;
+    text-decoration:blink;
+   border-bottom: 3px solid #6eab24;
 }
 
 .@{ns}-newbusiness {
@@ -161,4 +250,20 @@ div.spinner {
     padding-bottom: 1px;
     text-decoration:blink;
    border-bottom: 3px solid #6eab24;
+}
+
+.claims-draft-link{
+    color: @quote-color;
+}
+
+.claims-processing-link{
+    color: @install-color;
+}
+
+.claims-paid-link{
+    color: @payroll-color;
+}
+
+.right-border{
+    border-right: 2px solid black;
 }

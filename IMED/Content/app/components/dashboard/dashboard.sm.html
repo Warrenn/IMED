@@ -3,27 +3,54 @@
         <ion-item class="bar sm-hidden lg-min60 no-activated dashboard-margin" ng-click="$ctrl.toggleFilterState()">
             <div ng-include src="'templates/filter.html'"></div>
         </ion-item>
-        <label class="item item-input dashboard-margin lg-min40">
-            <input type="text" ng-model="$ctrl.gridModel.searchText" placeholder="Search">
-            <i class="ion-search padding-right"></i>
-        </label>
+
         <div class="bar item dashboard-filter-bar lg-hidden">
             <div ng-include src="'templates/filter.html'"></div>
         </div>
     </subheading>
     <content>
         <div class="list card am-fade-and-slide-top dashboard-margin" ng-if="$ctrl.dashboardSettings.showNewBusiness">
-            <div class="item item-divider">NEW BUSINESS</div>
+            <div class="item">
+                <div class="dashboard-panel-item-left">
+                    <b><b>NEW BUSINESS</b></b>
+                </div>
+                <div class="dashboard-panel-item-right">
+                    <label class="item-input">
+                        <input type="text" ng-model="$ctrl.gridModel.searchText" placeholder="Search within New Business">
+                        <b><i class="ion-search padding-right"></i></b>
+                    </label>
+                </div>
+            </div>
             <new-business-panel summary="$ctrl.newBusinessSummary"></new-business-panel>
         </div>
         <div class="dashboard-split-panels" ng-if="$ctrl.dashboardSettings.showClaims">
             <div class="list card dashboard-split-item am-fade-and-slide-top dashboard-margin" ng-if="$ctrl.dashboardSettings.showPayroll">
-                <div class="item item-divider">PAYROLL</div>
+                <div class="item">
+                    <div class="dashboard-panel-item-left">
+                        <b><b>PAYROLL</b></b>
+                    </div>
+                    <div class="dashboard-panel-item-right">
+                        <label class="item-input">
+                            <input type="text" ng-model="$ctrl.gridModel.searchText" placeholder="Search within Payroll">
+                            <b><i class="ion-search padding-right"></i></b>
+                        </label>
+                    </div>
+                </div>
                 <payroll-panel>
                 </payroll-panel>
             </div>
             <div class="list card dashboard-split-item am-fade-and-slide-top dashboard-margin" ng-if="$ctrl.dashboardSettings.showClaims">
-                <div class="item item-divider">CLAIMS</div>
+                <div class="item">
+                    <div class="dashboard-panel-item-left">
+                        <b><b>CLAIMS</b></b>
+                    </div>
+                    <div class="dashboard-panel-item-right">
+                        <label class="item-input">
+                            <input type="text" ng-model="$ctrl.gridModel.searchText" placeholder="Search within Claims">
+                            <b><i class="ion-search padding-right"></i></b>
+                        </label>
+                    </div>
+                </div>
                 <claims-panel summary="$ctrl.claimsSummary"></claims-panel>
             </div>
         </div>
@@ -35,6 +62,6 @@
     <label class="dashboard-filter-input"><input type="checkbox" ng-model="$ctrl.dashboardSettings.showPayroll" value="">PAYROLL</label>
     <label><input type="checkbox" ng-model="$ctrl.dashboardSettings.showClaims" value="">CLAIMS</label>
     <div class="dashboard-filter-save">
-        <a href="" ng-click="$ctrl.saveSettings()" class="right">Save View</a>
+        <a href="" ng-click="$ctrl.saveSettings()">Saved View</a>
     </div>
 </script>

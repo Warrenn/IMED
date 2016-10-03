@@ -5,7 +5,7 @@
                 {{$ctrl.summary.draft | zeropad:'00'}}
             </div>
             <div class="content">
-                <a ui-sref="claimdraft" class="heading">DRAFT CLAIMS</a>
+                <a ui-sref="claimdraft" class="heading layout-link">DRAFT CLAIMS</a>
                 <div class="description">You can see all  draft eClaims which must still be completed by your client. Your intervention may be required. If left in draft for 60 days these will be default to Preserver.</div>
             </div>
         </div>
@@ -14,7 +14,7 @@
                 {{$ctrl.summary.processing | zeropad:'00'}}
             </div>
             <div class="content">
-                <a class="heading">PROCESSING</a>
+                <a class="heading layout-link">PROCESSING</a>
                 <div class="description">You can see all claims which have been completed by your client. These claims are being processed,.</div>
             </div>
         </div>
@@ -23,13 +23,15 @@
                 {{$ctrl.summary.paid | zeropad:'00'}}
             </div>
             <div class="content">
-                <a class="heading">PAID</a>
+                <a class="heading layout-link">PAID</a>
                 <div class="description">You can see all claims that have been paid. These will appear on the list for 30 days from date of payment.</div>
             </div>
         </div>
         <div class="panel item">
-            <a ui-sref="claimpaid" class="payRollLink">TOTAL CLAIMS</a>
-            <div class="total">{{($ctrl.summary.draft + $ctrl.summary.processing + $ctrl.summary.paid) | zeropad:'00' }}</div>
+            <span class="dashboard-label">TOTAL CLAIMS</span>
+            <span calss="dashboard-label-total" align="right">
+                {{($ctrl.summary.draft + $ctrl.summary.processing + $ctrl.summary.paid) | zeropad:'00' }}
+            </span>
         </div>
         <div class="panel item content content-light">
             You can see a list of all claims in your portfolio.
