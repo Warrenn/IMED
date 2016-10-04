@@ -28,10 +28,10 @@
             </div>
         </div>
         <div class="panel item">
-            <span class="dashboard-label">TOTAL CLAIMS</span>
-            <span calss="dashboard-label-total" align="right">
+            <div class="label">TOTAL CLAIMS</div>
+            <div class="total">
                 {{($ctrl.summary.draft + $ctrl.summary.processing + $ctrl.summary.paid) | zeropad:'00' }}
-            </span>
+            </div>
         </div>
         <div class="panel item content content-light">
             You can see a list of all claims in your portfolio.

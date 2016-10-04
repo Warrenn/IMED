@@ -18,8 +18,9 @@
     <button class="layout-float-button ion-chevron-up am-fade-and-scale" ng-class="$ctrl.showScrollButton?'':'ng-hide'" ng-click="$ctrl.scrollToTop()"></button>
     <ion-pull-up-footer class="bar-light" default-behavior="expand" max-height="350" state="$ctrl.footerState">
         <ion-pull-up-bar ion-pull-up-trigger>
-            <h1 class="title title-left"><a href="">My Client Disclaimer</a>{{$ctrl.scrollTop}}</h1>
-            <i ng-class="$ctrl.footerState === 'EXPANDED'?'ion-chevron-up':'ion-chevron-down'" class="button button-icon"></i>
+            <h1 class="title title-left"><a href=""><b class="layout-link"><u>My Client Disclaimer</u></b></a>{{$ctrl.scrollTop}}</h1>
+
+            <i ng-class="$ctrl.footerState === 'EXPANDED'?'ion-chevron-up layout-link':'ion-chevron-down layout-link'" class="button button-icon"></i>
         </ion-pull-up-bar>
         <ion-pull-up-content scroll="false">
             <footer></footer>

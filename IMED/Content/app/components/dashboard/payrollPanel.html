@@ -34,10 +34,10 @@
         </div>
          
         <div class="panel item">
-            <div class="dashboard-label">TOTAL PAYPOINTS</div>
-            <div calss="dashboard-label-total" align="right"><big>
+            <div class="label">TOTAL PAYPOINTS</div>
+            <div class="total">
                 {{($ctrl.summary.payrollOverDue + $ctrl.summary.notSubmitted + $ctrl.summary.submitted) | zeropad:'00' }}
-            </big></div>
+            </div>
         </div>
         <div class="panel item content content-light">
             The total expected pay points for the due month. The due month runs from the 8th of the month to the 7th of the following month.

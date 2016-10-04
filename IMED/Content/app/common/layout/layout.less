@@ -54,6 +54,10 @@
 
     @media (max-width: @screen-sm) {
         border-bottom: 1px solid @dark;
+
+        a {
+            width: 100%;
+        }
     }
 }
 
@@ -75,6 +79,11 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+
+.@{ns}-float-right{
+    float: right;
+    text-align: right;
 }
 
 @media (min-width: @screen-sm) {
@@ -183,4 +192,8 @@
     line-height: 42px;
     float: right;
     border-radius: 12px;
+}
+
+i.button-icon, i.button{
+    color: @link-blue;
 }
