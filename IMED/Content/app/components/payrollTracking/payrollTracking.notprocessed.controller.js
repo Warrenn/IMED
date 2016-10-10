@@ -1,11 +1,11 @@
 import GridLayoutControllerBase from '../../common/gridLayout/gridLayout.controller.base';
 
 class PayrollNotProcessedController extends GridLayoutControllerBase {
-    constructor(payrollService, $rootScope) {
+    constructor(payrollTrackingService, $rootScope) {
         'ngInject';
 
         super($rootScope);
-        this.serverRequest = payrollService.getNotProcessedPayroll;
+        this.serverRequest = payrollTrackingService.getNotProcessedPayroll;
     }
 }
 

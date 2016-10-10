@@ -14,7 +14,7 @@
                 {{$ctrl.summary.processing | zeropad:'00'}}
             </div>
             <div class="content">
-                <a class="heading layout-link">PROCESSING</a>
+                <a ui-sref="claimsprocessing.busyprocessing" class="heading layout-link">PROCESSING</a>
                 <div class="description">You can see all claims which have been completed by your client. These claims are being processed,.</div>
             </div>
         </div>
@@ -23,7 +23,7 @@
                 {{$ctrl.summary.paid | zeropad:'00'}}
             </div>
             <div class="content">
-                <a class="heading layout-link">PAID</a>
+                <a ui-sref="claimpaid" class="heading layout-link">PAID</a>
                 <div class="description">You can see all claims that have been paid. These will appear on the list for 30 days from date of payment.</div>
             </div>
         </div>

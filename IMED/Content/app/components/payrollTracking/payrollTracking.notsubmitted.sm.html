@@ -1,4 +1,4 @@
-<grid-layout heading="'PAYROLL'"
+<grid-layout heading="'PAYROLL TRACKING'"
              grid-model="$ctrl.gridModel"
              on-search-change = "$ctrl.onSearchChange()"  
              marker-type="'payroll'">
@@ -7,9 +7,9 @@
             <thead>
                 <tr>
                     <td class="gridlayout-data-table-heading">Scheme Name</td>
-                    <td class="gridlayout-data-table-heading">Scheme Code</td>
+                    <td class="gridlayout-data-table-heading">Scheme Number</td>
                     <td class="gridlayout-data-table-heading">Pay Point Name</td>
-                    <td class="gridlayout-data-table-heading">Date Last Payroll Processed</td>
+                    <td class="gridlayout-data-table-heading">Agreed Due Date</td>
                 </tr>
             </thead>
             <tbody>
@@ -28,9 +28,9 @@
                     </td>
                 </tr>
             </tbody>
-        </table>
+        </table>  
         <div class="gridlayout-paging-bar">
-            <ul uib-pagination total-items="$ctrl.gridModel.amount" ng-model="$ctrl.pageNumber" boundary-link-numbers="true" max-size="5" ng-change="$ctrl.fetchModreDataPaging()"></ul>
+            <ul uib-pagination total-items="$ctrl.gridModel.amount" ng-model="$ctrl.pageNumber" boundary-link-numbers="true" max-size="5" ng-change="$ctrl.fetchData()"></ul>
         </div>
     </content>
 </grid-layout>

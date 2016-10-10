@@ -1,6 +1,6 @@
 <grid-layout heading="'PAYROLL'"
              grid-model="$ctrl.gridModel"
-             on-search-change = "$ctrl.onSearchChange()"               
+             on-search-change = "$ctrl.onSearchChange()"  
              marker-type="'payroll'">
     <content>
         <div ng-repeat="item in $ctrl.itemsSoFar" class="list card">
@@ -12,15 +12,15 @@
                 <i ng-class="$ctrl.isDetailsShown(item)?'ion-chevron-up':'ion-chevron-down'" class="button button-icon gridlayout-data-item-title-icon"></i>
             </ion-item>
             <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
-                <label class=""><b>Scheme number</b></label>
+                <label class=""><b>Scheme Code</b></label>
                 <div class="">{{item.schemeNumber}}</div>
             </ion-item>
             <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
-                <label class=""><b>Pay point name</b></label>
+                <label class=""><b>Pay Point Name</b></label>
                 <div class="">{{item.payPointName}}</div>
             </ion-item>
             <ion-item class="item-accordion" ng-show="$ctrl.isDetailsShown(item)">
-                <label><b>Agreed due date</b></label>
+                <label><b>Date Last Payroll Processed</b></label>
                 <div class=""> {{item.agreedDueDate | date:'dd MM yyyy'}}</div>
             </ion-item>
         </div>

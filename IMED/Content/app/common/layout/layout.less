@@ -3,6 +3,21 @@
 
 @ns: layout;
 
+@font-face {
+   font-family: FutaraStd;
+   src: url("../FutaraStd-Light.otf");
+}
+
+@font-face {
+   font-family: FutaraStd;
+   src: url("../FutaraStd-Bold.otf");
+   font-weight: bold;
+}
+
+body{
+    font-family: FutaraStd
+}
+
 .@{ns}-float-button {
     .circle(@float-button-width, @button-light-active-bg, 0);
     position: absolute;
@@ -17,6 +32,7 @@
 .@{ns}-link{
     color: @link-blue;
 }
+
 .@{ns}-footer-heading {
     padding: @item-padding @item-padding 0 @item-padding;
     text-decoration: underline;

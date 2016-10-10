@@ -1,9 +1,8 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import payrollnotprocessedComponent from './payroll.notprocessed.component';
-import payrollprocessedComponent from './payroll.processed.component';
-import payrollnotsubmittedComponent from './payroll.notsubmitted.component';
 import payrolloverdueComponent from './payroll.overdue.component';
+import payrollsubmittedComponent from './payroll.submitted.component';
+import payrollnotsubmittedComponent from './payroll.notsubmitted.component';
 import PayrollService from './payroll.service';
 
 let payrollModule = angular
@@ -20,8 +19,7 @@ let payrollModule = angular
                 data: {
                     tabs: {                                            
                         'payroll.notsubmitted': 'Not Submitted',                      
-                        'payroll.notprocessed': 'Not Processed',
-                        'payroll.processed': 'Processed',
+                        'payroll.submitted': 'Submitted',
                         'payroll.overdue' :'Overdue'
                     }
                 }
@@ -31,23 +29,17 @@ let payrollModule = angular
             url: '/notsubmitted',
             component: 'payrollNotSubmitted'
         })
-        .state('payroll.notprocessed', {
+        .state('payroll.submitted', {
             url: '/notprocessed',
-            component: 'payrollNotProcessed'
-        })
-        .state('payroll.processed', {
-            url: '/processed',
-            component: 'payrollProcessed'
+            component: 'payrollSubmitted'
         })
         .state('payroll.overdue', {
             url: '/overdue',
             component: 'payrollOverdue'
-        });
-        
+        })
     })
    .component('payrollNotSubmitted', payrollnotsubmittedComponent)
-   .component('payrollNotProcessed', payrollnotprocessedComponent)
-   .component('payrollProcessed', payrollprocessedComponent)
+   .component('payrollSubmitted', payrollsubmittedComponent)
     .component('payrollOverdue', payrolloverdueComponent)
    .service('payrollService', PayrollService)
     .name;
