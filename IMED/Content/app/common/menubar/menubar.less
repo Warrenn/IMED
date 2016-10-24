@@ -3,23 +3,34 @@
 
 @ns: menubar;
 
+
+
+@media (min-width: @screen-lg) {
+
+}
+
 .@{ns}-container {
     height: @menubar-bar-height !important;
+    width: @screen-lg-width;
+    display: inline;
+    align-content:center;
+    background-color: @menu-background
 }
 
 .@{ns}-logo {
     display: inline-block;
     background-image: url(logo.png);
-    height: (@menubar-bar-base-height - @content-padding);
+    padding: 5%;
+    height: auto;
+    //height: (@menubar-bar-base-height - @content-padding);
     width: @menu-logo-width;
     background-size: @menu-logo-width;
     background-repeat: no-repeat;
-    margin-top: (@content-padding / 3);
+   // margin-top: (@content-padding / 3);
 }
 
 .@{ns}-icon-right {
     float: right;
-    color: @link-blue;
 }
 
 @{ns} {

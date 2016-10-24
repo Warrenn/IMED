@@ -1,8 +1,12 @@
 <div class="layout-content-container">
-    <ion-header-bar align-title="right" class="bar-light menubar-container">
-        <menubar user-name="$ctrl.gridModel.userName">
-        </menubar>
-    </ion-header-bar>
+    <div class="menubar-top-line"></div>
+    <div class="layout-menu-container">
+        <div class="layout-menu center" >
+            <menubar user-name="$ctrl.gridModel.userName">
+            </menubar>
+        </div>
+    </div>
+
     <div ng-transclude="subheading">
     </div>
     <div class="mySpinnerload" ng-show="$ctrl.gridModel.isLoading">

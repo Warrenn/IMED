@@ -513,7 +513,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\app\common\fonts\" />
     <Folder Include="Filters\" />
   </ItemGroup>
   <ItemGroup>
@@ -565,6 +564,8 @@
     <Content Include="Content\app\components\welcomepage\welcomepage.less" />
     <Content Include="Content\app\components\payrollTracking\payrollTracking.less" />
     <Content Include="Content\app\components\claimsprocessing\claimsprocessing.less" />
+    <Content Include="Content\app\common\fonts\FuturaStd-Bold.otf" />
+    <Content Include="Content\app\common\fonts\FuturaStd-Light.otf" />
     <None Include="Project_Readme.html" />
     <Content Include="wwwroot\app.bundle.js.map" />
     <Content Include="wwwroot\app.css.map" />

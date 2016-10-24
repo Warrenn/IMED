@@ -3,21 +3,6 @@
 
 @ns: layout;
 
-@font-face {
-   font-family: FutaraStd;
-   src: url("../FutaraStd-Light.otf");
-}
-
-@font-face {
-   font-family: FutaraStd;
-   src: url("../FutaraStd-Bold.otf");
-   font-weight: bold;
-}
-
-body{
-    font-family: FutaraStd
-}
-
 .@{ns}-float-button {
     .circle(@float-button-width, @button-light-active-bg, 0);
     position: absolute;
@@ -30,16 +15,18 @@ body{
 }
 
 .@{ns}-link{
-    color: @link-blue;
+    color: @link-color;
 }
 
 .@{ns}-footer-heading {
     padding: @item-padding @item-padding 0 @item-padding;
     text-decoration: underline;
     font-weight: bold;
+    font-family: 'FutaraStd';
 }
 
 .@{ns}-footer {
+    font-family: FutaraStd;
     background-color: @light;
     position: absolute;
     left: 0;
@@ -132,12 +119,31 @@ body{
 }
 
 @media (min-width: @screen-lg) {
-    body {
-        width: @screen-lg;
-    }
 
-    .@{ns}-content-container {
-    }
+}
+
+body {
+    width: @body-width;
+}
+
+.@{ns}-content-container {
+    margin: 0%;
+    padding: 0%;
+    width: @body-width;
+}
+
+.@{ns}-content-padding {
+
+}
+
+.@{ns}-menu-container {
+    background-color: @menu-background;
+    padding: 0%;
+    width: @body-width;
+ }
+
+.@{ns}-menu{
+    width: @content-width;
 }
 
 .has-menu-bar {
@@ -171,7 +177,7 @@ body{
 .has-menu-bar.has-grid-header.has-search.has-grid-tabs {
     top: @menubar-bar-height + @grid-heading-height + @bar-subheader-height + @tabs-height !important;
 }
-
+   
 .loading-container .loading {
     padding: 20px;
     border-radius: 5px;
@@ -188,28 +194,8 @@ body{
     margin-right: auto;
     padding-bottom: 1px;
 }
-
+ 
 .right{
-    text-decoration: @textDecoration ;
     border-bottom: 3px solid #33cd5f;
     color: #006150;
-}
-
-.returnButton{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
-    background-color: #4caf50;
-    border: none;
-    color: #fff;
-    padding: 3px 57px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    line-height: 42px;
-    float: right;
-    border-radius: 12px;
-}
-
-i.button-icon, i.button{
-    color: @link-blue;
 }
