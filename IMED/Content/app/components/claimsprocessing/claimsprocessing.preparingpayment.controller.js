@@ -1,11 +1,11 @@
-import GridLayoutControllerBase from '../../common/gridLayout/gridLayout.controller.base';
+import ClaimsProcessingControllerBase from './claimsprocessing.controller';
 
-class ClaimsProcessingPreparingPaymentController extends GridLayoutControllerBase {
-    constructor(claimsProcessingService, $rootScope) {
+class ClaimsProcessingPreparingPaymentController extends ClaimsProcessingControllerBase {
+    constructor(claimsProcessingService, $rootScope, $scope, $ionicPopover) {
         'ngInject';
 
-        super($rootScope);
-        this.serverRequest = claimsProcessingService.getPreparingPaymentClaims;
+        super(claimsProcessingService, $rootScope, $scope, $ionicPopover);
+        this.serverRequest = claimsProcessingService.getBusyProcessingClaims;
     }
 }
 

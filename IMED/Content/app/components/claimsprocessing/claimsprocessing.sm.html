@@ -15,7 +15,25 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in $ctrl.itemsOnPage" ng-class="{'gridlayout-data-table-row':$odd,'gridlayout-data-table-row-alternate':$even}">                  
+                <tr ng-repeat="item in $ctrl.itemsOnPage" ng-class="{'gridlayout-data-table-row':$odd,'gridlayout-data-table-row-alternate':$even}">
+                    <td class="gridlayout-data-table-value">
+                        <div class="icon gridlayout-item-status "
+                             ng-class="item.expired?['gridlayout-item-status-alert','ion-alert']:['gridlayout-item-status-normal','ion-android-person']">
+                        </div>
+                        <span class="gridlayout-data-item-title">{{item.claimType}}</span>
+                    </td>
+                    <td class="gridlayout-data-table-value gridlayout-data-table-value-borders">
+                        <span class="gridlayout-data-item-title">{{item.memberName}}</span> 
+                        <div class="icon ion-information-circled gridlayout-item-status layout-link" ng-click="showContactDetails(item, $event)"></div>                       
+                    </td>
+                    <td class="gridlayout-data-table-value gridlayout-data-table-value-borders">{{item.memberNumber}}</td>
+                    <td class="gridlayout-data-table-value gridlayout-data-table-value-borders">{{item.schemeCode}}</td>
+                    <td class="gridlayout-data-table-value gridlayout-data-table-value-borders" ng-class="item.expired?'gridlayout-item-status-alert':''">
+                        {{item.dayInStatus  | date:'dd MM yyyy'}}
+                    </td>
+                    <td class="gridlayout-data-table-value gridlayout-data-table-value-borders" ng-class="item.expired?'gridlayout-item-status-alert':''">
+                        {{item.dayOfNotification  | date:'dd MM yyyy'}}
+                    </td>
                 </tr>
             </tbody>
         </table>

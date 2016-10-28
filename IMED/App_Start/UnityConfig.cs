@@ -19,7 +19,7 @@ namespace IMED
             container.RegisterType<IUserProfileService, UserProfileFakeService>();
             container.RegisterType<IDashboardService, DashboardService>();
             container.RegisterType<ILaunchingService, LaunchingService>();
-            container.RegisterType<IClaimsPaidService, ClaimsPaidService>();
+            container.RegisterType<IClaimsService, ClaimsService>();
             container.RegisterType<IInstallingService, InstallingService>();
             container.RegisterType<IAuthenticationHandler, AuthenticationHandler>();
 

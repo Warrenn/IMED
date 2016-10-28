@@ -4,7 +4,7 @@
 
         this.getBusyProcessingClaims = (request) => {
             const  options = {
-                url: '/api/Payroll/GetNotSubmittedPayroll?' + $httpParamSerializer(request),
+                url: '/api/Claims/GetClaimsBusyProcessing?' + $httpParamSerializer(request),
                 method: 'GET'
             }
             return $http(options).then((response) => {
@@ -16,7 +16,7 @@
         }
         this.getPreparingPaymentClaims = (request) => {
             const  options = {
-                url: '/api/Payroll/GetProcessedPayroll?' + $httpParamSerializer(request),
+                url: '/api/Claims/GetClaimsPreparingPayment?' + $httpParamSerializer(request),
                 method: 'GET'
             }
             return $http(options).then((response) => {
@@ -28,7 +28,7 @@
         }
         this.getTaxFinalisationClaims = (request) => {
             const  options = {
-                url: '/api/Payroll/GetNotProcessedPayroll?' + $httpParamSerializer(request),
+                url: '/api/Claims/GetClaimsTaxFinalisation?' + $httpParamSerializer(request),
                 method: 'GET'
             }
             return $http(options).then((response) => {
