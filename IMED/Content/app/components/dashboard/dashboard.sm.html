@@ -16,9 +16,10 @@
                 </div>
                 <div class="dashboard-panel-item-right">
                     <label class="item-input">
-                        <input type="text" ng-model="$ctrl.gridModel.searchText" placeholder="Search within New Business">
-                        <b><i class="ion-search padding-right"></i></b>
+                        <input type="text" ng-model="$ctrl.searchNewbusinessText" placeholder="Search within New Business">
+
                     </label>
+                    <button ng-click="$ctrl.searchNewbusiness()"><i class="ion-search padding-right"></i></button>
                 </div>
             </div>
             <new-business-panel summary="$ctrl.newBusinessSummary"></new-business-panel>

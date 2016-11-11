@@ -480,6 +480,16 @@
     <Content Include="Content\app\components\quotesIssued\quotesIssued.js" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.sm.html" />
     <Content Include="Content\app\components\quotesIssued\quotesIssued.xs.html" />
+    <Content Include="Content\app\components\search\search.newbusiness.component.js" />
+    <Content Include="Content\app\components\search\search.newbusiness.controller.js" />
+    <Content Include="Content\app\components\search\search.js" />
+    <Content Include="Content\app\components\search\search.payroll.component.js" />
+    <Content Include="Content\app\components\search\search.payroll.controller.js" />
+    <Content Include="Content\app\components\search\search.service.js" />
+    <Content Include="Content\app\components\search\search.sm.html" />
+    <Content Include="Content\app\components\search\search.claims.component.js" />
+    <Content Include="Content\app\components\search\search.claims.controller.js" />
+    <Content Include="Content\app\components\search\search.xs.html" />
     <Content Include="Content\app\components\welcomepage\welcome.page.component.js" />
     <Content Include="Content\app\components\welcomepage\welcome.page.controller.js" />
     <Content Include="Content\app\components\welcomepage\welcomepage.js" />
@@ -568,6 +578,7 @@
     <Content Include="Content\app\components\claimsprocessing\claimsprocessing.less" />
     <Content Include="Content\app\common\fonts\FuturaStd-Bold.otf" />
     <Content Include="Content\app\common\fonts\FuturaStd-Light.otf" />
+    <Content Include="Content\app\components\search\search.less" />
     <None Include="Project_Readme.html" />
     <Content Include="wwwroot\app.bundle.js.map" />
     <Content Include="wwwroot\app.css.map" />

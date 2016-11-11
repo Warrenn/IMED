@@ -10,6 +10,8 @@ import PayrollTracking from './payrollTracking/payrollTracking';
 import ClaimPaid from './claimpaid/claimpaid';
 import ClaimsProcessing from './claimsprocessing/claimsprocessing';
 
+import Search from './search/search';
+
 import WelcomePage from './welcomepage/welcomepage';
 
 
@@ -23,7 +25,8 @@ let componentModule = angular
         ClaimsProcessing,
         WelcomePage,
         PayrollTracking,
-        Payroll
+        Payroll,
+        Search
     ])
     .name;
 

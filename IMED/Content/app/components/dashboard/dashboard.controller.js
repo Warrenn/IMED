@@ -1,7 +1,7 @@
 import chartConfig from "./chartConfig";
 
 class DashboardController{
-    constructor(dashboardService, $scope) {
+    constructor(dashboardService, $rootScope,$scope, $location) {
         'ngInject';
 
         this.filterState = 'COLLAPSED';
@@ -9,6 +9,7 @@ class DashboardController{
         this.newBusinessSummary = {};
         this.claimsSummary = {};
         this.gridModel = {};
+        this.searchNewBusinessText = "";
 
         $scope.showClaimpanel = false;
         $scope.showClaimSpinner = true;
@@ -41,6 +42,12 @@ class DashboardController{
             this.filterState = this.filterState === 'EXPANDED' ?
                 'COLLAPSED' :
                 'EXPANDED';
+        }
+
+        this.searchNewbusiness = () => {
+            $rootScope.searchNewbusinessText = this.searchNewbusinessText;
+            window.location = "claimpaid";
+
         }
     }
 }

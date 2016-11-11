@@ -1,0 +1,11 @@
+<grid-layout heading="'PROCESSING BUSY'"
+             grid-model="$ctrl.gridModel"
+             on-search-change = "$ctrl.onSearchChange()"  
+             marker-type="'payroll'">
+    <content>
+
+        <ion-infinite-scroll distance="2"
+                             on-infinite="$ctrl.loadMoreData()"
+                             ng-if="!$ctrl.onLastPage"></ion-infinite-scroll>
+    </content>
+</grid-layout>
