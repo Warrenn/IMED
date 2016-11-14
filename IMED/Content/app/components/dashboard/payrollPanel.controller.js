@@ -3,15 +3,19 @@ import chartConfig from "./chartConfig";
 class PayrollPanelController{
     constructor(dashboardService) {
         'ngInject';
+        this.showpannel = false;
+        this.showspinner = true;
 
         dashboardService
             .getPayrollSummary()
             .then((results) => {
+              
                 this.chartConfig = {
                     options: chartConfig.options,
                     series: [chartConfig.series.statuses],
                     title: chartConfig.title
                 }
+
 
                 this.summary = results.data;
 
@@ -27,7 +31,8 @@ class PayrollPanelController{
                         color: chartConfig.chartColors['notSubmitted']
                     }
                 ];
-
+                this.showspinner = false;
+                this.showpannel = true;
             });
     }
 }

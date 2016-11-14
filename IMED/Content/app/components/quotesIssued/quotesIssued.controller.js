@@ -1,11 +1,12 @@
 import GridLayoutControllerBase from '../../common/gridLayout/gridLayout.controller.base';
 
 class QuotesIssuedController extends GridLayoutControllerBase {
-    constructor(quotesIssuedService, $rootScope) {
+    constructor(quotesIssuedService, $rootScope,$ionicLoading) {
         'ngInject';
 
-        super($rootScope);
+        super($rootScope,$ionicLoading);
         this.serverRequest = quotesIssuedService.getIssuedQoutes;
+     
     }
 }
 

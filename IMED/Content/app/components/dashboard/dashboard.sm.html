@@ -16,10 +16,11 @@
             <div class="item item-divider">NEW BUSINESS</div>
             <new-business-panel summary="$ctrl.newBusinessSummary"></new-business-panel>
         </div>
-        <div class="dashboard-split-panels">
+        <div class="dashboard-split-panels" ng-if="$ctrl.dashboardSettings.showClaims">
             <div class="list card dashboard-split-item am-fade-and-slide-top dashboard-margin" ng-if="$ctrl.dashboardSettings.showPayroll">
                 <div class="item item-divider">PAYROLL</div>
-                <payroll-panel></payroll-panel>
+                <payroll-panel>
+                </payroll-panel>
             </div>
             <div class="list card dashboard-split-item am-fade-and-slide-top dashboard-margin" ng-if="$ctrl.dashboardSettings.showClaims">
                 <div class="item item-divider">CLAIMS</div>

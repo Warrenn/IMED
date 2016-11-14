@@ -1,5 +1,5 @@
 ﻿class QuotesIssuedService {
-	constructor($http, $httpParamSerializer) {
+    constructor($http, $httpParamSerializer) {
 		'ngInject';
 
 		this.getIssuedQoutes = (request) => {
@@ -7,11 +7,13 @@
 				url: '/api/Quotes/GetIssuedQoutes?' + $httpParamSerializer(request),
 				method: 'GET'
 			}
-		    return $http(options).then((response) => {
+			
+			return $http(options).then((response) => {
 		        return {
 		            response,
-                    request
+		            request,
 		        }
+
 		    });
 		}
 	}

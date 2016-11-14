@@ -1,5 +1,5 @@
 class GridLayoutControllerBase {
-    constructor($rootScope) {
+    constructor($rootScope, $ionicLoading) {
         'ngInject';
 
         this.take = 10;
@@ -8,15 +8,18 @@ class GridLayoutControllerBase {
         this.itemsOnPage = [];
         this.itemsSoFar = [];
         this.shownItem = null;
+        this.loadingMoreItems = false;
         this.gridModel = {
             searchText: '',
-            amount: 0
+            amount: 0,
+            loadingWithItems:false
+
         }
 
         this.$onInit = () => {
             this.clearState();
             this.fetchData();
-
+            this.gridModel.loadingWithItems=true;
             $rootScope.$on('mediaQuery.stateChange', () => {
                 this.clearState();
                 this.fetchData();
@@ -41,9 +44,19 @@ class GridLayoutControllerBase {
         this.loadMoreData = () => {
             this.pageNumber++;
             this.fetchData();
+            
         };
 
+        this.fetchModreDataPaging = () => {
+            this.fetchData();
+           
+        };
+
+
         this.fetchData = () => {
+            if(this.currentMediaState !=='xs'){
+                $ionicLoading.show();
+            }
             return this.serverRequest({
                     skip: ((this.pageNumber - 1) * this.take),
                     take: this.take,
@@ -55,12 +68,16 @@ class GridLayoutControllerBase {
                         start = originalRequest.skip,
                         data = response.data,
                         args = [start, data.length].concat(data);
-
+                      
                     Array.prototype.splice.apply(this.itemsSoFar, args);
                     this.itemsOnPage = data;
                     this.gridModel.amount = response.count;
                     this.onLastPage = (start + data.length) >= response.count;
                     $rootScope.$broadcast('scroll.infiniteScrollComplete');
+                    this.loadingMoreItems = false;
+                    this.gridModel.loadingWithItems=false;
+                    $ionicLoading.hide();
+
                 });
         };
 

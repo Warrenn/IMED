@@ -10,6 +10,9 @@ class DashboardController{
         this.claimsSummary = {};
         this.gridModel = {};
 
+        this.showClaimpanel = false;
+        this.showClaimSpinner = true;
+
         this.$onInit = () => {
 
             dashboardService
@@ -25,6 +28,8 @@ class DashboardController{
                 });
 
             this.dashboardSettings = dashboardService.getDashboardSettings();
+            this.showClaimpanel = true;
+            this.showClaimSpinner = false;
         };
 
         this.saveSettings = () => {

@@ -13,6 +13,7 @@
 
                     </tr>
                 </thead>
+              
                 <tbody>
                     <tr ng-repeat="item in $ctrl.itemsOnPage" ng-class="{'gridlayout-data-table-row':$odd,'gridlayout-data-table-row-alternate':$even}">
                         <td class="gridlayout-data-table-value">
@@ -28,7 +29,7 @@
                 </tbody>
             </table>
             <div class="gridlayout-paging-bar">
-                <ul uib-pagination total-items="$ctrl.gridModel.amount" ng-model="$ctrl.pageNumber" boundary-link-numbers="true" max-size="5" ng-change="$ctrl.fetchData()"></ul>
+                <ul uib-pagination total-items="$ctrl.gridModel.amount" ng-model="$ctrl.pageNumber" boundary-link-numbers="true" max-size="5" ng-change="$ctrl.fetchModreDataPaging()"></ul>
             </div>
         </content>
     </grid-layout>
