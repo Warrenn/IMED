@@ -10,9 +10,9 @@ namespace IMED.App_Start
     {
         public static void RegisterFileServer(this IAppBuilder app, FileServerOptions options)
         {
-            var rootPath = string.IsNullOrEmpty(ConfigurationManager.AppSettings["IMED:QueryPath"])
+            var rootPath = string.IsNullOrEmpty(ConfigurationManager.AppSettings["IMED:RootPath"])
                 ? "./wwwroot"
-                : ConfigurationManager.AppSettings["IMED:QueryPath"];
+                : ConfigurationManager.AppSettings["IMED:RootPath"];
             
             ConfigureCaching(options,ConfigurationManager.AppSettings["IMED:FileServer:Caching"]);
             options.RequestPath = new PathString(ConfigurationManager.AppSettings["IMED:QueryPath"] ?? string.Empty);
